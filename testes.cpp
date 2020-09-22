@@ -1,20 +1,20 @@
 #include "testes.h"
 #include "dominios.h"
 
-//Funções de Teste: Classe Cep
-void TUCep::create(){
+//Funcoes de Teste: Cep
+void TUCep::Create(){
     cep = new Cep();
     estado = true;
 }
 
-void TUCep::destroy(){
+void TUCep::Destroy(){
     delete cep;
 }
 
-void TUCep::sucessTest(){
+void TUCep::SucessTest(){
     try{
-        cep->setCep(VALOR_VALIDO);
-        if(cep->getCep() != VALOR_VALIDO){
+        cep->SetCep(VALOR_VALIDO);
+        if(cep->GetCep() != VALOR_VALIDO){
             estado = false;
         }
     }
@@ -23,9 +23,9 @@ void TUCep::sucessTest(){
     }
 }
 
-void TUCep::failureTest(){
+void TUCep::FailureTest(){
     try{
-        cep->setCep(VALOR_INVALIDO);
+        cep->SetCep(VALOR_INVALIDO);
         estado = false;
     }
     catch(invalid_argument &excecao){
@@ -33,29 +33,29 @@ void TUCep::failureTest(){
     }
 }
 
-bool TUCep::run(){
-    create();
-    sucessTest();
-    failureTest();
-    destroy();
+bool TUCep::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
     return estado;
 }
 
-//Funções de Teste: Classe Classe
+//Funcoes de Teste: Classe
 
-void TUClasse::create(){
+void TUClasse::Create(){
     classe = new Classe();
     estado = true;
 }
 
-void TUClasse::destroy(){
+void TUClasse::Destroy(){
     delete classe;
 }
 
-void TUClasse::sucessTest(){
+void TUClasse::SucessTest(){
     try{
-        classe->setClasse(VALOR_VALIDO);
-        if(classe->getClasse() != VALOR_VALIDO){
+        classe->SetClasse(VALOR_VALIDO);
+        if(classe->GetClasse() != VALOR_VALIDO){
             estado = false;
         }
     }
@@ -64,9 +64,9 @@ void TUClasse::sucessTest(){
     }
 }
 
-void TUClasse::failureTest(){
+void TUClasse::FailureTest(){
     try{
-        classe->setClasse(VALOR_INVALIDO);
+        classe->SetClasse(VALOR_INVALIDO);
         estado = false;
     }
     catch(invalid_argument &excecao){
@@ -74,11 +74,53 @@ void TUClasse::failureTest(){
     }
 }
 
-bool TUClasse::run(){
-    create();
-    sucessTest();
-    failureTest();
-    destroy();
+bool TUClasse::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
     return estado;
 }
+
+//Funcoes de Teste: Codigo de Agencia
+
+void TUCodigoDeAgencia::Create(){
+    codigo_de_agencia = new CodigoDeAgencia();
+    estado = true;
+}
+
+void TUCodigoDeAgencia::Destroy(){
+    delete codigo_de_agencia;
+}
+
+void TUCodigoDeAgencia::SucessTest(){
+    try{
+        codigo_de_agencia->SetCodigoDeAgencia(VALOR_VALIDO);
+        if(codigo_de_agencia->GetCodigoDeAgencia() != VALOR_VALIDO){
+            estado = false;
+        }
+    }
+    catch(invalid_argument &excecao){
+        estado = false;
+    }
+}
+
+void TUCodigoDeAgencia::FailureTest(){
+    try{
+        codigo_de_agencia->SetCodigoDeAgencia(VALOR_INVALIDO);
+        estado = false;
+    }
+    catch(invalid_argument &excecao){
+        return;
+    }
+}
+
+bool TUCodigoDeAgencia::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
+    return estado;
+}
+
 
