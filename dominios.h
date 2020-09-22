@@ -8,35 +8,21 @@ using namespace std;
 //Classe CEP
 
 class Cep{
+public:
+    void SetCep(int valor);
+    int GetCep();
 private:
     int valor;
+    constexpr static int kIntervalosPossiveisSaoPaulo[2][2] ={{1000000, 5999999} , {8000000, 8499999}};
+    constexpr static int kIntervaloPossivelRioDeJaneiro[2] = {20000000, 26600999};
+    constexpr static int kIntervaloPossivelBrasilia[2] = {70000000, 70999999};
+    constexpr static int kIntervaloPossivelSalvador[2] = {40000000, 41999999};
+    constexpr static int kIntervaloPossivelFortaleza[2] = {60000000, 60999999};
 
-    const static int VALOR_MINIMO_SP_1 = 1000000;
-    const static int VALOR_MAXIMO_SP_1 = 5999999;
-
-    const static int VALOR_MINIMO_SP_2 = 8000000;
-    const static int VALOR_MAXIMO_SP_2 = 8499999;
-
-    const static int VALOR_MINIMO_RJ = 20000000;
-    const static int VALOR_MAXIMO_RJ = 26600999;
-
-    const static int VALOR_MINIMO_BR = 70000000;
-    const static int VALOR_MAXIMO_BR = 70999999;
-
-    const static int VALOR_MINIMO_SA = 41999999;
-    const static int VALOR_MAXIMO_SA = 40000000;
-
-    const static int VALOR_MINIMO_FO = 60000000;
-    const static int VALOR_MAXIMO_FO = 60999999;
-
-    void validarCep(int valor) throw(invalid_argument);
-
-public:
-    void setCep(int valor) throw(invalid_argument);
-    int getCep();
+    void ValidarCep(int valor);
 };
 
-inline int Cep::getCep(){
+inline int Cep::GetCep(){
     return valor;
 }
 
@@ -45,22 +31,36 @@ inline int Cep::getCep(){
 class Classe{
 private:
     string valor;
+    inline const static string kValoresPossiveis[5] = {"CDB", "LCA", "LCI", "LF", "LC"};
 
-    const string VALOR_CDB = "CDB";
-    const string VALOR_LCA = "LCA";
-    const string VALOR_LF = "LF";
-    const string VALOR_LC = "LC";
-
-    void validarClasse(string valor) throw(invalid_argument);
+    void ValidarClasse(string valor);
 
 public:
-    void setClasse(string valor) throw(invalid_argument);
-    string getClasse();
+    void SetClasse(string valor);
+    string GetClasse();
 };
 
-inline string Classe::getClasse(){
+inline string Classe::GetClasse(){
     return valor;
 }
 
+//Classe Codigo de Agencia
+
+class CodigoDeAgencia{
+private:
+    string valor;
+    const static int kTamanhoDoValor = 4;
+    inline const static string ValorNaoPermitido = "0000";
+
+    void ValidarCodigoDeAgencia(string valor);
+
+public:
+    void SetCodigoDeAgencia(string valor);
+    string GetCodigoDeAgencia();
+};
+
+inline string CodigoDeAgencia::GetCodigoDeAgencia(){
+    return valor;
+}
 
 #endif // DOMINIOS_H_INCLUDED

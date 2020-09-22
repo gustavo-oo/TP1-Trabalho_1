@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add option="-Wdeprecated -std=c++17" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -33,12 +34,16 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="dominios.cpp" />
-		<Unit filename="dominios.h" />
+		<Unit filename="dominios.h">
+			<Option compiler="gcc" use="1" buildCommand="-Wdeprecated" />
+		</Unit>
 		<Unit filename="main.cpp" />
 		<Unit filename="testes.cpp">
 			<Option target="Debug" />
 		</Unit>
-		<Unit filename="testes.h" />
+		<Unit filename="testes.h">
+			<Option compiler="gcc" use="1" buildCommand="-std=c++17" />
+		</Unit>
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
