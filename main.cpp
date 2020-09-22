@@ -7,16 +7,23 @@
 using namespace std;
 
 int main(){
-    TUCep teste;
+    TUCep testeCep;
+    TUClasse testeClasse;
 
-    switch(teste.run()){
-        case true:
-            cout << "SUCESSO";
-            break;
+    cout << "Teste da Classe Cep: ";
+    if(testeCep.run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
 
-        case false:
-            cout << "FALHA";
-            break;
+    cout << "Teste da Classe Classe: ";
+    if(testeClasse.run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
     }
 
     return 0;

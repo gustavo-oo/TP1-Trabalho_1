@@ -5,6 +5,8 @@
 
 using namespace std;
 
+//Classe CEP
+
 class Cep{
 private:
     int valor;
@@ -35,6 +37,28 @@ public:
 };
 
 inline int Cep::getCep(){
+    return valor;
+}
+
+//Classe Classe
+
+class Classe{
+private:
+    string valor;
+
+    const string VALOR_CDB = "CDB";
+    const string VALOR_LCA = "LCA";
+    const string VALOR_LF = "LF";
+    const string VALOR_LC = "LC";
+
+    void validarClasse(string valor) throw(invalid_argument);
+
+public:
+    void setClasse(string valor) throw(invalid_argument);
+    string getClasse();
+};
+
+inline string Classe::getClasse(){
     return valor;
 }
 

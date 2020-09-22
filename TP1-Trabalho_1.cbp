@@ -36,11 +36,9 @@
 		<Unit filename="dominios.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="testes.cpp">
-			<Option target="&lt;{~None~}&gt;" />
+			<Option target="Debug" />
 		</Unit>
-		<Unit filename="testes.h">
-			<Option target="&lt;{~None~}&gt;" />
-		</Unit>
+		<Unit filename="testes.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
