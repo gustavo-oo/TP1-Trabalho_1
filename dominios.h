@@ -100,4 +100,23 @@ inline int CodigoDeBanco::GetCodigoDeBanco(){
     return valor;
 }
 
+//Classe Codigo de Produto
+
+class CodigoDeProduto{
+private:
+    string valor;
+    const static int kTamanhoDoValor = 3;
+    inline const static string ValorNaoPermitido = "000";
+
+    void ValidarCodigoDeProduto(string valor);
+
+public:
+    void SetCodigoDeProduto(string valor);
+    string GetCodigoDeProduto();
+};
+
+inline string CodigoDeProduto::GetCodigoDeProduto(){
+    return valor;
+}
+
 #endif // DOMINIOS_H_INCLUDED

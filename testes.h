@@ -84,4 +84,21 @@ public:
     bool Run();
 };
 
+//Classe de Teste: Codigo de Produto
+class TUCodigoDeProduto{
+    CodigoDeProduto *codigo_de_produto;
+    bool estado;
+    inline const static string kValorValido = "789";
+    inline const static string kValorInvalido = "000";
+
+    void Create();
+    void Destroy();
+    void SucessTest();
+    void FailureTest();
+
+public:
+    bool Run();
+};
+
+
 #endif // TESTES_H_INCLUDED

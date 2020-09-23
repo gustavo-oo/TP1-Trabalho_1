@@ -205,5 +205,46 @@ bool TUCodigoDeBanco::Run(){
     return estado;
 }
 
+//Funcoes de Teste: Codigo de Produto
+
+void TUCodigoDeProduto::Create(){
+    codigo_de_produto = new CodigoDeProduto();
+    estado = true;
+}
+
+void TUCodigoDeProduto::Destroy(){
+    delete codigo_de_produto;
+}
+
+void TUCodigoDeProduto::SucessTest(){
+    try{
+        codigo_de_produto->SetCodigoDeProduto(kValorValido);
+        if(codigo_de_produto->GetCodigoDeProduto() != kValorValido){
+            estado = false;
+        }
+    }
+    catch(invalid_argument &excecao){
+        estado = false;
+    }
+}
+
+void TUCodigoDeProduto::FailureTest(){
+    try{
+        codigo_de_produto->SetCodigoDeProduto(kValorInvalido);
+        estado = false;
+    }
+    catch(invalid_argument &excecao){
+        return;
+    }
+}
+
+bool TUCodigoDeProduto::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
+    return estado;
+}
+
 
 
