@@ -63,4 +63,23 @@ inline string CodigoDeAgencia::GetCodigoDeAgencia(){
     return valor;
 }
 
+//Classe Codigo de Aplicação
+
+class CodigoDeAplicacao{
+private:
+    string valor;
+    const static int kTamanhoDoValor = 5;
+    inline const static string ValorNaoPermitido = "00000";
+
+    void ValidarCodigoDeAplicacao(string valor);
+
+public:
+    void SetCodigoDeAplicacao(string valor);
+    string GetCodigoDeAplicacao();
+};
+
+inline string CodigoDeAplicacao::GetCodigoDeAplicacao(){
+    return valor;
+}
+
 #endif // DOMINIOS_H_INCLUDED

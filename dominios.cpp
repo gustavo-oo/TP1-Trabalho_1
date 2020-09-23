@@ -64,3 +64,23 @@ void CodigoDeAgencia::SetCodigoDeAgencia(string valor){
     ValidarCodigoDeAgencia(valor);
     this->valor = valor;
 }
+
+//Funcoes da Classe: Codigo de Aplicacao
+
+void CodigoDeAplicacao::ValidarCodigoDeAplicacao(string valor){
+    if( valor.length() == kTamanhoDoValor and valor != ValorNaoPermitido){
+        for(int i=0; i < kTamanhoDoValor; i++){
+            if(!isdigit(valor[i])){
+                throw invalid_argument("Argumento Codigo de Aplicacao Invalido");
+            }
+        }
+        return;
+    }else{
+        throw invalid_argument("Argumento Codigo de Aplicacao Invalido");
+    }
+}
+
+void CodigoDeAplicacao::SetCodigoDeAplicacao(string valor){
+    ValidarCodigoDeAplicacao(valor);
+    this->valor = valor;
+}
