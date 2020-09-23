@@ -68,4 +68,20 @@ public:
     bool Run();
 };
 
+//Classe de Teste: Codigo de Banco
+class TUCodigoDeBanco{
+    CodigoDeBanco *codigo_de_banco;
+    bool estado;
+    const static int kValorValido = 001;
+    const static int kValorInvalido = 563;
+
+    void Create();
+    void Destroy();
+    void SucessTest();
+    void FailureTest();
+
+public:
+    bool Run();
+};
+
 #endif // TESTES_H_INCLUDED

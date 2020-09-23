@@ -123,7 +123,7 @@ bool TUCodigoDeAgencia::Run(){
     return estado;
 }
 
-//Funcoes de Teste: Codigo de Agencia
+//Funcoes de Teste: Codigo de Aplicacao
 
 void TUCodigoDeAplicacao::Create(){
     codigo_de_aplicacao = new CodigoDeAplicacao();
@@ -163,5 +163,47 @@ bool TUCodigoDeAplicacao::Run(){
     Destroy();
     return estado;
 }
+
+//Funcoes de Teste: Codigo de Banco
+
+void TUCodigoDeBanco::Create(){
+    codigo_de_banco = new CodigoDeBanco();
+    estado = true;
+}
+
+void TUCodigoDeBanco::Destroy(){
+    delete codigo_de_banco;
+}
+
+void TUCodigoDeBanco::SucessTest(){
+    try{
+        codigo_de_banco->SetCodigoDeBanco(kValorValido);
+        if(codigo_de_banco->GetCodigoDeBanco() != kValorValido){
+            estado = false;
+        }
+    }
+    catch(invalid_argument &excecao){
+        estado = false;
+    }
+}
+
+void TUCodigoDeBanco::FailureTest(){
+    try{
+        codigo_de_banco->SetCodigoDeBanco(kValorInvalido);
+        estado = false;
+    }
+    catch(invalid_argument &excecao){
+        return;
+    }
+}
+
+bool TUCodigoDeBanco::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
+    return estado;
+}
+
 
 

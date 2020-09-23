@@ -11,6 +11,7 @@ int main(){
     TUClasse teste_classe;
     TUCodigoDeAgencia teste_codigo_de_agencia;
     TUCodigoDeAplicacao teste_codigo_de_aplicacao;
+    TUCodigoDeBanco teste_codigo_de_banco;
 
     //Confirmacao Teste: Cep
     cout << "Teste da Classe Cep: ";
@@ -42,6 +43,15 @@ int main(){
     //Confirmacao Teste: Codigo de Aplicacao
     cout << "Teste da Classe Codigo de Aplicacao: ";
     if(teste_codigo_de_aplicacao.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
+
+    //Confirmacao Teste: Codigo de Banco
+    cout << "Teste da Classe Codigo de Banco: ";
+    if(teste_codigo_de_banco.Run()){
         cout << "SUCESSO\n";
     }
     else{

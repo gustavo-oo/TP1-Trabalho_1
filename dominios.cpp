@@ -3,20 +3,20 @@
 
 //Funcoes da Classe: Cep
 void Cep::ValidarCep(int valor){
-    if ((kIntervalosPossiveisSaoPaulo[0][0] <= valor and valor <= kIntervalosPossiveisSaoPaulo[0][1]) or
-        (kIntervalosPossiveisSaoPaulo[1][0] <= valor and valor <= kIntervalosPossiveisSaoPaulo[1][1])){
+    if ((kIntervalosPermitidosSaoPaulo[0][0] <= valor and valor <= kIntervalosPermitidosSaoPaulo[0][1]) or
+        (kIntervalosPermitidosSaoPaulo[1][0] <= valor and valor <= kIntervalosPermitidosSaoPaulo[1][1])){
             return;
     }
-    if(kIntervaloPossivelRioDeJaneiro[0] <= valor and valor <= kIntervaloPossivelRioDeJaneiro[1]){
+    if(kIntervaloPermitidoRioDeJaneiro[0] <= valor and valor <= kIntervaloPermitidoRioDeJaneiro[1]){
         return;
     }
-    if(kIntervaloPossivelBrasilia[0] <= valor and valor <= kIntervaloPossivelBrasilia[1]){
+    if(kIntervaloPermitidoBrasilia[0] <= valor and valor <= kIntervaloPermitidoBrasilia[1]){
         return;
     }
-    if(kIntervaloPossivelSalvador[0] <= valor and valor <= kIntervaloPossivelSalvador[1]){
+    if(kIntervaloPermitidoSalvador[0] <= valor and valor <= kIntervaloPermitidoSalvador[1]){
         return;
     }
-    if(kIntervaloPossivelFortaleza[0] <= valor and valor <= kIntervaloPossivelFortaleza[1]){
+    if(kIntervaloPermitidoFortaleza[0] <= valor and valor <= kIntervaloPermitidoFortaleza[1]){
         return;
     }
 
@@ -31,8 +31,8 @@ void Cep::SetCep(int valor){
 //Funcoes da Classe: Classe
 
 void Classe::ValidarClasse(string valor){
-    if(valor == kValoresPossiveis[0] or valor == kValoresPossiveis[1] or
-       valor == kValoresPossiveis[2] or valor == kValoresPossiveis[3]){
+    if(valor == kValoresPermitidos[0] or valor == kValoresPermitidos[1] or
+       valor == kValoresPermitidos[2] or valor == kValoresPermitidos[3]){
         return;
     }
     else{
@@ -82,5 +82,25 @@ void CodigoDeAplicacao::ValidarCodigoDeAplicacao(string valor){
 
 void CodigoDeAplicacao::SetCodigoDeAplicacao(string valor){
     ValidarCodigoDeAplicacao(valor);
+    this->valor = valor;
+}
+
+//Funcoes da Classe: Codigo de Banco
+
+void CodigoDeBanco::ValidarCodigoDeBanco(int valor){
+    switch(valor){
+    case kValoresPermitidos[0]:
+    case kValoresPermitidos[1]:
+    case kValoresPermitidos[2]:
+    case kValoresPermitidos[3]:
+    case kValoresPermitidos[4]:
+        return;
+    default:
+        throw invalid_argument("Argumento Codigo de Banco Invalido");
+    }
+}
+
+void CodigoDeBanco::SetCodigoDeBanco(int valor){
+    ValidarCodigoDeBanco(valor);
     this->valor = valor;
 }
