@@ -8,8 +8,8 @@ class TUCep{
 private:
     Cep *cep;
     bool estado;
-    const static int VALOR_VALIDO = 3000000;
-    const static int VALOR_INVALIDO = 65999999;
+    const static int kValorValido = 3000000;
+    const static int kValorInvalido = 65999999;
 
     void Create();
     void Destroy();
@@ -24,8 +24,8 @@ public:
 class TUClasse{
     Classe *classe;
     bool estado;
-    inline const static string VALOR_VALIDO = "LCA";
-    inline const static string VALOR_INVALIDO = "ABC";
+    inline const static string kValorValido = "LCA";
+    inline const static string kValorInvalido = "ABC";
 
     void Create();
     void Destroy();
@@ -40,8 +40,24 @@ public:
 class TUCodigoDeAgencia{
     CodigoDeAgencia *codigo_de_agencia;
     bool estado;
-    inline const static string VALOR_VALIDO = "1578";
-    inline const static string VALOR_INVALIDO = "0000";
+    inline const static string kValorValido = "1578";
+    inline const static string kValorInvalido = "0000";
+
+    void Create();
+    void Destroy();
+    void SucessTest();
+    void FailureTest();
+
+public:
+    bool Run();
+};
+
+//Classe de Teste: Codigo de Aplicacao
+class TUCodigoDeAplicacao{
+    CodigoDeAplicacao *codigo_de_aplicacao;
+    bool estado;
+    inline const static string kValorValido = "01234";
+    inline const static string kValorInvalido = "00000";
 
     void Create();
     void Destroy();

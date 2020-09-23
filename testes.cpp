@@ -13,8 +13,8 @@ void TUCep::Destroy(){
 
 void TUCep::SucessTest(){
     try{
-        cep->SetCep(VALOR_VALIDO);
-        if(cep->GetCep() != VALOR_VALIDO){
+        cep->SetCep(kValorValido);
+        if(cep->GetCep() != kValorValido){
             estado = false;
         }
     }
@@ -25,7 +25,7 @@ void TUCep::SucessTest(){
 
 void TUCep::FailureTest(){
     try{
-        cep->SetCep(VALOR_INVALIDO);
+        cep->SetCep(kValorInvalido);
         estado = false;
     }
     catch(invalid_argument &excecao){
@@ -54,8 +54,8 @@ void TUClasse::Destroy(){
 
 void TUClasse::SucessTest(){
     try{
-        classe->SetClasse(VALOR_VALIDO);
-        if(classe->GetClasse() != VALOR_VALIDO){
+        classe->SetClasse(kValorValido);
+        if(classe->GetClasse() != kValorValido){
             estado = false;
         }
     }
@@ -66,7 +66,7 @@ void TUClasse::SucessTest(){
 
 void TUClasse::FailureTest(){
     try{
-        classe->SetClasse(VALOR_INVALIDO);
+        classe->SetClasse(kValorInvalido);
         estado = false;
     }
     catch(invalid_argument &excecao){
@@ -95,8 +95,8 @@ void TUCodigoDeAgencia::Destroy(){
 
 void TUCodigoDeAgencia::SucessTest(){
     try{
-        codigo_de_agencia->SetCodigoDeAgencia(VALOR_VALIDO);
-        if(codigo_de_agencia->GetCodigoDeAgencia() != VALOR_VALIDO){
+        codigo_de_agencia->SetCodigoDeAgencia(kValorValido);
+        if(codigo_de_agencia->GetCodigoDeAgencia() != kValorValido){
             estado = false;
         }
     }
@@ -107,7 +107,7 @@ void TUCodigoDeAgencia::SucessTest(){
 
 void TUCodigoDeAgencia::FailureTest(){
     try{
-        codigo_de_agencia->SetCodigoDeAgencia(VALOR_INVALIDO);
+        codigo_de_agencia->SetCodigoDeAgencia(kValorInvalido);
         estado = false;
     }
     catch(invalid_argument &excecao){
@@ -116,6 +116,47 @@ void TUCodigoDeAgencia::FailureTest(){
 }
 
 bool TUCodigoDeAgencia::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
+    return estado;
+}
+
+//Funcoes de Teste: Codigo de Agencia
+
+void TUCodigoDeAplicacao::Create(){
+    codigo_de_aplicacao = new CodigoDeAplicacao();
+    estado = true;
+}
+
+void TUCodigoDeAplicacao::Destroy(){
+    delete codigo_de_aplicacao;
+}
+
+void TUCodigoDeAplicacao::SucessTest(){
+    try{
+        codigo_de_aplicacao->SetCodigoDeAplicacao(kValorValido);
+        if(codigo_de_aplicacao->GetCodigoDeAplicacao() != kValorValido){
+            estado = false;
+        }
+    }
+    catch(invalid_argument &excecao){
+        estado = false;
+    }
+}
+
+void TUCodigoDeAplicacao::FailureTest(){
+    try{
+        codigo_de_aplicacao->SetCodigoDeAplicacao(kValorInvalido);
+        estado = false;
+    }
+    catch(invalid_argument &excecao){
+        return;
+    }
+}
+
+bool TUCodigoDeAplicacao::Run(){
     Create();
     SucessTest();
     FailureTest();
