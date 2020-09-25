@@ -1,20 +1,19 @@
 # depslib dependency file v1.0
-1600883394 source:c:\users\gusta\documents\programação\tp1-trabalho_1\dominios.cpp
+1601050741 source:c:\users\gusta\documents\programação\tp1-trabalho_1\dominios.cpp
 	"dominios.h"
-	<string>
 
-1600884502 c:\users\gusta\documents\programação\tp1-trabalho_1\dominios.h
+1601051293 c:\users\gusta\documents\programação\tp1-trabalho_1\dominios.h
 	<stdexcept>
 
-1600883107 source:c:\users\gusta\documents\programação\tp1-trabalho_1\main.cpp
+1601050741 source:c:\users\gusta\documents\programação\tp1-trabalho_1\main.cpp
 	<iostream>
 	"dominios.h"
 	"testes.h"
 
-1600883108 c:\users\gusta\documents\programação\tp1-trabalho_1\testes.h
+1601050742 c:\users\gusta\documents\programação\tp1-trabalho_1\testes.h
 	"dominios.h"
 
-1600883108 source:c:\users\gusta\documents\programação\tp1-trabalho_1\testes.cpp
+1601050742 source:c:\users\gusta\documents\programação\tp1-trabalho_1\testes.cpp
 	"testes.h"
 	"dominios.h"
 
