@@ -1,5 +1,4 @@
 #include "dominios.h"
-#include <string>
 
 //Funcoes da Classe: Cep
 void Cep::ValidarCep(int valor){
@@ -128,4 +127,51 @@ void CodigoDeProduto::SetCodigoDeProduto(string valor){
     ValidarCodigoDeProduto(valor);
     this->valor = valor;
 }
+
+//Funcoes da Classe: Cpf
+
+void Cpf::ValidarCpf(string valor){
+    if( valor.length() == this->kTamanhoDoValor){
+        for(int i=0; i < this->kTamanhoDoValor; i++){
+            if(i == this->posicaoPonto1 or i == this->posicaoPonto2){
+                if(valor[i] != '.')
+                throw invalid_argument("Argumento CPF Invalido");
+            }
+            else if(i == posicaoHifen){
+                if(valor[i] != '-')
+                throw invalid_argument("Argumento CPF Invalido");
+            }
+            else if(!isdigit(valor[i]))
+                throw invalid_argument("Argumento CPF Invalido");
+        }
+
+        //verificando ultimos 2 digitos
+        int soma;
+        int multiplicador;
+        int multiplicacao;
+        for(int j=2; j > 0; j--){
+            soma = 0;
+            multiplicador = j - 1;
+            for(int i=0; i < kTamanhoDoValor - j; i++){
+                if( valor[i] != '.' and valor[i] != '-'){
+                    multiplicacao = (valor[i] - (int)'0') * multiplicador;
+                    soma += multiplicacao;
+                    multiplicador++;
+                }
+            }
+            if(soma%modulo == 10)
+                soma = 0;
+            if( soma%modulo != (valor[kTamanhoDoValor - j] - (int)'0'))
+                throw invalid_argument("Argumento CPF Invalido");
+        }
+    }
+    else
+        throw invalid_argument("Argumento CPF Invalido");
+}
+
+void Cpf::SetCpf(string valor){
+    ValidarCpf(valor);
+    this->valor = valor;
+}
+
 

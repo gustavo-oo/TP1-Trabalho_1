@@ -246,5 +246,43 @@ bool TUCodigoDeProduto::Run(){
     return estado;
 }
 
+//Funcoes de Teste: Cpf
 
+void TUCpf::Create(){
+    cpf = new Cpf();
+    estado = true;
+}
 
+void TUCpf::Destroy(){
+    delete cpf;
+}
+
+void TUCpf::SucessTest(){
+    try{
+        cpf->SetCpf(kValorValido);
+        if(cpf->GetCpf() != kValorValido){
+            estado = false;
+        }
+    }
+    catch(invalid_argument &excecao){
+        estado = false;
+    }
+}
+
+void TUCpf::FailureTest(){
+    try{
+        cpf->SetCpf(kValorInvalido);
+        estado = false;
+    }
+    catch(invalid_argument &excecao){
+        return;
+    }
+}
+
+bool TUCpf::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
+    return estado;
+}

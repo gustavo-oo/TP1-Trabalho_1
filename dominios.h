@@ -119,4 +119,27 @@ inline string CodigoDeProduto::GetCodigoDeProduto(){
     return valor;
 }
 
+//Classe CPF
+
+class Cpf{
+private:
+    string valor;
+    const static int kTamanhoDoValor = 14;
+    const static int modulo = 11;
+    const static int posicaoPonto1 = 3;
+    const static int posicaoPonto2 = 7;
+    const static int posicaoHifen = 11;
+
+    void ValidarCpf(string valor);
+
+public:
+    void SetCpf(string valor);
+    string GetCpf();
+};
+
+inline string Cpf::GetCpf(){
+    return valor;
+}
+
+
 #endif // DOMINIOS_H_INCLUDED
