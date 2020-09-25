@@ -157,4 +157,22 @@ inline string Data::GetData(){
     return valor;
 }
 
+class Emissor{
+public:
+    void SetEmissor(string valor);
+    string GetEmissor();
+private:
+    string valor;
+    constexpr static int kIntervaloDeCaracteres[2] = {5, 30};
+    const static char kHifen = '-';
+    const static char kPonto = '.';
+    const static char kEspaco = ' ';
+
+    void ValidarEmissor(string valor);
+};
+
+inline string Emissor::GetEmissor(){
+    return valor;
+}
+
 #endif // DOMINIOS_H_INCLUDED

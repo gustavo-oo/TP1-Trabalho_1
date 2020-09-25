@@ -134,5 +134,22 @@ public:
     bool Run();
 };
 
+//Classe de Teste: Emissor
+class TUEmissor{
+private:
+    Emissor *emissor;
+    bool estado;
+    inline const static string kValorValido = "Emissor05 - Teste . 2a";
+    inline const static string kValorInvalido = "Teste -emissor";
+
+    void Create();
+    void Destroy();
+    void SucessTest();
+    void FailureTest();
+
+public:
+    bool Run();
+};
+
 
 #endif // TESTES_H_INCLUDED

@@ -207,4 +207,56 @@ void Data::SetData(string valor){
     this->valor = valor;
 }
 
+void Emissor::ValidarEmissor(string valor){
+    //1º verificar quantidade de caracteres
+    if(valor.length() >= kIntervaloDeCaracteres[0] and valor.length() <= kIntervaloDeCaracteres[1]){
+    //Teste feito sempre analisando o caractere anterior:
+    //So numeros e letras podem estar em sequencia, sendo aceitos letras maisculas e minusculas, numeros, ponto, hifen e espaco
+        for(int i = 0; i < valor.length(); i++){
+            //Como não tem caractere anterior ao 1º, a verificação é um pouco diferente
+            if(i == 0){
+                if(isalpha(valor[i])){
+                   if(!isupper(valor[i])){
+                        throw invalid_argument("Argumento Emissor Invalido");
+                    }
+                }
+            }else{
+                //Verificação de carecteres após o 1º
+                //Se o caractere atual é uma letra e o anterior um espaço, a letra deve ser maiuscula
+                if(isalpha(valor[i])){
+                    if(valor[i-1] == kEspaco){
+                        if(!isupper(valor[i])){
+                            throw invalid_argument("Argumento Emissor Invalido");
+                        }
+                    }else{  //Se o caractere anterior não é um espaço, ele só pode ser um número ou uma letra
+                        if(!isdigit(valor[i-1]) and !isalpha(valor[i-1])){
+                            throw invalid_argument("Argumento Emissor Invalido");
+                        }
+                    }
+                }else{  //Se o caractere atual é um número, o anterior só pode ser um número, uma letra ou um espaço
+                    if(isdigit(valor[i])){
+                        if(!isdigit(valor[i-1]) and !isalpha(valor[i-1]) and valor[i-1] != kEspaco){
+                            throw invalid_argument("Argumento Emissor Invalido");
+                        }
+                    }else{  //Se o caractere atual é um ponto ou hifen, o anterior só pode ser um espaço
+                        if(valor[i] == kPonto or valor[i] == kHifen){
+                            if(valor[i-1] != kEspaco){
+                                throw invalid_argument("Argumento Emissor Invalido");
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+    }
+}
+
+void Emissor::SetEmissor(string valor){
+    ValidarEmissor(valor);
+    this->valor = valor;
+}
+
 

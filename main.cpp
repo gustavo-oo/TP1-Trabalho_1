@@ -15,6 +15,7 @@ int main(){
     TUCodigoDeProduto teste_codigo_de_produto;
     TUCpf teste_cpf;
     TUData teste_data;
+    TUEmissor teste_emissor;
 
     //Confirmacao Teste: Cep
     cout << "Teste da Classe Cep: ";
@@ -82,6 +83,15 @@ int main(){
     //Confirmacao Teste: Data
     cout << "Teste da Classe Data: ";
     if(teste_data.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
+
+    //Confirmacao Teste: Emissor
+    cout << "Teste da Classe Emissor: ";
+    if(teste_emissor.Run()){
         cout << "SUCESSO\n";
     }
     else{
