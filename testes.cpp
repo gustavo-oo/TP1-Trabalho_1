@@ -286,3 +286,44 @@ bool TUCpf::Run(){
     Destroy();
     return estado;
 }
+
+//Funcoes de Teste: Data
+
+void TUData::Create(){
+    data = new Data();
+    estado = true;
+}
+
+void TUData::Destroy(){
+    delete data;
+}
+
+void TUData::SucessTest(){
+    try{
+        data->SetData(kValorValido);
+        if(data->GetData() != kValorValido){
+            estado = false;
+        }
+    }
+    catch(invalid_argument &excecao){
+        estado = false;
+    }
+}
+
+void TUData::FailureTest(){
+    try{
+        data->SetData(kValorInvalido);
+        estado = false;
+    }
+    catch(invalid_argument &excecao){
+        return;
+    }
+}
+
+bool TUData::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
+    return estado;
+}

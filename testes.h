@@ -117,5 +117,22 @@ public:
     bool Run();
 };
 
+//Classe de Teste: Data
+class TUData{
+private:
+    Data *data;
+    bool estado;
+    inline const static string kValorValido = "29/02/2020";
+    inline const static string kValorInvalido = "29/02/2062";
+
+    void Create();
+    void Destroy();
+    void SucessTest();
+    void FailureTest();
+
+public:
+    bool Run();
+};
+
 
 #endif // TESTES_H_INCLUDED
