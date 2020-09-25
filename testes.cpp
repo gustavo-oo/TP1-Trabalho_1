@@ -327,3 +327,45 @@ bool TUData::Run(){
     Destroy();
     return estado;
 }
+
+//Funcoes de Teste: Emissor
+
+void TUEmissor::Create(){
+    emissor = new Emissor();
+    estado = true;
+}
+
+void TUEmissor::Destroy(){
+    delete emissor;
+}
+
+void TUEmissor::SucessTest(){
+    try{
+        emissor->SetEmissor(kValorValido);
+        if(emissor->GetEmissor() != kValorValido){
+            estado = false;
+        }
+    }
+    catch(invalid_argument &excecao){
+        estado = false;
+    }
+}
+
+void TUEmissor::FailureTest(){
+    try{
+        emissor->SetEmissor(kValorInvalido);
+        estado = false;
+    }
+    catch(invalid_argument &excecao){
+        return;
+    }
+}
+
+bool TUEmissor::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
+    return estado;
+}
+
