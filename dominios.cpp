@@ -332,3 +332,40 @@ void Endereco::SetEndereco(string valor){
     ValidarEndereco(valor);
     this->valor = valor;
 }
+
+//Funcoes da Classe: Nome
+
+void Nome::ValidarNome(string valor){
+    if(valor.length() >= kIntervaloDeCaracteres[0] and valor.length() <= kIntervaloDeCaracteres[1]){
+        for(int i = 0; i < valor.length(); i++){
+            if(!isalpha(valor[i]) and valor[i] != kEspaco){
+                throw invalid_argument("Argumento Emissor Invalido");
+            }
+            if(i == 0){
+                if(isalpha(valor[i])){
+                   if(!isupper(valor[i])){
+                        throw invalid_argument("Argumento Emissor Invalido");
+                    }
+                }
+
+            }else{
+                if(isalpha(valor[i])){
+                    if(valor[i-1] == kEspaco and !isupper(valor[i])){
+                        throw invalid_argument("Argumento Emissor Invalido");
+                    }
+                }else{
+                    if(valor[i] == kEspaco and valor[i-1] == kEspaco){
+                        throw invalid_argument("Argumento Emissor Invalido");
+                    }
+                }
+            }
+        }
+    }else{
+        throw invalid_argument("Argumento Emissor Invalido");
+    }
+}
+
+void Nome::SetNome(string valor){
+    ValidarNome(valor);
+    this->valor = valor;
+}

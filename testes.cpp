@@ -410,3 +410,45 @@ bool TUEndereco::Run(){
     return estado;
 }
 
+//Funcoes de Teste: Nome
+
+void TUNome::Create(){
+    nome = new Nome();
+    estado = true;
+}
+
+void TUNome::Destroy(){
+    delete nome;
+}
+
+void TUNome::SucessTest(){
+    try{
+        nome->SetNome(kValorValido);
+        if(nome->GetNome() != kValorValido){
+            estado = false;
+        }
+    }
+    catch(invalid_argument &excecao){
+        estado = false;
+    }
+}
+
+void TUNome::FailureTest(){
+    try{
+        nome->SetNome(kValorInvalido);
+        estado = false;
+    }
+    catch(invalid_argument &excecao){
+        return;
+    }
+}
+
+bool TUNome::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
+    return estado;
+}
+
+

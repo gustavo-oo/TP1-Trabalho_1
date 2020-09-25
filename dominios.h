@@ -196,4 +196,22 @@ inline string Endereco::GetEndereco(){
     return valor;
 }
 
+//Classe Nome
+
+class Nome{
+public:
+    void SetNome(string valor);
+    string GetNome();
+private:
+    string valor;
+    constexpr static int kIntervaloDeCaracteres[2] = {5, 30};
+    const static char kEspaco = ' ';
+
+    void ValidarNome(string valor);
+};
+
+inline string Nome::GetNome(){
+    return valor;
+}
+
 #endif // DOMINIOS_H_INCLUDED

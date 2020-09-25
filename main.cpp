@@ -16,6 +16,7 @@ int main(){
     TUData teste_data;
     TUEmissor teste_emissor;
     TUEndereco teste_endereco;
+    TUNome teste_nome;
 
     //Confirmacao Teste: Cep
     cout << "Teste da Classe Cep: ";
@@ -106,6 +107,16 @@ int main(){
     else{
         cout << "FALHA\n";
     }
+
+    //Confirmacao Teste: Nome
+    cout << "Teste da Classe Nome: ";
+    if(teste_nome.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
+
 
     return 0;
 }
