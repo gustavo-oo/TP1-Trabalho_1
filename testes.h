@@ -140,7 +140,24 @@ private:
     Emissor *emissor;
     bool estado;
     inline const static string kValorValido = "Emissor05 - Teste . 2a";
-    inline const static string kValorInvalido = "Teste -emissor";
+    inline const static string kValorInvalido = "Teste  -02";
+
+    void Create();
+    void Destroy();
+    void SucessTest();
+    void FailureTest();
+
+public:
+    bool Run();
+};
+
+//Classe de Teste: Endereco
+class TUEndereco{
+private:
+    Endereco *endereco;
+    bool estado;
+    inline const static string kValorValido = "Rua 8 St . N";
+    inline const static string kValorInvalido = "Endereco*Invalido";
 
     void Create();
     void Destroy();

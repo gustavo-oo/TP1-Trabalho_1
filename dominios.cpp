@@ -202,6 +202,8 @@ void Data::ValidarData(string valor){
     throw invalid_argument("Argumento Data Invalido");
 }
 
+//Funcoes da Classe: Emissor
+
 void Data::SetData(string valor){
     ValidarData(valor);
     this->valor = valor;
@@ -213,6 +215,9 @@ void Emissor::ValidarEmissor(string valor){
     //Teste feito sempre analisando o caractere anterior:
     //So numeros e letras podem estar em sequencia, sendo aceitos letras maisculas e minusculas, numeros, ponto, hifen e espaco
         for(int i = 0; i < valor.length(); i++){
+            if(!isdigit(valor[i]) and !isalpha(valor[i]) and valor[i] != kPonto and valor[i] != kEspaco and valor[i] != kHifen){
+                throw invalid_argument("Argumento Emissor Invalido");
+            }
             //Como não tem caractere anterior ao 1º, a verificação é um pouco diferente
             if(i == 0){
                 if(isalpha(valor[i])){
@@ -243,6 +248,10 @@ void Emissor::ValidarEmissor(string valor){
                             if(valor[i-1] != kEspaco){
                                 throw invalid_argument("Argumento Emissor Invalido");
                             }
+                        }else{  //Se o caractere atual é um espaço, o anterior não pode ser um espaço
+                            if(valor[i] == kEspaco and valor[i-1] == kEspaco){
+                                throw invalid_argument("Argumento Emissor Invalido");
+                            }
                         }
                     }
 
@@ -251,6 +260,8 @@ void Emissor::ValidarEmissor(string valor){
             }
 
         }
+    }else{
+        throw invalid_argument("Argumento Emissor Invalido");
     }
 }
 
@@ -259,4 +270,65 @@ void Emissor::SetEmissor(string valor){
     this->valor = valor;
 }
 
+//Funcoes da Classe: Endereco
 
+void Endereco::ValidarEndereco(string valor){
+    //1º verificar quantidade de caracteres
+    if(valor.length() >= kIntervaloDeCaracteres[0] and valor.length() <= kIntervaloDeCaracteres[1]){
+    //Teste feito sempre analisando o caractere anterior:
+    //So numeros e letras podem estar em sequencia, sendo aceitos letras maisculas e minusculas, numeros, ponto e espaco
+        for(int i = 0; i < valor.length(); i++){
+            if(!isdigit(valor[i]) and !isalpha(valor[i]) and valor[i] != kPonto and valor[i] != kEspaco){
+                throw invalid_argument("Argumento Emissor Invalido");
+            }
+            //Como não tem caractere anterior ao 1º, a verificação é um pouco diferente
+            if(i == 0){
+                if(isalpha(valor[i])){
+                   if(!isupper(valor[i])){
+                        throw invalid_argument("Argumento Emissor Invalido");
+                    }
+                }
+            }else{
+                //Verificação de carecteres após o 1º
+                //Se o caractere atual é uma letra e o anterior um espaço, a letra deve ser maiuscula
+                if(isalpha(valor[i])){
+                    if(valor[i-1] == kEspaco){
+                        if(!isupper(valor[i])){
+                            throw invalid_argument("Argumento Emissor Invalido");
+                        }
+                    }else{  //Se o caractere anterior não é um espaço, ele só pode ser um número ou uma letra
+                        if(!isdigit(valor[i-1]) and !isalpha(valor[i-1])){
+                            throw invalid_argument("Argumento Emissor Invalido");
+                        }
+                    }
+                }else{  //Se o caractere atual é um número, o anterior só pode ser um número, uma letra ou um espaço
+                    if(isdigit(valor[i])){
+                        if(!isdigit(valor[i-1]) and !isalpha(valor[i-1]) and valor[i-1] != kEspaco){
+                            throw invalid_argument("Argumento Emissor Invalido");
+                        }
+                    }else{  //Se o caractere atual é um ponto, o anterior só pode ser um espaço
+                        if(valor[i] == kPonto){
+                            if(valor[i-1] != kEspaco){
+                                throw invalid_argument("Argumento Emissor Invalido");
+                            }
+                        }else{  //Se o caractere atual é um espaço, o anterior não pode ser um espaço
+                            if(valor[i] == kEspaco and valor[i-1] == kEspaco){
+                                throw invalid_argument("Argumento Emissor Invalido");
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+        }
+    }else{
+        throw invalid_argument("Argumento Emissor Invalido");
+    }
+}
+
+void Endereco::SetEndereco(string valor){
+    ValidarEndereco(valor);
+    this->valor = valor;
+}

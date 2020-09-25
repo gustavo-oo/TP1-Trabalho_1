@@ -157,6 +157,8 @@ inline string Data::GetData(){
     return valor;
 }
 
+//Classe Emissor
+
 class Emissor{
 public:
     void SetEmissor(string valor);
@@ -172,6 +174,25 @@ private:
 };
 
 inline string Emissor::GetEmissor(){
+    return valor;
+}
+
+//Classe Endereco
+
+class Endereco{
+public:
+    void SetEndereco(string valor);
+    string GetEndereco();
+private:
+    string valor;
+    constexpr static int kIntervaloDeCaracteres[2] = {5, 20};
+    const static char kPonto = '.';
+    const static char kEspaco = ' ';
+
+    void ValidarEndereco(string valor);
+};
+
+inline string Endereco::GetEndereco(){
     return valor;
 }
 
