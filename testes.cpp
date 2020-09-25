@@ -369,3 +369,44 @@ bool TUEmissor::Run(){
     return estado;
 }
 
+//Funcoes de Teste: Endereco
+
+void TUEndereco::Create(){
+    endereco = new Endereco();
+    estado = true;
+}
+
+void TUEndereco::Destroy(){
+    delete endereco;
+}
+
+void TUEndereco::SucessTest(){
+    try{
+        endereco->SetEndereco(kValorValido);
+        if(endereco->GetEndereco() != kValorValido){
+            estado = false;
+        }
+    }
+    catch(invalid_argument &excecao){
+        estado = false;
+    }
+}
+
+void TUEndereco::FailureTest(){
+    try{
+        endereco->SetEndereco(kValorInvalido);
+        estado = false;
+    }
+    catch(invalid_argument &excecao){
+        return;
+    }
+}
+
+bool TUEndereco::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
+    return estado;
+}
+

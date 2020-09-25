@@ -3,7 +3,6 @@
 #include "dominios.h"
 #include "testes.h"
 
-
 using namespace std;
 
 int main(){
@@ -16,6 +15,7 @@ int main(){
     TUCpf teste_cpf;
     TUData teste_data;
     TUEmissor teste_emissor;
+    TUEndereco teste_endereco;
 
     //Confirmacao Teste: Cep
     cout << "Teste da Classe Cep: ";
@@ -92,6 +92,15 @@ int main(){
     //Confirmacao Teste: Emissor
     cout << "Teste da Classe Emissor: ";
     if(teste_emissor.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
+
+    //Confirmacao Teste: Endereco
+    cout << "Teste da Classe Endereco: ";
+    if(teste_endereco.Run()){
         cout << "SUCESSO\n";
     }
     else{
