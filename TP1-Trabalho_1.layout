@@ -2,6 +2,7 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
+<<<<<<< HEAD
 	<File name="main.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="65" topLine="0" />
@@ -10,25 +11,49 @@
 	<File name="dominios.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="2971" topLine="104" />
+=======
+	<File name="main.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1478" topLine="36" />
+		</Cursor>
+	</File>
+	<File name="dominios.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="639" topLine="72" />
+>>>>>>> 0b4d940f5ced125645ae5af9905c4c6cbbf4a219
 		</Cursor>
 		<Folding>
 			<Collapse line="9" />
 			<Collapse line="24" />
 		</Folding>
 	</File>
+<<<<<<< HEAD
 	<File name="testes.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="5518" topLine="173" />
+=======
+	<File name="testes.h" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="199" topLine="0" />
+>>>>>>> 0b4d940f5ced125645ae5af9905c4c6cbbf4a219
 		</Cursor>
 	</File>
 	<File name="dominios.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
 		<Cursor>
+<<<<<<< HEAD
 			<Cursor1 position="21" topLine="0" />
+=======
+			<Cursor1 position="1978" topLine="81" />
+>>>>>>> 0b4d940f5ced125645ae5af9905c4c6cbbf4a219
 		</Cursor>
 	</File>
-	<File name="testes.h" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="1" zoom_2="0">
+	<File name="testes.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
+<<<<<<< HEAD
 			<Cursor1 position="2329" topLine="96" />
+=======
+			<Cursor1 position="4608" topLine="0" />
+>>>>>>> 0b4d940f5ced125645ae5af9905c4c6cbbf4a219
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

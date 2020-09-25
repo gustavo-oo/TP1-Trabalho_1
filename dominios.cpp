@@ -2,24 +2,6 @@
 
 //Funcoes da Classe: Cep
 void Cep::ValidarCep(int valor){
-    /*
-    if ((kIntervalosPermitidosSaoPaulo[0][0] <= valor and valor <= kIntervalosPermitidosSaoPaulo[0][1]) or
-        (kIntervalosPermitidosSaoPaulo[1][0] <= valor and valor <= kIntervalosPermitidosSaoPaulo[1][1])){
-        return;
-    }
-    if(kIntervaloPermitidoRioDeJaneiro[0] <= valor and valor <= kIntervaloPermitidoRioDeJaneiro[1]){
-        return;
-    }
-    if(kIntervaloPermitidoBrasilia[0] <= valor and valor <= kIntervaloPermitidoBrasilia[1]){
-        return;
-    }
-    if(kIntervaloPermitidoSalvador[0] <= valor and valor <= kIntervaloPermitidoSalvador[1]){
-        return;
-    }
-    if(kIntervaloPermitidoFortaleza[0] <= valor and valor <= kIntervaloPermitidoFortaleza[1]){
-        return;
-    }
-*/
     switch(valor){
     case kIntervalosPermitidosSaoPaulo[0][0] ... kIntervalosPermitidosSaoPaulo[0][1]:
     case kIntervalosPermitidosSaoPaulo[1][0] ... kIntervalosPermitidosSaoPaulo[1][1]:
