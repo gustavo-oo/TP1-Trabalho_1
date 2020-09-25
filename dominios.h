@@ -135,4 +135,26 @@ inline string Cpf::GetCpf(){
     return valor;
 }
 
+//Classe CPF
+
+class Data{
+public:
+    void SetData(string valor);
+    string GetData();
+private:
+    string valor;
+    const static int kTamanhoDoValor = 10;
+    constexpr static int kMes31Dias[7] = {1, 3, 5, 7, 8, 10, 12};
+    constexpr static int kMes30Dias[4] = {4, 6, 9, 11};
+    constexpr static int kIntervaloAnosPermitidos[2] = {2020, 2099};
+    const static int kPosicaoBarra1 = 2;
+    const static int kPosicaoBarra2 = 4;
+
+    void ValidarData(string valor);
+};
+
+inline string Data::GetData(){
+    return valor;
+}
+
 #endif // DOMINIOS_H_INCLUDED

@@ -1,4 +1,5 @@
 #include "dominios.h"
+#include <iostream>
 
 //Funcoes da Classe: Cep
 void Cep::ValidarCep(int valor){
@@ -113,9 +114,9 @@ void CodigoDeProduto::SetCodigoDeProduto(string valor){
 //Funcoes da Classe: Cpf
 
 void Cpf::ValidarCpf(string valor){
-    if( valor.length() == this->kTamanhoDoValor){
-        for(int i=0; i < this->kTamanhoDoValor; i++){
-            if(i == this->kPosicaoPonto1 or i == this->kPosicaoPonto2){
+    if( valor.length() == kTamanhoDoValor){
+        for(int i=0; i < kTamanhoDoValor; i++){
+            if(i == kPosicaoPonto1 or i == kPosicaoPonto2){
                 if(valor[i] != '.')
                 throw invalid_argument("Argumento CPF Invalido");
             }
@@ -153,6 +154,56 @@ void Cpf::ValidarCpf(string valor){
 
 void Cpf::SetCpf(string valor){
     ValidarCpf(valor);
+    this->valor = valor;
+}
+
+//Funcoes da Classe: Data
+
+void Data::ValidarData(string valor){
+    int dia = ((int)valor[0] - (int)'0')*10 + (int)valor[1] - (int)'0';
+    int mes = ((int)valor[3] - (int)'0')*10 + (int)valor[4] - (int)'0';
+    int ano = ((int)valor[6] - (int)'0')*1000 + ((int)valor[7] - (int)'0')*100 + ((int)valor[8] - (int)'0')*10 + (int)valor[9] - (int)'0';//6,7,8,9
+    const int fevereiro = 2;
+    //Verificar Formato
+    if(valor.length()== kTamanhoDoValor or valor[kPosicaoBarra1] == '/' or valor[kPosicaoBarra2] == '/' ){
+        //Verificar dados
+        if(dia >= 1 and dia <= 31 and mes >= 1 and mes <= 12 and ano >= kIntervaloAnosPermitidos[0] and ano <= kIntervaloAnosPermitidos[1]){
+            switch(mes){
+
+            //Meses com 30 dias
+                case kMes30Dias[0]:
+                case kMes30Dias[1]:
+                case kMes30Dias[2]:
+                case kMes30Dias[3]:
+                    if (dia > 30){
+                        throw invalid_argument("Argumento Data Invalido");
+                    }
+                    return;
+
+            //Mes de Fevereiro (28 ou 29 dias)
+                case fevereiro:
+                    if(((ano % 4 == 0) and (ano % 100 != 0)) or (ano % 400 == 0)){
+                        if(dia > 29){
+                            throw invalid_argument("Argumento Data Invalido");
+                        }
+                    }else{
+                        if (dia > 28){
+                            throw invalid_argument("Argumento Data Invalido");
+                        }
+                    }
+                    return;
+
+            //Meses com 31 dias
+            default:
+                return;
+            }
+        }
+    }
+    throw invalid_argument("Argumento Data Invalido");
+}
+
+void Data::SetData(string valor){
+    ValidarData(valor);
     this->valor = valor;
 }
 

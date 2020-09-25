@@ -14,6 +14,7 @@ int main(){
     TUCodigoDeBanco teste_codigo_de_banco;
     TUCodigoDeProduto teste_codigo_de_produto;
     TUCpf teste_cpf;
+    TUData teste_data;
 
     //Confirmacao Teste: Cep
     cout << "Teste da Classe Cep: ";
@@ -69,9 +70,18 @@ int main(){
         cout << "FALHA\n";
     }
 
-    //Confirmacao Teste: Codigo de Cpf
-    cout << "Teste da Classe Cpf: ";
+    //Confirmacao Teste: CPF
+    cout << "Teste da Classe CPF: ";
     if(teste_cpf.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
+
+    //Confirmacao Teste: Data
+    cout << "Teste da Classe Data: ";
+    if(teste_data.Run()){
         cout << "SUCESSO\n";
     }
     else{
