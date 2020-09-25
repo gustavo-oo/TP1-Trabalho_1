@@ -168,5 +168,22 @@ public:
     bool Run();
 };
 
+//Classe de Teste: Nome
+class TUNome{
+private:
+    Nome *nome;
+    bool estado;
+    inline const static string kValorValido = "Joao Da Silva";
+    inline const static string kValorInvalido = "Nome  errado";
+
+    void Create();
+    void Destroy();
+    void SucessTest();
+    void FailureTest();
+
+public:
+    bool Run();
+};
+
 
 #endif // TESTES_H_INCLUDED
