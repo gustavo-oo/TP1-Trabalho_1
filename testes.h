@@ -100,5 +100,22 @@ public:
     bool Run();
 };
 
+//Classe de Teste: Cpf
+class TUCpf{
+private:
+    Cpf *cpf;
+    bool estado;
+    inline const static string kValorValido = "123.456.789-09";
+    inline const static string kValorInvalido = "123.456.789-10";
+
+    void Create();
+    void Destroy();
+    void SucessTest();
+    void FailureTest();
+
+public:
+    bool Run();
+};
+
 
 #endif // TESTES_H_INCLUDED

@@ -29,15 +29,14 @@ inline int Cep::GetCep(){
 //Classe Classe
 
 class Classe{
+public:
+    void SetClasse(string valor);
+    string GetClasse();
 private:
     string valor;
     inline const static string kValoresPermitidos[5] = {"CDB", "LCA", "LCI", "LF", "LC"};
 
     void ValidarClasse(string valor);
-
-public:
-    void SetClasse(string valor);
-    string GetClasse();
 };
 
 inline string Classe::GetClasse(){
@@ -47,16 +46,15 @@ inline string Classe::GetClasse(){
 //Classe Codigo de Agencia
 
 class CodigoDeAgencia{
+public:
+    void SetCodigoDeAgencia(string valor);
+    string GetCodigoDeAgencia();
 private:
     string valor;
     const static int kTamanhoDoValor = 4;
     inline const static string ValorNaoPermitido = "0000";
 
     void ValidarCodigoDeAgencia(string valor);
-
-public:
-    void SetCodigoDeAgencia(string valor);
-    string GetCodigoDeAgencia();
 };
 
 inline string CodigoDeAgencia::GetCodigoDeAgencia(){
@@ -66,16 +64,15 @@ inline string CodigoDeAgencia::GetCodigoDeAgencia(){
 //Classe Codigo de Aplicacao
 
 class CodigoDeAplicacao{
+public:
+    void SetCodigoDeAplicacao(string valor);
+    string GetCodigoDeAplicacao();
 private:
     string valor;
     const static int kTamanhoDoValor = 5;
     inline const static string ValorNaoPermitido = "00000";
 
     void ValidarCodigoDeAplicacao(string valor);
-
-public:
-    void SetCodigoDeAplicacao(string valor);
-    string GetCodigoDeAplicacao();
 };
 
 inline string CodigoDeAplicacao::GetCodigoDeAplicacao(){
@@ -85,15 +82,14 @@ inline string CodigoDeAplicacao::GetCodigoDeAplicacao(){
 //Classe Codigo de Banco
 
 class CodigoDeBanco{
+public:
+    void SetCodigoDeBanco(int valor);
+    int GetCodigoDeBanco();
 private:
     int valor;
     constexpr static int kValoresPermitidos[5] = {341, 001, 237, 104, 033}; //Itau, BB, Bradesco, Caixa, Santander
 
     void ValidarCodigoDeBanco(int valor);
-
-public:
-    void SetCodigoDeBanco(int valor);
-    int GetCodigoDeBanco();
 };
 
 inline int CodigoDeBanco::GetCodigoDeBanco(){
@@ -103,19 +99,39 @@ inline int CodigoDeBanco::GetCodigoDeBanco(){
 //Classe Codigo de Produto
 
 class CodigoDeProduto{
-private:
-    string valor;
-    const static int kTamanhoDoValor = 3;
-    inline const static string ValorNaoPermitido = "000";
-
-    void ValidarCodigoDeProduto(string valor);
-
 public:
     void SetCodigoDeProduto(string valor);
     string GetCodigoDeProduto();
+private:
+    string valor;
+    const static int kTamanhoDoValor = 3;
+    inline const static string kValorNaoPermitido = "000";
+
+    void ValidarCodigoDeProduto(string valor);
 };
 
 inline string CodigoDeProduto::GetCodigoDeProduto(){
+    return valor;
+}
+
+//Classe CPF
+
+class Cpf{
+public:
+    void SetCpf(string valor);
+    string GetCpf();
+private:
+    string valor;
+    const static int kTamanhoDoValor = 14;
+    const static int kModulo = 11;
+    const static int kPosicaoPonto1 = 3;
+    const static int kPosicaoPonto2 = 7;
+    const static int kPosicaoHifen = 11;
+
+    void ValidarCpf(string valor);
+};
+
+inline string Cpf::GetCpf(){
     return valor;
 }
 
