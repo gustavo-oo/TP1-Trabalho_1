@@ -614,3 +614,44 @@ bool TUSenha::Run(){
     Destroy();
     return estado;
 }
+
+//Funcoes de Teste: Taxa
+
+void TUTaxa::Create(){
+    taxa = new Taxa();
+    estado = true;
+}
+
+void TUTaxa::Destroy(){
+    delete taxa;
+}
+
+void TUTaxa::SucessTest(){
+    try{
+        taxa->SetTaxa(kValorValido);
+        if(taxa->GetTaxa() != kValorValido){
+            estado = false;
+        }
+    }
+    catch(invalid_argument &excecao){
+        estado = false;
+    }
+}
+
+void TUTaxa::FailureTest(){
+    try{
+        taxa->SetTaxa(kValorInvalido);
+        estado = false;
+    }
+    catch(invalid_argument &excecao){
+        return;
+    }
+}
+
+bool TUTaxa::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
+    return estado;
+}

@@ -253,4 +253,20 @@ public:
     bool Run();
 };
 
+//Classe de Teste: Senha
+class TUTaxa{
+    Taxa *taxa;
+    bool estado;
+    constexpr static double kValorValido = 23.78;
+    constexpr static double kValorInvalido = 201;
+
+    void Create();
+    void Destroy();
+    void SucessTest();
+    void FailureTest();
+
+public:
+    bool Run();
+};
+
 #endif // TESTES_H_INCLUDED

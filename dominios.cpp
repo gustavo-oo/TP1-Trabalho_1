@@ -445,6 +445,7 @@ void Numero::SetNumero(string valor){
 }
 
 //Funcoes da Classe: Prazo
+
 void Prazo::ValidarPrazo(int valor){
     for(int i=0; i < 12; i++){              //12 valores permitidos
         if(kValoresPermitidos[i] == valor)
@@ -459,6 +460,7 @@ void Prazo::SetPrazo(int valor){
 }
 
 //Funcoes da Classe: Senha
+
 void Senha::ValidarSenha(string valor){
     if(valor.length() == kTamanhoDoValor){
         for(int i=0; i < kTamanhoDoValor; i++){
@@ -477,4 +479,16 @@ void Senha::ValidarSenha(string valor){
 void Senha::SetSenha(string valor){
     ValidarSenha(valor);
     this->valor = valor;
+}
+
+//Funcoes da Classe: Taxa
+
+void Taxa::ValidarTaxa(double valor){
+    if(valor < kValorMin or valor > kValorMax)
+        throw invalid_argument("Argumento Taxa Invalido");
+}
+
+void Taxa::SetTaxa(double valor){
+    ValidarTaxa(valor);
+    this->valor =  valor;
 }

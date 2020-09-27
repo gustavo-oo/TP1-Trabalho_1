@@ -21,6 +21,7 @@ int main(){
     TUNumero teste_numero;
     TUPrazo teste_prazo;
     TUSenha teste_senha;
+    TUTaxa teste_taxa;
 
     //Confirmacao Teste: Cep
     cout << "Teste da Classe Cep: ";
@@ -139,7 +140,7 @@ int main(){
         cout << "FALHA\n";
     }
 
-        //Confirmacao Teste: Prazo
+    //Confirmacao Teste: Prazo
     cout << "Teste da Classe Prazo: ";
     if(teste_prazo.Run()){
         cout << "SUCESSO\n";
@@ -149,7 +150,7 @@ int main(){
     }
 
 
-        //Confirmacao Teste: Senha
+    //Confirmacao Teste: Senha
     cout << "Teste da Classe Senha: ";
     if(teste_senha.Run()){
         cout << "SUCESSO\n";
@@ -157,6 +158,16 @@ int main(){
     else{
         cout << "FALHA\n";
     }
+
+    //Confirmacao Teste: Taxa
+    cout << "Teste da Classe Taxa: ";
+    if(teste_taxa.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
+
 
     return 0;
 }
