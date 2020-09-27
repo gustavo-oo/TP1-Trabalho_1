@@ -288,5 +288,22 @@ inline string Senha::GetSenha(){
     return valor;
 }
 
+//Classe Taxa
+
+class Taxa{
+public:
+    void SetTaxa(double valor);
+    double GetTaxa();
+private:
+    double valor;
+    const static int kValorMax = 200;
+    const static int kValorMin = 0;
+
+    void ValidarTaxa(double valor);
+};
+
+inline double Taxa::GetTaxa(){
+    return valor;
+}
 
 #endif // DOMINIOS_H_INCLUDED
