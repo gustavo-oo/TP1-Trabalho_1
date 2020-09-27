@@ -504,3 +504,18 @@ void ValorDeAplicacao::SetValorDeAplicacao(double valor){
     ValidarValorDeAplicacao(valor);
     this->valor =  valor;
 }
+
+//Funcoes da Classe: Valor Mínimo
+
+void ValorMinimo::ValidarValorMinimo(double valor){
+    for(int i=0; i < 4; i++){              //4 valores permitidos
+        if(kValoresPermitidos[i] == valor)
+            return;
+    }
+    throw invalid_argument("Argumento Prazo Invalido");
+}
+
+void ValorMinimo::SetValorMinimo(double valor){
+    ValidarValorMinimo(valor);
+    this->valor = valor;
+}
