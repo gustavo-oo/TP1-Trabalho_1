@@ -410,6 +410,47 @@ bool TUEndereco::Run(){
     return estado;
 }
 
+//Funcoes de Teste: Horario
+
+void TUHorario::Create(){
+    horario = new Horario();
+    estado = true;
+}
+
+void TUHorario::Destroy(){
+    delete horario;
+}
+
+void TUHorario::SucessTest(){
+    try{
+        horario->SetHorario(kValorValido);
+        if(horario->GetHorario() != kValorValido){
+            estado = false;
+        }
+    }
+    catch(invalid_argument &excecao){
+        estado = false;
+    }
+}
+
+void TUHorario::FailureTest(){
+    try{
+        horario->SetHorario(kValorInvalido);
+        estado = false;
+    }
+    catch(invalid_argument &excecao){
+        return;
+    }
+}
+
+bool TUHorario::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
+    return estado;
+}
+
 //Funcoes de Teste: Nome
 
 void TUNome::Create(){

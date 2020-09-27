@@ -196,6 +196,26 @@ inline string Endereco::GetEndereco(){
     return valor;
 }
 
+//Classe Horário
+
+class Horario{
+public:
+    void SetHorario(string valor);
+    string GetHorario();
+private:
+    string valor;
+    const static int kTamanhoDoValor = 5;
+    const static int kPosicao2Pontos = 2;
+    const static int kHoraMin = 13;
+    const static int kHoraMax = 17;
+
+    void ValidarHorario(string valor);
+};
+
+inline string Horario::GetHorario(){
+    return valor;
+}
+
 //Classe Nome
 
 class Nome{

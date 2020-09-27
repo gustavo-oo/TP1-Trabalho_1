@@ -16,6 +16,7 @@ int main(){
     TUData teste_data;
     TUEmissor teste_emissor;
     TUEndereco teste_endereco;
+    TUHorario teste_horario;
     TUNome teste_nome;
 
     //Confirmacao Teste: Cep
@@ -102,6 +103,15 @@ int main(){
     //Confirmacao Teste: Endereco
     cout << "Teste da Classe Endereco: ";
     if(teste_endereco.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
+
+    //Confirmacao Teste: Horario
+    cout << "Teste da Classe Horario: ";
+    if(teste_horario.Run()){
         cout << "SUCESSO\n";
     }
     else{

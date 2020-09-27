@@ -1,5 +1,6 @@
 #include "dominios.h"
 #include <iostream>
+#include <string> //stoi
 
 //Funcoes da Classe: Cep
 void Cep::ValidarCep(int valor){
@@ -330,6 +331,44 @@ void Endereco::ValidarEndereco(string valor){
 
 void Endereco::SetEndereco(string valor){
     ValidarEndereco(valor);
+    this->valor = valor;
+}
+
+//Funcoes da Classe: Horário
+
+void Horario::ValidarHorario(string valor){
+    if(valor.length() == kTamanhoDoValor){
+        string hora, minuto;
+        for(int i=0; i < kTamanhoDoValor; i++){
+            if(i != kPosicao2Pontos){
+                if(isdigit(valor[i])){
+                    if(i < kPosicao2Pontos)
+                        hora.push_back(valor[i]);
+                    else
+                        minuto.push_back(valor[i]);
+                }
+                else
+                    throw invalid_argument("Argumento Horario Invalido");
+            }
+            else if(valor[i] != ':')
+                throw invalid_argument("Argumento Horario Invalido");
+        }
+        int iHora = stoi(hora);
+        int iMinuto = stoi(minuto);
+
+        if(iHora < kHoraMin or iHora > kHoraMax)
+            throw invalid_argument("Argumento Horario Invalido");
+        if(iMinuto < 0 or iMinuto > 59)
+            throw invalid_argument("Argumento Horario Invalido");
+        if(iHora == kHoraMax and iMinuto != 0)
+            throw invalid_argument("Argumento Horario Invalido");
+    }
+    else
+        throw invalid_argument("Argumento Horario Invalido");
+}
+
+void Horario::SetHorario(string valor){
+    ValidarHorario(valor);
     this->valor = valor;
 }
 

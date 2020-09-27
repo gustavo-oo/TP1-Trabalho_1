@@ -168,6 +168,23 @@ public:
     bool Run();
 };
 
+//Classe de Teste: Horario
+class TUHorario{
+private:
+    Horario *horario;
+    bool estado;
+    inline const static string kValorValido = "13:00";
+    inline const static string kValorInvalido = "17:01";
+
+    void Create();
+    void Destroy();
+    void SucessTest();
+    void FailureTest();
+
+public:
+    bool Run();
+};
+
 //Classe de Teste: Nome
 class TUNome{
 private:
