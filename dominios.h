@@ -306,4 +306,22 @@ inline double Taxa::GetTaxa(){
     return valor;
 }
 
+//Classe Valor de Aplicação
+
+class ValorDeAplicacao{
+public:
+    void SetValorDeAplicacao(double valor);
+    double GetValorDeAplicacao();
+private:
+    double valor;
+    const static int kValorMax = 1000000;
+    const static int kValorMin = 0;
+
+    void ValidarValorDeAplicacao(double valor);
+};
+
+inline double ValorDeAplicacao::GetValorDeAplicacao(){
+    return valor;
+}
+
 #endif // DOMINIOS_H_INCLUDED

@@ -269,4 +269,20 @@ public:
     bool Run();
 };
 
+//Classe de Teste: Valor de Aplicação
+class TUValorDeAplicacao{
+    ValorDeAplicacao *valor_de_aplicacao;
+    bool estado;
+    constexpr static double kValorValido = 999999;
+    constexpr static double kValorInvalido = 1000001;
+
+    void Create();
+    void Destroy();
+    void SucessTest();
+    void FailureTest();
+
+public:
+    bool Run();
+};
+
 #endif // TESTES_H_INCLUDED

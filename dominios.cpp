@@ -492,3 +492,15 @@ void Taxa::SetTaxa(double valor){
     ValidarTaxa(valor);
     this->valor =  valor;
 }
+
+//Funcoes da Classe: Valor de Aplicação
+
+void ValorDeAplicacao::ValidarValorDeAplicacao(double valor){
+    if(valor < kValorMin or valor > kValorMax)
+        throw invalid_argument("Argumento Taxa Invalido");
+}
+
+void ValorDeAplicacao::SetValorDeAplicacao(double valor){
+    ValidarValorDeAplicacao(valor);
+    this->valor =  valor;
+}
