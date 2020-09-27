@@ -19,6 +19,7 @@ int main(){
     TUHorario teste_horario;
     TUNome teste_nome;
     TUNumero teste_numero;
+    TUPrazo teste_prazo;
 
     //Confirmacao Teste: Cep
     cout << "Teste da Classe Cep: ";
@@ -131,6 +132,15 @@ int main(){
     //Confirmacao Teste: Numero
     cout << "Teste da Classe Numero: ";
     if(teste_numero.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
+
+        //Confirmacao Teste: Prazo
+    cout << "Teste da Classe Prazo: ";
+    if(teste_prazo.Run()){
         cout << "SUCESSO\n";
     }
     else{

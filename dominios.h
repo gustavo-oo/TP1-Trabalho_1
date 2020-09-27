@@ -254,4 +254,21 @@ inline string Numero::GetNumero(){
     return valor;
 }
 
+//Classe Prazo
+
+class Prazo{
+public:
+    void SetPrazo(int valor);
+    int GetPrazo();
+private:
+    int valor;
+    constexpr static int kValoresPermitidos[12] = {6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72};
+
+    void ValidarPrazo(int valor);
+};
+
+inline int Prazo::GetPrazo(){
+    return valor;
+}
+
 #endif // DOMINIOS_H_INCLUDED
