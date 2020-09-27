@@ -655,3 +655,44 @@ bool TUTaxa::Run(){
     Destroy();
     return estado;
 }
+
+//Funcoes de Teste: Valor de Aplicação
+
+void TUValorDeAplicacao::Create(){
+    valor_de_aplicacao = new ValorDeAplicacao();
+    estado = true;
+}
+
+void TUValorDeAplicacao::Destroy(){
+    delete valor_de_aplicacao;
+}
+
+void TUValorDeAplicacao::SucessTest(){
+    try{
+        valor_de_aplicacao->SetValorDeAplicacao(kValorValido);
+        if(valor_de_aplicacao->GetValorDeAplicacao() != kValorValido){
+            estado = false;
+        }
+    }
+    catch(invalid_argument &excecao){
+        estado = false;
+    }
+}
+
+void TUValorDeAplicacao::FailureTest(){
+    try{
+        valor_de_aplicacao->SetValorDeAplicacao(kValorInvalido);
+        estado = false;
+    }
+    catch(invalid_argument &excecao){
+        return;
+    }
+}
+
+bool TUValorDeAplicacao::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
+    return estado;
+}
