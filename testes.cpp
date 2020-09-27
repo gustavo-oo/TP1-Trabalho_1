@@ -573,3 +573,44 @@ bool TUPrazo::Run(){
     Destroy();
     return estado;
 }
+
+//Funcoes de Teste: Senha
+
+void TUSenha::Create(){
+    senha = new Senha();
+    estado = true;
+}
+
+void TUSenha::Destroy(){
+    delete senha;
+}
+
+void TUSenha::SucessTest(){
+    try{
+        senha->SetSenha(kValorValido);
+        if(senha->GetSenha() != kValorValido){
+            estado = false;
+        }
+    }
+    catch(invalid_argument &excecao){
+        estado = false;
+    }
+}
+
+void TUSenha::FailureTest(){
+    try{
+        senha->SetSenha(kValorInvalido);
+        estado = false;
+    }
+    catch(invalid_argument &excecao){
+        return;
+    }
+}
+
+bool TUSenha::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
+    return estado;
+}

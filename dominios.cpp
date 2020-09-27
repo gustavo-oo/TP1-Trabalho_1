@@ -457,3 +457,24 @@ void Prazo::SetPrazo(int valor){
     ValidarPrazo(valor);
     this->valor = valor;
 }
+
+//Funcoes da Classe: Senha
+void Senha::ValidarSenha(string valor){
+    if(valor.length() == kTamanhoDoValor){
+        for(int i=0; i < kTamanhoDoValor; i++){
+            if(!isdigit(valor[i]))
+                throw invalid_argument("Argumento Senha Invalido");
+            for(int j=0; j < kTamanhoDoValor; j++){     // Comparando cada digito da
+                if(i != j and valor[i] == valor[j])     // senha com todos os demais
+                    throw invalid_argument("Argumento Senha Invalido");
+            }
+        }
+    }
+    else
+        throw invalid_argument("Argumento Senha Invalido");
+}
+
+void Senha::SetSenha(string valor){
+    ValidarSenha(valor);
+    this->valor = valor;
+}

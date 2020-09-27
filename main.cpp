@@ -20,6 +20,7 @@ int main(){
     TUNome teste_nome;
     TUNumero teste_numero;
     TUPrazo teste_prazo;
+    TUSenha teste_senha;
 
     //Confirmacao Teste: Cep
     cout << "Teste da Classe Cep: ";
@@ -141,6 +142,16 @@ int main(){
         //Confirmacao Teste: Prazo
     cout << "Teste da Classe Prazo: ";
     if(teste_prazo.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
+
+
+        //Confirmacao Teste: Senha
+    cout << "Teste da Classe Senha: ";
+    if(teste_senha.Run()){
         cout << "SUCESSO\n";
     }
     else{
