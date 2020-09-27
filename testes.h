@@ -202,5 +202,21 @@ public:
     bool Run();
 };
 
+//Classe de Teste: Numero
+class TUNumero{
+private:
+    Numero *numero;
+    bool estado;
+    inline const static string kValorValido = "123456-0";
+    inline const static string kValorInvalido = "123456-7";
+
+    void Create();
+    void Destroy();
+    void SucessTest();
+    void FailureTest();
+
+public:
+    bool Run();
+};
 
 #endif // TESTES_H_INCLUDED

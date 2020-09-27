@@ -119,14 +119,14 @@ void Cpf::ValidarCpf(string valor){
         for(int i=0; i < kTamanhoDoValor; i++){
             if(i == kPosicaoPonto1 or i == kPosicaoPonto2){
                 if(valor[i] != '.')
-                throw invalid_argument("Argumento CPF Invalido");
+                    throw invalid_argument("Argumento CPF Invalido");
             }
             else if(i == kPosicaoHifen){
                 if(valor[i] != '-')
-                throw invalid_argument("Argumento CPF Invalido");
+                    throw invalid_argument("Argumento CPF Invalido");
             }
             else if(!isdigit(valor[i]))
-                throw invalid_argument("Argumento CPF Invalido");
+                    throw invalid_argument("Argumento CPF Invalido");
         }
 
         //verificando ultimos 2 digitos
@@ -406,5 +406,40 @@ void Nome::ValidarNome(string valor){
 
 void Nome::SetNome(string valor){
     ValidarNome(valor);
+    this->valor = valor;
+}
+
+//Funcoes da Classe: Número
+
+void Numero::ValidarNumero(string valor){
+    if(valor.length() == kTamanhoDoValor){
+        int digitos[7], posicao = 0;
+        for(int i=0; i < kTamanhoDoValor; i++){
+            if(i == kPosicaoHifen){
+                if(valor[i] != '-')
+                    throw invalid_argument("Argumento Numero Invalido");
+            }
+            else if(!isdigit(valor[i]))
+                throw invalid_argument("Argumento Numero Invalido");
+            else
+                digitos[posicao++] = (int)valor[i] - (int)'0';
+        }
+        int multiplicador = 2, soma = 0;    // Multiplicador começa em 2 e vai
+        for(int i = 5; i >= 0; i--){        // incrementando do último dígito
+            digitos[i] *= multiplicador;    // (antes do dv)até o primeiro
+            soma += digitos[i];             // A soma dos produtos dos dígitos
+            multiplicador++;                // pelo multiplicador é então dividida
+        }                                   // por 11(kModulo) e o resto da divisão
+        int dv = (soma*10)%kModulo;         // é o digito verificador.
+        if(dv == 10 and valor[kTamanhoDoValor - 1] != '0' and valor[kTamanhoDoValor - 1] != 'X') //  No caso do dv ser 10, ele será
+            throw invalid_argument("Argumento Numero Invalido");                                 //  substituido por X ou 0.
+        else if(dv != digitos[6])
+            throw invalid_argument("Argumento Numero Invalido");                                 // Comparando o dv correto com o passado.
+    }
+    else
+        throw invalid_argument("Argumento Numero Invalido");
+}
+void Numero::SetNumero(string valor){
+    ValidarNumero(valor);
     this->valor = valor;
 }

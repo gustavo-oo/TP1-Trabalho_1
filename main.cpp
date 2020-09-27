@@ -18,6 +18,7 @@ int main(){
     TUEndereco teste_endereco;
     TUHorario teste_horario;
     TUNome teste_nome;
+    TUNumero teste_numero;
 
     //Confirmacao Teste: Cep
     cout << "Teste da Classe Cep: ";
@@ -127,6 +128,14 @@ int main(){
         cout << "FALHA\n";
     }
 
+    //Confirmacao Teste: Numero
+    cout << "Teste da Classe Numero: ";
+    if(teste_numero.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
 
     return 0;
 }
