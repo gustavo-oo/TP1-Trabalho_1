@@ -324,4 +324,22 @@ inline double ValorDeAplicacao::GetValorDeAplicacao(){
     return valor;
 }
 
+//Classe Valor Mínimo
+
+class ValorMinimo{
+public:
+    void SetValorMinimo(double valor);
+    double GetValorMinimo();
+private:
+    double valor;
+    constexpr static double kValoresPermitidos[4] = {1000, 5000, 10000, 50000};
+
+    void ValidarValorMinimo(double valor);
+};
+
+inline double ValorMinimo::GetValorMinimo(){
+    return valor;
+}
+
+
 #endif // DOMINIOS_H_INCLUDED

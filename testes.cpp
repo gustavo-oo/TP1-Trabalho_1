@@ -696,3 +696,44 @@ bool TUValorDeAplicacao::Run(){
     Destroy();
     return estado;
 }
+
+//Funcoes de Teste: Valor Mínimo
+
+void TUValorMinimo::Create(){
+    valor_minimo = new ValorMinimo();
+    estado = true;
+}
+
+void TUValorMinimo::Destroy(){
+    delete valor_minimo;
+}
+
+void TUValorMinimo::SucessTest(){
+    try{
+        valor_minimo->SetValorMinimo(kValorValido);
+        if(valor_minimo->GetValorMinimo() != kValorValido){
+            estado = false;
+        }
+    }
+    catch(invalid_argument &excecao){
+        estado = false;
+    }
+}
+
+void TUValorMinimo::FailureTest(){
+    try{
+        valor_minimo->SetValorMinimo(kValorInvalido);
+        estado = false;
+    }
+    catch(invalid_argument &excecao){
+        return;
+    }
+}
+
+bool TUValorMinimo::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
+    return estado;
+}

@@ -285,4 +285,20 @@ public:
     bool Run();
 };
 
+//Classe de Teste: Valor Mínimo
+class TUValorMinimo{
+    ValorMinimo *valor_minimo;
+    bool estado;
+    constexpr static double kValorValido = 50000;
+    constexpr static double kValorInvalido = 500;
+
+    void Create();
+    void Destroy();
+    void SucessTest();
+    void FailureTest();
+
+public:
+    bool Run();
+};
+
 #endif // TESTES_H_INCLUDED
