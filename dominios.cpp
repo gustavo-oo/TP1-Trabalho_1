@@ -443,3 +443,17 @@ void Numero::SetNumero(string valor){
     ValidarNumero(valor);
     this->valor = valor;
 }
+
+//Funcoes da Classe: Prazo
+void Prazo::ValidarPrazo(int valor){
+    for(int i=0; i < 12; i++){              //12 valores permitidos
+        if(kValoresPermitidos[i] == valor)
+            return;
+    }
+    throw invalid_argument("Argumento Prazo Invalido");
+}
+
+void Prazo::SetPrazo(int valor){
+    ValidarPrazo(valor);
+    this->valor = valor;
+}

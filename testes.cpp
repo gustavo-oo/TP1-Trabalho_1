@@ -532,3 +532,44 @@ bool TUNumero::Run(){
     Destroy();
     return estado;
 }
+
+//Funcoes de Teste: Prazo
+
+void TUPrazo::Create(){
+    prazo = new Prazo();
+    estado = true;
+}
+
+void TUPrazo::Destroy(){
+    delete prazo;
+}
+
+void TUPrazo::SucessTest(){
+    try{
+        prazo->SetPrazo(kValorValido);
+        if(prazo->GetPrazo() != kValorValido){
+            estado = false;
+        }
+    }
+    catch(invalid_argument &excecao){
+        estado = false;
+    }
+}
+
+void TUPrazo::FailureTest(){
+    try{
+        prazo->SetPrazo(kValorInvalido);
+        estado = false;
+    }
+    catch(invalid_argument &excecao){
+        return;
+    }
+}
+
+bool TUPrazo::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
+    return estado;
+}

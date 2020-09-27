@@ -219,4 +219,21 @@ public:
     bool Run();
 };
 
+//Classe de Teste: Prazo
+class TUPrazo{
+private:
+    Prazo *prazo;
+    bool estado;
+    inline const static int kValorValido = 18;
+    inline const static int kValorInvalido = 20;
+
+    void Create();
+    void Destroy();
+    void SucessTest();
+    void FailureTest();
+
+public:
+    bool Run();
+};
+
 #endif // TESTES_H_INCLUDED
