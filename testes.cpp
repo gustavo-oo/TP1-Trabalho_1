@@ -492,4 +492,43 @@ bool TUNome::Run(){
     return estado;
 }
 
+//Funcoes de Teste: Numero
 
+void TUNumero::Create(){
+    numero = new Numero();
+    estado = true;
+}
+
+void TUNumero::Destroy(){
+    delete numero;
+}
+
+void TUNumero::SucessTest(){
+    try{
+        numero->SetNumero(kValorValido);
+        if(numero->GetNumero() != kValorValido){
+            estado = false;
+        }
+    }
+    catch(invalid_argument &excecao){
+        estado = false;
+    }
+}
+
+void TUNumero::FailureTest(){
+    try{
+        numero->SetNumero(kValorInvalido);
+        estado = false;
+    }
+    catch(invalid_argument &excecao){
+        return;
+    }
+}
+
+bool TUNumero::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
+    return estado;
+}

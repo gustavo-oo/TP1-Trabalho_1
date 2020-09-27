@@ -234,4 +234,24 @@ inline string Nome::GetNome(){
     return valor;
 }
 
+//Classe Número
+
+class Numero{
+public:
+    void SetNumero(string valor);
+    string GetNumero();
+
+private:
+    string valor;
+    const static int kTamanhoDoValor = 8;
+    const static int kPosicaoHifen = 6;
+    const static int kModulo = 11;
+
+    void ValidarNumero(string valor);
+};
+
+inline string Numero::GetNumero(){
+    return valor;
+}
+
 #endif // DOMINIOS_H_INCLUDED
