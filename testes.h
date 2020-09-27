@@ -224,8 +224,25 @@ class TUPrazo{
 private:
     Prazo *prazo;
     bool estado;
-    inline const static int kValorValido = 18;
-    inline const static int kValorInvalido = 20;
+    const static int kValorValido = 18;
+    const static int kValorInvalido = 20;
+
+    void Create();
+    void Destroy();
+    void SucessTest();
+    void FailureTest();
+
+public:
+    bool Run();
+};
+
+//Classe de Teste: Senha
+class TUSenha{
+private:
+    Senha *senha;
+    bool estado;
+    inline const static string kValorValido = "123456";
+    inline const static string kValorInvalido = "A23456";
 
     void Create();
     void Destroy();

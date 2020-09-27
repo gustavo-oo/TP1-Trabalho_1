@@ -271,4 +271,22 @@ inline int Prazo::GetPrazo(){
     return valor;
 }
 
+//Classe Senha
+
+class Senha{
+public:
+    void SetSenha(string valor);
+    string GetSenha();
+private:
+    string valor;
+    const static int kTamanhoDoValor = 6;
+
+    void ValidarSenha(string valor);
+};
+
+inline string Senha::GetSenha(){
+    return valor;
+}
+
+
 #endif // DOMINIOS_H_INCLUDED
