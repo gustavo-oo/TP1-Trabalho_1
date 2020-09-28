@@ -168,6 +168,23 @@ public:
     bool Run();
 };
 
+//Classe de Teste: Horario
+class TUHorario{
+private:
+    Horario *horario;
+    bool estado;
+    inline const static string kValorValido = "13:00";
+    inline const static string kValorInvalido = "17:01";
+
+    void Create();
+    void Destroy();
+    void SucessTest();
+    void FailureTest();
+
+public:
+    bool Run();
+};
+
 //Classe de Teste: Nome
 class TUNome{
 private:
@@ -185,5 +202,103 @@ public:
     bool Run();
 };
 
+//Classe de Teste: Numero
+class TUNumero{
+private:
+    Numero *numero;
+    bool estado;
+    inline const static string kValorValido = "123456-0";
+    inline const static string kValorInvalido = "123456-7";
+
+    void Create();
+    void Destroy();
+    void SucessTest();
+    void FailureTest();
+
+public:
+    bool Run();
+};
+
+//Classe de Teste: Prazo
+class TUPrazo{
+private:
+    Prazo *prazo;
+    bool estado;
+    const static int kValorValido = 18;
+    const static int kValorInvalido = 20;
+
+    void Create();
+    void Destroy();
+    void SucessTest();
+    void FailureTest();
+
+public:
+    bool Run();
+};
+
+//Classe de Teste: Senha
+class TUSenha{
+private:
+    Senha *senha;
+    bool estado;
+    inline const static string kValorValido = "123456";
+    inline const static string kValorInvalido = "A23456";
+
+    void Create();
+    void Destroy();
+    void SucessTest();
+    void FailureTest();
+
+public:
+    bool Run();
+};
+
+//Classe de Teste: Senha
+class TUTaxa{
+    Taxa *taxa;
+    bool estado;
+    constexpr static double kValorValido = 23.78;
+    constexpr static double kValorInvalido = 201;
+
+    void Create();
+    void Destroy();
+    void SucessTest();
+    void FailureTest();
+
+public:
+    bool Run();
+};
+
+//Classe de Teste: Valor de Aplicação
+class TUValorDeAplicacao{
+    ValorDeAplicacao *valor_de_aplicacao;
+    bool estado;
+    constexpr static double kValorValido = 999999;
+    constexpr static double kValorInvalido = 1000001;
+
+    void Create();
+    void Destroy();
+    void SucessTest();
+    void FailureTest();
+
+public:
+    bool Run();
+};
+
+//Classe de Teste: Valor Mínimo
+class TUValorMinimo{
+    ValorMinimo *valor_minimo;
+    bool estado;
+    constexpr static double kValorValido = 50000;
+    constexpr static double kValorInvalido = 500;
+
+    void Create();
+    void Destroy();
+    void SucessTest();
+    void FailureTest();
+
+public:
+    bool Run();
+};
 
 #endif // TESTES_H_INCLUDED

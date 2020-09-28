@@ -222,6 +222,26 @@ inline string Endereco::GetEndereco(){
     return valor;
 }
 
+//Classe Horário
+
+class Horario{
+public:
+    void SetHorario(string valor);
+    string GetHorario();
+private:
+    string valor;
+    const static int kTamanhoDoValor = 5;
+    const static int kPosicao2Pontos = 2;
+    const static int kHoraMin = 13;
+    const static int kHoraMax = 17;
+
+    void ValidarHorario(string valor);
+};
+
+inline string Horario::GetHorario(){
+    return valor;
+}
+
 //Classe Nome
 
 class Nome{
@@ -239,5 +259,113 @@ private:
 inline string Nome::GetNome(){
     return valor;
 }
+
+//Classe Número
+
+class Numero{
+public:
+    void SetNumero(string valor);
+    string GetNumero();
+
+private:
+    string valor;
+    const static int kTamanhoDoValor = 8;
+    const static int kPosicaoHifen = 6;
+    const static int kModulo = 11;
+
+    void ValidarNumero(string valor);
+};
+
+inline string Numero::GetNumero(){
+    return valor;
+}
+
+//Classe Prazo
+
+class Prazo{
+public:
+    void SetPrazo(int valor);
+    int GetPrazo();
+private:
+    int valor;
+    constexpr static int kValoresPermitidos[12] = {6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72};
+
+    void ValidarPrazo(int valor);
+};
+
+inline int Prazo::GetPrazo(){
+    return valor;
+}
+
+//Classe Senha
+
+class Senha{
+public:
+    void SetSenha(string valor);
+    string GetSenha();
+private:
+    string valor;
+    const static int kTamanhoDoValor = 6;
+
+    void ValidarSenha(string valor);
+};
+
+inline string Senha::GetSenha(){
+    return valor;
+}
+
+//Classe Taxa
+
+class Taxa{
+public:
+    void SetTaxa(double valor);
+    double GetTaxa();
+private:
+    double valor;
+    const static int kValorMax = 200;
+    const static int kValorMin = 0;
+
+    void ValidarTaxa(double valor);
+};
+
+inline double Taxa::GetTaxa(){
+    return valor;
+}
+
+//Classe Valor de Aplicação
+
+class ValorDeAplicacao{
+public:
+    void SetValorDeAplicacao(double valor);
+    double GetValorDeAplicacao();
+private:
+    double valor;
+    const static int kValorMax = 1000000;
+    const static int kValorMin = 0;
+
+    void ValidarValorDeAplicacao(double valor);
+};
+
+inline double ValorDeAplicacao::GetValorDeAplicacao(){
+    return valor;
+}
+
+//Classe Valor Mínimo
+
+class ValorMinimo{
+public:
+    void SetValorMinimo(double valor);
+    double GetValorMinimo();
+private:
+    double valor;
+    constexpr static double kValoresPermitidos[4] = {1000, 5000, 10000, 50000};
+
+    void ValidarValorMinimo(double valor);
+};
+
+inline double ValorMinimo::GetValorMinimo(){
+    return valor;
+}
+
 
 #endif // DOMINIOS_H_INCLUDED

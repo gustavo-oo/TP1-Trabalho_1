@@ -1,5 +1,6 @@
 #include "dominios.h"
 #include <iostream>
+#include <string> //stoi
 
 //Funcoes da Classe: Cep
 void Cep::ValidarCep(int valor){
@@ -118,14 +119,14 @@ void Cpf::ValidarCpf(string valor){
         for(int i=0; i < kTamanhoDoValor; i++){
             if(i == kPosicaoPonto1 or i == kPosicaoPonto2){
                 if(valor[i] != '.')
-                throw invalid_argument("Argumento CPF Invalido");
+                    throw invalid_argument("Argumento CPF Invalido");
             }
             else if(i == kPosicaoHifen){
                 if(valor[i] != '-')
-                throw invalid_argument("Argumento CPF Invalido");
+                    throw invalid_argument("Argumento CPF Invalido");
             }
             else if(!isdigit(valor[i]))
-                throw invalid_argument("Argumento CPF Invalido");
+                    throw invalid_argument("Argumento CPF Invalido");
         }
 
         //verificando ultimos 2 digitos
@@ -210,25 +211,19 @@ void Data::SetData(string valor){
 }
 
 void Emissor::ValidarEmissor(string valor){
-    //1º verificar quantidade de caracteres
     if(valor.length() >= kIntervaloDeCaracteres[0] and valor.length() <= kIntervaloDeCaracteres[1]){
-    //Teste feito sempre analisando o caractere anterior:
-    //So numeros e letras podem estar em sequencia, sendo aceitos letras maisculas e minusculas, numeros, ponto, hifen e espaco
         for(int i = 0; i < valor.length(); i++){
             if(!isdigit(valor[i]) and !isalpha(valor[i]) and valor[i] != kPonto and valor[i] != kEspaco and valor[i] != kHifen){
                 throw invalid_argument("Argumento Emissor Invalido");
             }
-            //Como não tem caractere anterior ao 1º, a verificação é um pouco diferente
             if(i == 0){
-                if(isalpha(valor[i])){
+                if(isalpha(valor[i])){ //Se o caractere atual é uma letra e o anterior um espaço, a letra deve ser maiuscula
                    if(!isupper(valor[i])){
                         throw invalid_argument("Argumento Emissor Invalido");
                     }
                 }
             }else{
-                //Verificação de carecteres após o 1º
-                //Se o caractere atual é uma letra e o anterior um espaço, a letra deve ser maiuscula
-                if(isalpha(valor[i])){
+                if(isalpha(valor[i])){ //Se o caractere atual é uma letra e o anterior um espaço, a letra deve ser maiuscula
                     if(valor[i-1] == kEspaco){
                         if(!isupper(valor[i])){
                             throw invalid_argument("Argumento Emissor Invalido");
@@ -333,6 +328,44 @@ void Endereco::SetEndereco(string valor){
     this->valor = valor;
 }
 
+//Funcoes da Classe: Horário
+
+void Horario::ValidarHorario(string valor){
+    if(valor.length() == kTamanhoDoValor){
+        string hora, minuto;
+        for(int i=0; i < kTamanhoDoValor; i++){
+            if(i != kPosicao2Pontos){
+                if(isdigit(valor[i])){
+                    if(i < kPosicao2Pontos)
+                        hora.push_back(valor[i]);
+                    else
+                        minuto.push_back(valor[i]);
+                }
+                else
+                    throw invalid_argument("Argumento Horario Invalido");
+            }
+            else if(valor[i] != ':')
+                throw invalid_argument("Argumento Horario Invalido");
+        }
+        int iHora = stoi(hora);
+        int iMinuto = stoi(minuto);
+
+        if(iHora < kHoraMin or iHora > kHoraMax)
+            throw invalid_argument("Argumento Horario Invalido");
+        if(iMinuto < 0 or iMinuto > 59)
+            throw invalid_argument("Argumento Horario Invalido");
+        if(iHora == kHoraMax and iMinuto != 0)
+            throw invalid_argument("Argumento Horario Invalido");
+    }
+    else
+        throw invalid_argument("Argumento Horario Invalido");
+}
+
+void Horario::SetHorario(string valor){
+    ValidarHorario(valor);
+    this->valor = valor;
+}
+
 //Funcoes da Classe: Nome
 
 void Nome::ValidarNome(string valor){
@@ -367,5 +400,116 @@ void Nome::ValidarNome(string valor){
 
 void Nome::SetNome(string valor){
     ValidarNome(valor);
+    this->valor = valor;
+}
+
+//Funcoes da Classe: Número
+
+void Numero::ValidarNumero(string valor){
+    if(valor.length() == kTamanhoDoValor){
+        int digitos[7], posicao = 0;
+        for(int i=0; i < kTamanhoDoValor; i++){
+            if(i == kPosicaoHifen){
+                if(valor[i] != '-')
+                    throw invalid_argument("Argumento Numero Invalido");
+            }
+            else if(!isdigit(valor[i]))
+                throw invalid_argument("Argumento Numero Invalido");
+            else
+                digitos[posicao++] = (int)valor[i] - (int)'0';
+        }
+        int multiplicador = 2, soma = 0;    // Multiplicador começa em 2 e vai
+        for(int i = 5; i >= 0; i--){        // incrementando do último dígito
+            digitos[i] *= multiplicador;    // (antes do dv)até o primeiro
+            soma += digitos[i];             // A soma dos produtos dos dígitos
+            multiplicador++;                // pelo multiplicador é então dividida
+        }                                   // por 11(kModulo) e o resto da divisão
+        int dv = (soma*10)%kModulo;         // é o digito verificador.
+        if(dv == 10 and valor[kTamanhoDoValor - 1] != '0' and valor[kTamanhoDoValor - 1] != 'X') //  No caso do dv ser 10, ele será
+            throw invalid_argument("Argumento Numero Invalido");                                 //  substituido por X ou 0.
+        else if(dv != digitos[6])
+            throw invalid_argument("Argumento Numero Invalido");                                 // Comparando o dv correto com o passado.
+    }
+    else
+        throw invalid_argument("Argumento Numero Invalido");
+}
+void Numero::SetNumero(string valor){
+    ValidarNumero(valor);
+    this->valor = valor;
+}
+
+//Funcoes da Classe: Prazo
+
+void Prazo::ValidarPrazo(int valor){
+    for(int i=0; i < 12; i++){              //12 valores permitidos
+        if(kValoresPermitidos[i] == valor)
+            return;
+    }
+    throw invalid_argument("Argumento Prazo Invalido");
+}
+
+void Prazo::SetPrazo(int valor){
+    ValidarPrazo(valor);
+    this->valor = valor;
+}
+
+//Funcoes da Classe: Senha
+
+void Senha::ValidarSenha(string valor){
+    if(valor.length() == kTamanhoDoValor){
+        for(int i=0; i < kTamanhoDoValor; i++){
+            if(!isdigit(valor[i]))
+                throw invalid_argument("Argumento Senha Invalido");
+            for(int j=0; j < kTamanhoDoValor; j++){     // Comparando cada digito da
+                if(i != j and valor[i] == valor[j])     // senha com todos os demais
+                    throw invalid_argument("Argumento Senha Invalido");
+            }
+        }
+    }
+    else
+        throw invalid_argument("Argumento Senha Invalido");
+}
+
+void Senha::SetSenha(string valor){
+    ValidarSenha(valor);
+    this->valor = valor;
+}
+
+//Funcoes da Classe: Taxa
+
+void Taxa::ValidarTaxa(double valor){
+    if(valor < kValorMin or valor > kValorMax)
+        throw invalid_argument("Argumento Taxa Invalido");
+}
+
+void Taxa::SetTaxa(double valor){
+    ValidarTaxa(valor);
+    this->valor =  valor;
+}
+
+//Funcoes da Classe: Valor de Aplicação
+
+void ValorDeAplicacao::ValidarValorDeAplicacao(double valor){
+    if(valor < kValorMin or valor > kValorMax)
+        throw invalid_argument("Argumento Taxa Invalido");
+}
+
+void ValorDeAplicacao::SetValorDeAplicacao(double valor){
+    ValidarValorDeAplicacao(valor);
+    this->valor =  valor;
+}
+
+//Funcoes da Classe: Valor Mínimo
+
+void ValorMinimo::ValidarValorMinimo(double valor){
+    for(int i=0; i < 4; i++){              //4 valores permitidos
+        if(kValoresPermitidos[i] == valor)
+            return;
+    }
+    throw invalid_argument("Argumento Prazo Invalido");
+}
+
+void ValorMinimo::SetValorMinimo(double valor){
+    ValidarValorMinimo(valor);
     this->valor = valor;
 }

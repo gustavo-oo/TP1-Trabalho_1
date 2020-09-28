@@ -410,6 +410,47 @@ bool TUEndereco::Run(){
     return estado;
 }
 
+//Funcoes de Teste: Horario
+
+void TUHorario::Create(){
+    horario = new Horario();
+    estado = true;
+}
+
+void TUHorario::Destroy(){
+    delete horario;
+}
+
+void TUHorario::SucessTest(){
+    try{
+        horario->SetHorario(kValorValido);
+        if(horario->GetHorario() != kValorValido){
+            estado = false;
+        }
+    }
+    catch(invalid_argument &excecao){
+        estado = false;
+    }
+}
+
+void TUHorario::FailureTest(){
+    try{
+        horario->SetHorario(kValorInvalido);
+        estado = false;
+    }
+    catch(invalid_argument &excecao){
+        return;
+    }
+}
+
+bool TUHorario::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
+    return estado;
+}
+
 //Funcoes de Teste: Nome
 
 void TUNome::Create(){
@@ -451,4 +492,248 @@ bool TUNome::Run(){
     return estado;
 }
 
+//Funcoes de Teste: Numero
 
+void TUNumero::Create(){
+    numero = new Numero();
+    estado = true;
+}
+
+void TUNumero::Destroy(){
+    delete numero;
+}
+
+void TUNumero::SucessTest(){
+    try{
+        numero->SetNumero(kValorValido);
+        if(numero->GetNumero() != kValorValido){
+            estado = false;
+        }
+    }
+    catch(invalid_argument &excecao){
+        estado = false;
+    }
+}
+
+void TUNumero::FailureTest(){
+    try{
+        numero->SetNumero(kValorInvalido);
+        estado = false;
+    }
+    catch(invalid_argument &excecao){
+        return;
+    }
+}
+
+bool TUNumero::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
+    return estado;
+}
+
+//Funcoes de Teste: Prazo
+
+void TUPrazo::Create(){
+    prazo = new Prazo();
+    estado = true;
+}
+
+void TUPrazo::Destroy(){
+    delete prazo;
+}
+
+void TUPrazo::SucessTest(){
+    try{
+        prazo->SetPrazo(kValorValido);
+        if(prazo->GetPrazo() != kValorValido){
+            estado = false;
+        }
+    }
+    catch(invalid_argument &excecao){
+        estado = false;
+    }
+}
+
+void TUPrazo::FailureTest(){
+    try{
+        prazo->SetPrazo(kValorInvalido);
+        estado = false;
+    }
+    catch(invalid_argument &excecao){
+        return;
+    }
+}
+
+bool TUPrazo::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
+    return estado;
+}
+
+//Funcoes de Teste: Senha
+
+void TUSenha::Create(){
+    senha = new Senha();
+    estado = true;
+}
+
+void TUSenha::Destroy(){
+    delete senha;
+}
+
+void TUSenha::SucessTest(){
+    try{
+        senha->SetSenha(kValorValido);
+        if(senha->GetSenha() != kValorValido){
+            estado = false;
+        }
+    }
+    catch(invalid_argument &excecao){
+        estado = false;
+    }
+}
+
+void TUSenha::FailureTest(){
+    try{
+        senha->SetSenha(kValorInvalido);
+        estado = false;
+    }
+    catch(invalid_argument &excecao){
+        return;
+    }
+}
+
+bool TUSenha::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
+    return estado;
+}
+
+//Funcoes de Teste: Taxa
+
+void TUTaxa::Create(){
+    taxa = new Taxa();
+    estado = true;
+}
+
+void TUTaxa::Destroy(){
+    delete taxa;
+}
+
+void TUTaxa::SucessTest(){
+    try{
+        taxa->SetTaxa(kValorValido);
+        if(taxa->GetTaxa() != kValorValido){
+            estado = false;
+        }
+    }
+    catch(invalid_argument &excecao){
+        estado = false;
+    }
+}
+
+void TUTaxa::FailureTest(){
+    try{
+        taxa->SetTaxa(kValorInvalido);
+        estado = false;
+    }
+    catch(invalid_argument &excecao){
+        return;
+    }
+}
+
+bool TUTaxa::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
+    return estado;
+}
+
+//Funcoes de Teste: Valor de Aplicação
+
+void TUValorDeAplicacao::Create(){
+    valor_de_aplicacao = new ValorDeAplicacao();
+    estado = true;
+}
+
+void TUValorDeAplicacao::Destroy(){
+    delete valor_de_aplicacao;
+}
+
+void TUValorDeAplicacao::SucessTest(){
+    try{
+        valor_de_aplicacao->SetValorDeAplicacao(kValorValido);
+        if(valor_de_aplicacao->GetValorDeAplicacao() != kValorValido){
+            estado = false;
+        }
+    }
+    catch(invalid_argument &excecao){
+        estado = false;
+    }
+}
+
+void TUValorDeAplicacao::FailureTest(){
+    try{
+        valor_de_aplicacao->SetValorDeAplicacao(kValorInvalido);
+        estado = false;
+    }
+    catch(invalid_argument &excecao){
+        return;
+    }
+}
+
+bool TUValorDeAplicacao::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
+    return estado;
+}
+
+//Funcoes de Teste: Valor Mínimo
+
+void TUValorMinimo::Create(){
+    valor_minimo = new ValorMinimo();
+    estado = true;
+}
+
+void TUValorMinimo::Destroy(){
+    delete valor_minimo;
+}
+
+void TUValorMinimo::SucessTest(){
+    try{
+        valor_minimo->SetValorMinimo(kValorValido);
+        if(valor_minimo->GetValorMinimo() != kValorValido){
+            estado = false;
+        }
+    }
+    catch(invalid_argument &excecao){
+        estado = false;
+    }
+}
+
+void TUValorMinimo::FailureTest(){
+    try{
+        valor_minimo->SetValorMinimo(kValorInvalido);
+        estado = false;
+    }
+    catch(invalid_argument &excecao){
+        return;
+    }
+}
+
+bool TUValorMinimo::Run(){
+    Create();
+    SucessTest();
+    FailureTest();
+    Destroy();
+    return estado;
+}

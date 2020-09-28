@@ -16,7 +16,14 @@ int main(){
     TUData teste_data;
     TUEmissor teste_emissor;
     TUEndereco teste_endereco;
+    TUHorario teste_horario;
     TUNome teste_nome;
+    TUNumero teste_numero;
+    TUPrazo teste_prazo;
+    TUSenha teste_senha;
+    TUTaxa teste_taxa;
+    TUValorDeAplicacao teste_valor_de_aplicacao;
+    TUValorMinimo teste_valor_minimo;
 
     //Confirmacao Teste: Cep
     cout << "Teste da Classe Cep: ";
@@ -108,9 +115,73 @@ int main(){
         cout << "FALHA\n";
     }
 
+    //Confirmacao Teste: Horario
+    cout << "Teste da Classe Horario: ";
+    if(teste_horario.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
+
     //Confirmacao Teste: Nome
     cout << "Teste da Classe Nome: ";
     if(teste_nome.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
+
+    //Confirmacao Teste: Numero
+    cout << "Teste da Classe Numero: ";
+    if(teste_numero.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
+
+    //Confirmacao Teste: Prazo
+    cout << "Teste da Classe Prazo: ";
+    if(teste_prazo.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
+
+
+    //Confirmacao Teste: Senha
+    cout << "Teste da Classe Senha: ";
+    if(teste_senha.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
+
+    //Confirmacao Teste: Taxa
+    cout << "Teste da Classe Taxa: ";
+    if(teste_taxa.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
+
+    //Confirmacao Teste: Valor de Aplicação
+    cout << "Teste da Classe Valor de Aplicacao: ";
+    if(teste_valor_de_aplicacao.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
+
+    //Confirmacao Teste: Valor Mínimo
+    cout << "Teste da Classe Valor Minimo: ";
+    if(teste_valor_minimo.Run()){
         cout << "SUCESSO\n";
     }
     else{
