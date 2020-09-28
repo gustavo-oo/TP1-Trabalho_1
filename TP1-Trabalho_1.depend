@@ -3,18 +3,18 @@
 	"dominios.h"
 	<iostream>
 
-1601068037 c:\users\gusta\documents\programação\tp1-trabalho_1\dominios.h
+1601297929 c:\users\gusta\documents\programação\tp1-trabalho_1\dominios.h
 	<stdexcept>
 
-1601068321 source:c:\users\gusta\documents\programação\tp1-trabalho_1\main.cpp
+1601297929 source:c:\users\gusta\documents\programação\tp1-trabalho_1\main.cpp
 	<iostream>
 	"dominios.h"
 	"testes.h"
 
-1601068414 c:\users\gusta\documents\programação\tp1-trabalho_1\testes.h
+1601297929 c:\users\gusta\documents\programação\tp1-trabalho_1\testes.h
 	"dominios.h"
 
-1601068378 source:c:\users\gusta\documents\programação\tp1-trabalho_1\testes.cpp
+1601297929 source:c:\users\gusta\documents\programação\tp1-trabalho_1\testes.cpp
 	"testes.h"
 	"dominios.h"
 
