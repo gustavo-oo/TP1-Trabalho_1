@@ -32,8 +32,9 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add option="-std=gnu++17" />
-			<Add option="-fexceptions" />
 			<Add option="-std=c++17" />
+			<Add option="-fexceptions" />
+			<Add option="-Wsign-compare" />
 		</Compiler>
 		<Unit filename="dominios.cpp" />
 		<Unit filename="dominios.h">

@@ -10,8 +10,14 @@ using namespace std;
 ///
 /// Regras de formato:
 ///
-/// - Valores nos intervalos:
+/// - Valores nos intervalos: <br>
+/// (1000000 at&eacute; 5999999) e (8000000 at&eacute; 8499999) - S&atilde;o Paulo <br>
+/// (20000000 at&eacute; 26600999) - Rio de Janeiro <br>
+/// (70000000 at&eacute; 70999999) - Bras&iacute;lia <br>
+/// (40000000 at&eacute; 41999999) - Salvador <br>
+/// (60000000 at&eacute; 60999999) - Fortaleza
 ///
+
 
 class Cep{
 public:
@@ -25,9 +31,9 @@ public:
     void SetCep(int valor);
 
     ///
-    ///Retorna valor de CEP
+    /// Retorna valor de CEP
     ///
-    /// @return CEP
+    /// @return valor
     ///
 
     int GetCep();
