@@ -5,11 +5,31 @@
 
 using namespace std;
 
-//Classe CEP
+///
+/// Padr&atilde;o para representa&ccedil;&atilde;o de CEP
+///
+/// Regras de formato:
+///
+/// - Valores nos intervalos:
+///
 
 class Cep{
 public:
+    ///
+    /// Armazena CEP
+    ///
+    /// @param valor de CEP
+    ///
+    /// @throw invalid_argument
+    ///
     void SetCep(int valor);
+
+    ///
+    ///Retorna valor de CEP
+    ///
+    /// @return CEP
+    ///
+
     int GetCep();
 private:
     int valor;
