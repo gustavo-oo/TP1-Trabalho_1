@@ -6,11 +6,11 @@
 using namespace std;
 
 ///
-/// Padr&atilde;o para representa&ccedil;&atilde;o de CEP
+/// Padr&atilde;o para representa&ccedil;&atilde;o de CEP.
 ///
-/// Regras de formato:
+/// <b> Regras de formato: </b>
 ///
-/// - Valores nos intervalos: <br>
+/// - <b> Valores nos intervalos seguintes s&atilde;o considerados v&aacute;lidos: </b> <br>
 /// (1000000 at&eacute; 5999999) e (8000000 at&eacute; 8499999) - S&atilde;o Paulo <br>
 /// (20000000 at&eacute; 26600999) - Rio de Janeiro <br>
 /// (70000000 at&eacute; 70999999) - Bras&iacute;lia <br>
@@ -22,18 +22,19 @@ using namespace std;
 class Cep{
 public:
     ///
-    /// Armazena CEP
+    /// Armazena valor de CEP caso seja v&aacute;lido.
     ///
-    /// @param valor de CEP
+    /// @param valor CEP
     ///
     /// @throw invalid_argument
     ///
+
     void SetCep(int valor);
 
     ///
-    /// Retorna valor de CEP
+    /// Retorna valor de CEP.
     ///
-    /// @return valor
+    /// @return valor CEP
     ///
 
     int GetCep();
@@ -45,6 +46,11 @@ private:
     constexpr static int kIntervaloPermitidoSalvador[2] = {40000000, 41999999};
     constexpr static int kIntervaloPermitidoFortaleza[2] = {60000000, 60999999};
 
+    ///
+    /// Verifica se o valor informado corresponde a um CEP v&aacute;lido.
+    ///
+    /// @param valor CEP
+    ///
     void ValidarCep(int valor);
 };
 
@@ -54,13 +60,44 @@ inline int Cep::GetCep(){
 
 //Classe Classe
 
+///
+/// Padr&atilde;o para representa&ccedil;&atilde;o de Classe.
+///
+/// Regras de formato:
+///
+/// - Os seguintes valores s&atilde;o considerados v&aacute;lidos: <br>
+/// CDB, LCA, LCI, LF e LC
+///
+
 class Classe{
 public:
+
+    ///
+    /// Armazena valor de Classe caso seja v&aacute;lido.
+    ///
+    /// @param valor Classe
+    ///
+    /// @throw invalid_argument
+    ///
+
     void SetClasse(string valor);
+
+    ///
+    /// Retorna valor de Classe.
+    ///
+    /// @return valor Classe
+    ///
+
     string GetClasse();
 private:
     string valor;
     inline const static string kValoresPermitidos[5] = {"CDB", "LCA", "LCI", "LF", "LC"};
+
+    ///
+    /// Verifica se o valor informado corresponde a uma Classe v&aacute;lida.
+    ///
+    /// @param valor CLasse
+    ///
 
     void ValidarClasse(string valor);
 };
@@ -71,14 +108,44 @@ inline string Classe::GetClasse(){
 
 //Classe Codigo de Agencia
 
+///
+/// Padr&atilde;o para representa&ccedil;&atilde;o de C&oacute;digo de Ag&ecirc;ncia.
+///
+/// Regras de formato:
+///
+/// - Valores de 4 d&iacute;gitos num&eacute;ricos, excluindo 0000, s&atilde;o considerados v&aacute;lidos.
+///
+
 class CodigoDeAgencia{
 public:
+
+    ///
+    /// Armazena valor de C&oacute;digo de Ag&ecirc;ncia caso seja v&aacute;lido.
+    ///
+    /// @param valor C&oacute;digo de Ag&ecirc;ncia
+    ///
+    /// @throw invalid_argument
+    ///
+
     void SetCodigoDeAgencia(string valor);
+
+    ///
+    /// Retorna valor de C&oacute;digo de Ag&ecirc;ncia.
+    ///
+    /// @return valor C&oacute;digo de Ag&ecirc;ncia
+    ///
+
     string GetCodigoDeAgencia();
 private:
     string valor;
     const static int kTamanhoDoValor = 4;
     inline const static string ValorNaoPermitido = "0000";
+
+    ///
+    /// Verifica se o valor informado corresponde a um C&oacute;digo de Ag&ecirc;ncia v&aacute;lido.
+    ///
+    /// @param valor C&oacute;digo de Ag&ecirc;ncia
+    ///
 
     void ValidarCodigoDeAgencia(string valor);
 };
