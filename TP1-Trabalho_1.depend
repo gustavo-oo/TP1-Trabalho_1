@@ -19,3 +19,18 @@
 	"testes.h"
 	"dominios.h"
 
+1601398350 source:c:\users\gusta\documents\programação\tp1-trabalho_1\main.cpp
+	<iostream>
+	"dominios.h"
+	"testes.h"
+
+1601401996 c:\users\gusta\documents\programação\tp1-trabalho_1\dominios.h
+	<stdexcept>
+
+1601398350 c:\users\gusta\documents\programação\tp1-trabalho_1\testes.h
+	"dominios.h"
+
+1601398350 source:c:\users\gusta\documents\programação\tp1-trabalho_1\testes.cpp
+	"testes.h"
+	"dominios.h"
+
