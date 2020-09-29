@@ -341,7 +341,7 @@ inline string Cpf::GetCpf(){
 ///
 /// <b> Regras de formato: </b>
 ///
-/// - <b> dd/mm/aaaa </b>, em que <b>"dd"</b> corresponde ao dia <b>(1 at&eacute; 31)</b>, <b>"mm"</b> o m&ecirc;s <b>(1 at&eacute; 12)</b>, e <b>"aaaa"</b> o ano <b>(2020 at&eacute; 2099)</b>.
+/// - <b> dd/mm/aaaa</b>, em que <b>"dd"</b> corresponde ao dia <b>(1 at&eacute; 31)</b>, <b>"mm"</b> o m&ecirc;s <b>(1 at&eacute; 12)</b>, e <b>"aaaa"</b> o ano <b>(2020 at&eacute; 2099)</b>.
 /// - S&atilde;o considerados anos bissextos.
 ///
 
@@ -450,7 +450,7 @@ inline string Emissor::GetEmissor(){
 ///
 /// <b> Regras de formato: </b>
 ///
-/// - Texto de <b>5 &agrave; 20 caracteres </b>, sendo aceitas <b>letras mai&uacute;sculas e min&uacute;sculas, d&iacute;gitos de 0 &agrave; 9</b>, e caracteres especiais <b>ponto e espa&ccedil;o.</b>
+/// - Texto de <b>5 &agrave; 20 caracteres</b>, sendo aceitas <b>letras mai&uacute;sculas e min&uacute;sculas, d&iacute;gitos de 0 &agrave; 9</b>, e caracteres especiais <b>ponto e espa&ccedil;o.</b>
 /// - S&oacute; podem haver <b>letras e d&iacute;gitos em sequ&ecirc;ncia.</b>
 /// - Em termos cujo <b>primeiro caractere &eacute; uma letra</b>, esta <b>deve ser escrita em mai&uacute;scula.</b>
 ///
@@ -496,7 +496,7 @@ inline string Endereco::GetEndereco(){
     return valor;
 }
 
-//Classe Hor�rio
+//Classe Horario
 
 class Horario{
 public:
@@ -523,7 +523,7 @@ inline string Horario::GetHorario(){
 ///
 /// <b> Regras de formato: </b>
 ///
-/// - Texto de <b>5 &agrave; 30 caracteres </b>, sendo aceitas <b>letras mai&uacute;sculas e min&uacute;sculas</b>, al&eacute;m do caractere especial <b>espa&ccedil;o</b></b>.
+/// - Texto de <b>5 &agrave; 30 caracteres</b>, sendo aceitas <b>letras mai&uacute;sculas e min&uacute;sculas</b>, al&eacute;m do caractere especial <b>espa&ccedil;o</b></b>.
 /// - Primeira letra de cada termo deve ser <b>mai&uacute;scula</b>.
 ///
 
@@ -567,7 +567,7 @@ inline string Nome::GetNome(){
     return valor;
 }
 
-//Classe N�mero
+//Classe Numero
 
 class Numero{
 public:
@@ -639,7 +639,7 @@ inline double Taxa::GetTaxa(){
     return valor;
 }
 
-//Classe Valor de Aplica��o
+//Classe Valor de Aplicacao
 
 class ValorDeAplicacao{
 public:
@@ -657,7 +657,7 @@ inline double ValorDeAplicacao::GetValorDeAplicacao(){
     return valor;
 }
 
-//Classe Valor M�nimo
+//Classe Valor Minimo
 
 class ValorMinimo{
 public:

@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1601397680 source:c:\users\gusta\desktop\tp1-trabalho_1\dominios.cpp
+	"dominios.h"
+	<iostream>
+	<string>
+
+1601398006 c:\users\gusta\desktop\tp1-trabalho_1\dominios.h
+	<stdexcept>
+
+1601397680 source:c:\users\gusta\desktop\tp1-trabalho_1\main.cpp
+	<iostream>
+	"dominios.h"
+	"testes.h"
+
+1601397680 c:\users\gusta\desktop\tp1-trabalho_1\testes.h
+	"dominios.h"
+
+1601397680 source:c:\users\gusta\desktop\tp1-trabalho_1\testes.cpp
+	"testes.h"
+	"dominios.h"
+
