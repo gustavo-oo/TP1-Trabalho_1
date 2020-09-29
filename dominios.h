@@ -10,12 +10,12 @@ using namespace std;
 ///
 /// <b> Regras de formato: </b>
 ///
-/// - Valores nos intervalos seguintes s&atilde;o considerados v&aacute;lidos: <br>
-/// <b>(1000000 at&eacute; 5999999)</b> e <b>(8000000 at&eacute; 8499999)</b> - S&atilde;o Paulo <br>
-/// <b>(20000000 at&eacute; 26600999)</b> - Rio de Janeiro <br>
-/// <b>(70000000 at&eacute; 70999999)</b> - Bras&iacute;lia <br>
-/// <b>(40000000 at&eacute; 41999999)</b> - Salvador <br>
-/// <b>(60000000 at&eacute; 60999999)</b> - Fortaleza
+/// - <b> Valores nos intervalos seguintes s&atilde;o considerados v&aacute;lidos: </b> <br>
+/// (1000000 at&eacute; 5999999) e (8000000 at&eacute; 8499999) - S&atilde;o Paulo <br>
+/// (20000000 at&eacute; 26600999) - Rio de Janeiro <br>
+/// (70000000 at&eacute; 70999999) - Bras&iacute;lia <br>
+/// (40000000 at&eacute; 41999999) - Salvador <br>
+/// (60000000 at&eacute; 60999999) - Fortaleza
 ///
 
 
@@ -51,8 +51,6 @@ private:
     ///
     /// @param valor CEP
     ///
-    /// @throw invalid_argument
-    ///
     void ValidarCep(int valor);
 };
 
@@ -65,10 +63,10 @@ inline int Cep::GetCep(){
 ///
 /// Padr&atilde;o para representa&ccedil;&atilde;o de Classe.
 ///
-/// <b> Regras de formato: </b>
+/// Regras de formato:
 ///
 /// - Os seguintes valores s&atilde;o considerados v&aacute;lidos: <br>
-/// <b>CDB, LCA, LCI, LF e LC.</b>
+/// CDB, LCA, LCI, LF e LC
 ///
 
 class Classe{
@@ -98,9 +96,7 @@ private:
     ///
     /// Verifica se o valor informado corresponde a uma Classe v&aacute;lida.
     ///
-    /// @param valor Classe
-    ///
-    /// @throw invalid_argument
+    /// @param valor CLasse
     ///
 
     void ValidarClasse(string valor);
@@ -115,9 +111,9 @@ inline string Classe::GetClasse(){
 ///
 /// Padr&atilde;o para representa&ccedil;&atilde;o de C&oacute;digo de Ag&ecirc;ncia.
 ///
-/// <b> Regras de formato: </b>
+/// Regras de formato:
 ///
-/// - Valores de <b>4 d&iacute;gitos num&eacute;ricos, excluindo 0000</b>, s&atilde;o considerados v&aacute;lidos.
+/// - Valores de 4 d&iacute;gitos num&eacute;ricos, excluindo 0000, s&atilde;o considerados v&aacute;lidos.
 ///
 
 class CodigoDeAgencia{
@@ -150,8 +146,6 @@ private:
     ///
     /// @param valor C&oacute;digo de Ag&ecirc;ncia
     ///
-    /// @throw invalid_argument
-    ///
 
     void ValidarCodigoDeAgencia(string valor);
 };
@@ -162,45 +156,14 @@ inline string CodigoDeAgencia::GetCodigoDeAgencia(){
 
 //Classe Codigo de Aplicacao
 
-///
-/// Padr&atilde;o para representa&ccedil;&atilde;o de C&oacute;digo de Aplica&ccedil;&atilde;o.
-///
-/// <b> Regras de formato: </b>
-///
-/// - Valores de <b>5 d&iacute;gitos num&eacute;ricos, excluindo 00000</b>, s&atilde;o considerados v&aacute;lidos.
-///
-
 class CodigoDeAplicacao{
 public:
-    ///
-    /// Armazena valor de C&oacute;digo de Aplica&ccedil;&atilde;o caso seja v&aacute;lido.
-    ///
-    /// @param valor C&oacute;digo de Aplica&ccedil;&atilde;o
-    ///
-    /// @throw invalid_argument
-    ///
-
     void SetCodigoDeAplicacao(string valor);
-
-    ///
-    /// Retorna valor de C&oacute;digo de Aplica&ccedil;&atilde;o.
-    ///
-    /// @return valor C&oacute;digo de Aplica&ccedil;&atilde;o
-    ///
-
     string GetCodigoDeAplicacao();
 private:
     string valor;
     const static int kTamanhoDoValor = 5;
     inline const static string ValorNaoPermitido = "00000";
-
-    ///
-    /// Verifica se o valor informado corresponde a um C&oacute;digo de Aplica&ccedil;&atilde;o v&aacute;lido.
-    ///
-    /// @param valor C&oacute;digo de Aplica&ccedil;&atilde;o
-    ///
-    /// @throw invalid_argument
-    ///
 
     void ValidarCodigoDeAplicacao(string valor);
 };
@@ -211,50 +174,13 @@ inline string CodigoDeAplicacao::GetCodigoDeAplicacao(){
 
 //Classe Codigo de Banco
 
-///
-/// Padr&atilde;o para representa&ccedil;&atilde;o de C&oacute;digo de Banco.
-///
-/// <b> Regras de formato: </b>
-///
-/// - Os seguintes valores s&atilde;o considerados v&aacute;lidos: <br>
-/// <b>341</b> - Ita&uacute; <br>
-/// <b>001</b> - Banco do Brasil <br>
-/// <b>237</b> - Banco Bradesco <br>
-/// <b>104</b> - Caixa Econ&ocirc;mica <br>
-/// <b>033</b> - Santander
-///
-
 class CodigoDeBanco{
 public:
-
-    ///
-    /// Armazena valor de C&oacute;digo de Banco caso seja v&aacute;lido.
-    ///
-    /// @param valor C&oacute;digo de Banco
-    ///
-    /// @throw invalid_argument
-    ///
-
     void SetCodigoDeBanco(int valor);
-
-    ///
-    /// Retorna valor de C&oacute;digo de Banco.
-    ///
-    /// @return valor C&oacute;digo de C&oacute;digo de Banco
-    ///
-
     int GetCodigoDeBanco();
 private:
     int valor;
     constexpr static int kValoresPermitidos[5] = {341, 001, 237, 104, 033}; //Itau, BB, Bradesco, Caixa, Santander
-
-    ///
-    /// Verifica se o valor informado corresponde a um C&oacute;digo de Banco v&aacute;lido.
-    ///
-    /// @param valor C&oacute;digo de Banco
-    ///
-    /// @throw invalid_argument
-    ///
 
     void ValidarCodigoDeBanco(int valor);
 };
@@ -265,46 +191,14 @@ inline int CodigoDeBanco::GetCodigoDeBanco(){
 
 //Classe Codigo de Produto
 
-///
-/// Padr&atilde;o para representa&ccedil;&atilde;o de C&oacute;digo de Produto.
-///
-/// <b> Regras de formato: </b>
-///
-/// - Valores de <b>3 d&iacute;gitos num&eacute;ricos, excluindo 000</b>, s&atilde;o considerados v&aacute;lidos.
-///
-
 class CodigoDeProduto{
 public:
-
-    ///
-    /// Armazena valor de C&oacute;digo de Produto caso seja v&aacute;lido.
-    ///
-    /// @param valor C&oacute;digo de Produto
-    ///
-    /// @throw invalid_argument
-    ///
-
     void SetCodigoDeProduto(string valor);
-
-    ///
-    /// Retorna valor de C&oacute;digo de Produto.
-    ///
-    /// @return valor C&oacute;digo de Produto.
-    ///
-
     string GetCodigoDeProduto();
 private:
     string valor;
     const static int kTamanhoDoValor = 3;
     inline const static string kValorNaoPermitido = "000";
-
-    ///
-    /// Verifica se o valor informado corresponde a um C&oacute;digo de Produto v&aacute;lido.
-    ///
-    /// @param valor C&oacute;digo de Produto
-    ///
-    /// @throw invalid_argument
-    ///
 
     void ValidarCodigoDeProduto(string valor);
 };
@@ -334,36 +228,11 @@ inline string Cpf::GetCpf(){
     return valor;
 }
 
-//Classe Data
-
-///
-/// Padr&atilde;o para representa&ccedil;&atilde;o de Data.
-///
-/// <b> Regras de formato: </b>
-///
-/// - <b> dd/mm/aaaa </b>, em que <b>"dd"</b> corresponde ao dia <b>(1 at&eacute; 31)</b>, <b>"mm"</b> o m&ecirc;s <b>(1 at&eacute; 12)</b>, e <b>"aaaa"</b> o ano <b>(2020 at&eacute; 2099)</b>.
-/// - S&atilde;o considerados anos bissextos.
-///
+//Classe CPF
 
 class Data{
 public:
-
-    ///
-    /// Armazena valor de Data caso seja v&aacute;lido.
-    ///
-    /// @param valor Data
-    ///
-    /// @throw invalid_argument
-    ///
-
     void SetData(string valor);
-
-    ///
-    /// Retorna valor de Data.
-    ///
-    /// @return valor Data.
-    ///
-
     string GetData();
 private:
     string valor;
@@ -373,14 +242,6 @@ private:
     constexpr static int kIntervaloAnosPermitidos[2] = {2020, 2099};
     const static int kPosicaoBarra1 = 2;
     const static int kPosicaoBarra2 = 4;
-
-    ///
-    /// Verifica se o valor informado corresponde a uma Data v&aacute;lida.
-    ///
-    /// @param valor Data
-    ///
-    /// @throw invalid_argument
-    ///
 
     void ValidarData(string valor);
 };
