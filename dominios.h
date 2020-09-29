@@ -10,12 +10,12 @@ using namespace std;
 ///
 /// <b> Regras de formato: </b>
 ///
-/// - <b> Valores nos intervalos seguintes s&atilde;o considerados v&aacute;lidos: </b> <br>
-/// (1000000 at&eacute; 5999999) e (8000000 at&eacute; 8499999) - S&atilde;o Paulo <br>
-/// (20000000 at&eacute; 26600999) - Rio de Janeiro <br>
-/// (70000000 at&eacute; 70999999) - Bras&iacute;lia <br>
-/// (40000000 at&eacute; 41999999) - Salvador <br>
-/// (60000000 at&eacute; 60999999) - Fortaleza
+/// - Valores nos intervalos seguintes s&atilde;o considerados v&aacute;lidos: <br>
+/// <b>(1000000 at&eacute; 5999999)</b> e <b>(8000000 at&eacute; 8499999)</b> - S&atilde;o Paulo <br>
+/// <b>(20000000 at&eacute; 26600999)</b> - Rio de Janeiro <br>
+/// <b>(70000000 at&eacute; 70999999)</b> - Bras&iacute;lia <br>
+/// <b>(40000000 at&eacute; 41999999)</b> - Salvador <br>
+/// <b>(60000000 at&eacute; 60999999)</b> - Fortaleza
 ///
 
 
@@ -51,6 +51,8 @@ private:
     ///
     /// @param valor CEP
     ///
+    /// @throw invalid_argument
+    ///
     void ValidarCep(int valor);
 };
 
@@ -63,10 +65,10 @@ inline int Cep::GetCep(){
 ///
 /// Padr&atilde;o para representa&ccedil;&atilde;o de Classe.
 ///
-/// Regras de formato:
+/// <b> Regras de formato: </b>
 ///
 /// - Os seguintes valores s&atilde;o considerados v&aacute;lidos: <br>
-/// CDB, LCA, LCI, LF e LC
+/// <b>CDB, LCA, LCI, LF e LC.</b>
 ///
 
 class Classe{
@@ -96,7 +98,9 @@ private:
     ///
     /// Verifica se o valor informado corresponde a uma Classe v&aacute;lida.
     ///
-    /// @param valor CLasse
+    /// @param valor Classe
+    ///
+    /// @throw invalid_argument
     ///
 
     void ValidarClasse(string valor);
@@ -111,9 +115,9 @@ inline string Classe::GetClasse(){
 ///
 /// Padr&atilde;o para representa&ccedil;&atilde;o de C&oacute;digo de Ag&ecirc;ncia.
 ///
-/// Regras de formato:
+/// <b> Regras de formato: </b>
 ///
-/// - Valores de 4 d&iacute;gitos num&eacute;ricos, excluindo 0000, s&atilde;o considerados v&aacute;lidos.
+/// - Valores de <b>4 d&iacute;gitos num&eacute;ricos, excluindo 0000</b>, s&atilde;o considerados v&aacute;lidos.
 ///
 
 class CodigoDeAgencia{
@@ -146,6 +150,8 @@ private:
     ///
     /// @param valor C&oacute;digo de Ag&ecirc;ncia
     ///
+    /// @throw invalid_argument
+    ///
 
     void ValidarCodigoDeAgencia(string valor);
 };
@@ -156,14 +162,45 @@ inline string CodigoDeAgencia::GetCodigoDeAgencia(){
 
 //Classe Codigo de Aplicacao
 
+///
+/// Padr&atilde;o para representa&ccedil;&atilde;o de C&oacute;digo de Aplica&ccedil;&atilde;o.
+///
+/// <b> Regras de formato: </b>
+///
+/// - Valores de <b>5 d&iacute;gitos num&eacute;ricos, excluindo 00000</b>, s&atilde;o considerados v&aacute;lidos.
+///
+
 class CodigoDeAplicacao{
 public:
+    ///
+    /// Armazena valor de C&oacute;digo de Aplica&ccedil;&atilde;o caso seja v&aacute;lido.
+    ///
+    /// @param valor C&oacute;digo de Aplica&ccedil;&atilde;o
+    ///
+    /// @throw invalid_argument
+    ///
+
     void SetCodigoDeAplicacao(string valor);
+
+    ///
+    /// Retorna valor de C&oacute;digo de Aplica&ccedil;&atilde;o.
+    ///
+    /// @return valor C&oacute;digo de Aplica&ccedil;&atilde;o
+    ///
+
     string GetCodigoDeAplicacao();
 private:
     string valor;
     const static int kTamanhoDoValor = 5;
     inline const static string ValorNaoPermitido = "00000";
+
+    ///
+    /// Verifica se o valor informado corresponde a um C&oacute;digo de Aplica&ccedil;&atilde;o v&aacute;lido.
+    ///
+    /// @param valor C&oacute;digo de Aplica&ccedil;&atilde;o
+    ///
+    /// @throw invalid_argument
+    ///
 
     void ValidarCodigoDeAplicacao(string valor);
 };
@@ -174,13 +211,50 @@ inline string CodigoDeAplicacao::GetCodigoDeAplicacao(){
 
 //Classe Codigo de Banco
 
+///
+/// Padr&atilde;o para representa&ccedil;&atilde;o de C&oacute;digo de Banco.
+///
+/// <b> Regras de formato: </b>
+///
+/// - Os seguintes valores s&atilde;o considerados v&aacute;lidos: <br>
+/// <b>341</b> - Ita&uacute; <br>
+/// <b>001</b> - Banco do Brasil <br>
+/// <b>237</b> - Banco Bradesco <br>
+/// <b>104</b> - Caixa Econ&ocirc;mica <br>
+/// <b>033</b> - Santander
+///
+
 class CodigoDeBanco{
 public:
+
+    ///
+    /// Armazena valor de C&oacute;digo de Banco caso seja v&aacute;lido.
+    ///
+    /// @param valor C&oacute;digo de Banco
+    ///
+    /// @throw invalid_argument
+    ///
+
     void SetCodigoDeBanco(int valor);
+
+    ///
+    /// Retorna valor de C&oacute;digo de Banco.
+    ///
+    /// @return valor C&oacute;digo de C&oacute;digo de Banco
+    ///
+
     int GetCodigoDeBanco();
 private:
     int valor;
     constexpr static int kValoresPermitidos[5] = {341, 001, 237, 104, 033}; //Itau, BB, Bradesco, Caixa, Santander
+
+    ///
+    /// Verifica se o valor informado corresponde a um C&oacute;digo de Banco v&aacute;lido.
+    ///
+    /// @param valor C&oacute;digo de Banco
+    ///
+    /// @throw invalid_argument
+    ///
 
     void ValidarCodigoDeBanco(int valor);
 };
@@ -191,14 +265,46 @@ inline int CodigoDeBanco::GetCodigoDeBanco(){
 
 //Classe Codigo de Produto
 
+///
+/// Padr&atilde;o para representa&ccedil;&atilde;o de C&oacute;digo de Produto.
+///
+/// <b> Regras de formato: </b>
+///
+/// - Valores de <b>3 d&iacute;gitos num&eacute;ricos, excluindo 000</b>, s&atilde;o considerados v&aacute;lidos.
+///
+
 class CodigoDeProduto{
 public:
+
+    ///
+    /// Armazena valor de C&oacute;digo de Produto caso seja v&aacute;lido.
+    ///
+    /// @param valor C&oacute;digo de Produto
+    ///
+    /// @throw invalid_argument
+    ///
+
     void SetCodigoDeProduto(string valor);
+
+    ///
+    /// Retorna valor de C&oacute;digo de Produto.
+    ///
+    /// @return valor C&oacute;digo de Produto.
+    ///
+
     string GetCodigoDeProduto();
 private:
     string valor;
     const static int kTamanhoDoValor = 3;
     inline const static string kValorNaoPermitido = "000";
+
+    ///
+    /// Verifica se o valor informado corresponde a um C&oacute;digo de Produto v&aacute;lido.
+    ///
+    /// @param valor C&oacute;digo de Produto
+    ///
+    /// @throw invalid_argument
+    ///
 
     void ValidarCodigoDeProduto(string valor);
 };
@@ -228,11 +334,36 @@ inline string Cpf::GetCpf(){
     return valor;
 }
 
-//Classe CPF
+//Classe Data
+
+///
+/// Padr&atilde;o para representa&ccedil;&atilde;o de Data.
+///
+/// <b> Regras de formato: </b>
+///
+/// - <b> dd/mm/aaaa </b>, em que <b>"dd"</b> corresponde ao dia <b>(1 at&eacute; 31)</b>, <b>"mm"</b> o m&ecirc;s <b>(1 at&eacute; 12)</b>, e <b>"aaaa"</b> o ano <b>(2020 at&eacute; 2099)</b>.
+/// - S&atilde;o considerados anos bissextos.
+///
 
 class Data{
 public:
+
+    ///
+    /// Armazena valor de Data caso seja v&aacute;lido.
+    ///
+    /// @param valor Data
+    ///
+    /// @throw invalid_argument
+    ///
+
     void SetData(string valor);
+
+    ///
+    /// Retorna valor de Data.
+    ///
+    /// @return valor Data.
+    ///
+
     string GetData();
 private:
     string valor;
@@ -243,6 +374,14 @@ private:
     const static int kPosicaoBarra1 = 2;
     const static int kPosicaoBarra2 = 4;
 
+    ///
+    /// Verifica se o valor informado corresponde a uma Data v&aacute;lida.
+    ///
+    /// @param valor Data
+    ///
+    /// @throw invalid_argument
+    ///
+
     void ValidarData(string valor);
 };
 
@@ -252,9 +391,35 @@ inline string Data::GetData(){
 
 //Classe Emissor
 
+///
+/// Padr&atilde;o para representa&ccedil;&atilde;o de Emissor.
+///
+/// <b> Regras de formato: </b>
+///
+/// - Texto de <b>5 &agrave; 30 caracteres</b>, sendo aceitas <b>letras mai&uacute;sculas e min&uacute;sculas, d&iacute;gitos de 0 &agrave; 9</b>, e caracteres especiais <b>" - ", ponto e espa&ccedil;o.</b>
+/// - S&oacute; podem haver <b>letras e d&iacute;gitos em sequ&ecirc;ncia.</b>
+/// - Em termos cujo <b>primeiro caractere &eacute; uma letra</b>, esta <b>deve ser escrita em mai&uacute;scula.</b>
+///
+
 class Emissor{
 public:
+
+    ///
+    /// Armazena valor de Emissor caso seja v&aacute;lido.
+    ///
+    /// @param valor Emissor
+    ///
+    /// @throw invalid_argument
+    ///
+
     void SetEmissor(string valor);
+
+    ///
+    /// Retorna valor de Emissor.
+    ///
+    /// @return valor Emissor.
+    ///
+
     string GetEmissor();
 private:
     string valor;
@@ -262,6 +427,14 @@ private:
     const static char kHifen = '-';
     const static char kPonto = '.';
     const static char kEspaco = ' ';
+
+    ///
+    /// Verifica se o valor informado corresponde a um Emissor v&aacute;lido.
+    ///
+    /// @param valor Emissor
+    ///
+    /// @throw invalid_argument
+    ///
 
     void ValidarEmissor(string valor);
 };
@@ -272,15 +445,49 @@ inline string Emissor::GetEmissor(){
 
 //Classe Endereco
 
+///
+/// Padr&atilde;o para representa&ccedil;&atilde;o de Endere&ccedil;o.
+///
+/// <b> Regras de formato: </b>
+///
+/// - Texto de <b>5 &agrave; 20 caracteres </b>, sendo aceitas <b>letras mai&uacute;sculas e min&uacute;sculas, d&iacute;gitos de 0 &agrave; 9</b>, e caracteres especiais <b>ponto e espa&ccedil;o.</b>
+/// - S&oacute; podem haver <b>letras e d&iacute;gitos em sequ&ecirc;ncia.</b>
+/// - Em termos cujo <b>primeiro caractere &eacute; uma letra</b>, esta <b>deve ser escrita em mai&uacute;scula.</b>
+///
+
 class Endereco{
 public:
+
+    ///
+    /// Armazena valor de Endere&ccedil;o caso seja v&aacute;lido.
+    ///
+    /// @param valor Endere&ccedil;o
+    ///
+    /// @throw invalid_argument
+    ///
+
     void SetEndereco(string valor);
+
+    ///
+    /// Retorna valor de Endere&ccedil;o.
+    ///
+    /// @return valor Endere&ccedil;o.
+    ///
+
     string GetEndereco();
 private:
     string valor;
     constexpr static int kIntervaloDeCaracteres[2] = {5, 20};
     const static char kPonto = '.';
     const static char kEspaco = ' ';
+
+    ///
+    /// Verifica se o valor informado corresponde a um Endere&ccedil;o v&aacute;lido.
+    ///
+    /// @param valor Endere&ccedil;o
+    ///
+    /// @throw invalid_argument
+    ///
 
     void ValidarEndereco(string valor);
 };
@@ -289,7 +496,7 @@ inline string Endereco::GetEndereco(){
     return valor;
 }
 
-//Classe Horário
+//Classe Horï¿½rio
 
 class Horario{
 public:
@@ -311,14 +518,47 @@ inline string Horario::GetHorario(){
 
 //Classe Nome
 
+///
+/// Padr&atilde;o para representa&ccedil;&atilde;o de Nome.
+///
+/// <b> Regras de formato: </b>
+///
+/// - Texto de <b>5 &agrave; 30 caracteres </b>, sendo aceitas <b>letras mai&uacute;sculas e min&uacute;sculas</b>, al&eacute;m do caractere especial <b>espa&ccedil;o</b></b>.
+/// - Primeira letra de cada termo deve ser <b>mai&uacute;scula</b>.
+///
+
 class Nome{
 public:
+
+    ///
+    /// Armazena valor de Nome caso seja v&aacute;lido.
+    ///
+    /// @param valor Nome
+    ///
+    /// @throw invalid_argument
+    ///
+
     void SetNome(string valor);
+
+    ///
+    /// Retorna valor de Nome.
+    ///
+    /// @return valor Nome.
+    ///
+
     string GetNome();
 private:
     string valor;
     constexpr static int kIntervaloDeCaracteres[2] = {5, 30};
     const static char kEspaco = ' ';
+
+    ///
+    /// Verifica se o valor informado corresponde a um Nome v&aacute;lido.
+    ///
+    /// @param valor Nome
+    ///
+    /// @throw invalid_argument
+    ///
 
     void ValidarNome(string valor);
 };
@@ -327,7 +567,7 @@ inline string Nome::GetNome(){
     return valor;
 }
 
-//Classe Número
+//Classe Nï¿½mero
 
 class Numero{
 public:
@@ -399,7 +639,7 @@ inline double Taxa::GetTaxa(){
     return valor;
 }
 
-//Classe Valor de Aplicação
+//Classe Valor de Aplicaï¿½ï¿½o
 
 class ValorDeAplicacao{
 public:
@@ -417,7 +657,7 @@ inline double ValorDeAplicacao::GetValorDeAplicacao(){
     return valor;
 }
 
-//Classe Valor Mínimo
+//Classe Valor Mï¿½nimo
 
 class ValorMinimo{
 public:
