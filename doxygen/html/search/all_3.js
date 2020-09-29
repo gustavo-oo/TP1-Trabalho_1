@@ -6,5 +6,6 @@ var searchData=
   ['getcodigodeaplicacao',['GetCodigoDeAplicacao',['../class_codigo_de_aplicacao.html#a4a8ab0556fe8bba26d529bd21573347b',1,'CodigoDeAplicacao']]],
   ['getcodigodebanco',['GetCodigoDeBanco',['../class_codigo_de_banco.html#ac623f12e8369df61b82405aaab3bbff5',1,'CodigoDeBanco']]],
   ['getcodigodeproduto',['GetCodigoDeProduto',['../class_codigo_de_produto.html#a3b4bcd7b139a64da558aea867aba371a',1,'CodigoDeProduto']]],
-  ['getdata',['GetData',['../class_data.html#a3123863b3b3e535a6c843626a3f5ec8a',1,'Data']]]
+  ['getdata',['GetData',['../class_data.html#a3123863b3b3e535a6c843626a3f5ec8a',1,'Data']]],
+  ['getemissor',['GetEmissor',['../class_emissor.html#a6ee9a803057e85f4605b8f835f639231',1,'Emissor']]]
 ];

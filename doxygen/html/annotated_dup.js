@@ -8,7 +8,7 @@ var annotated_dup =
     [ "CodigoDeProduto", "class_codigo_de_produto.html", "class_codigo_de_produto" ],
     [ "Cpf", "class_cpf.html", null ],
     [ "Data", "class_data.html", "class_data" ],
-    [ "Emissor", "class_emissor.html", null ],
+    [ "Emissor", "class_emissor.html", "class_emissor" ],
     [ "Endereco", "class_endereco.html", null ],
     [ "Horario", "class_horario.html", null ],
     [ "Nome", "class_nome.html", null ],

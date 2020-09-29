@@ -391,9 +391,35 @@ inline string Data::GetData(){
 
 //Classe Emissor
 
+///
+/// Padr&atilde;o para representa&ccedil;&atilde;o de Emissor.
+///
+/// <b> Regras de formato: </b>
+///
+/// - Texto de <b>5 &agrave; 30 caracteres</b>, sendo aceitas <b>letras mai&uacute;sculas e min&uacute;sculas, d&iacute;gitos de 0 &agrave; 9</b>, e caracteres especiais <b>" - ", ponto e espa&ccedil;o.</b>
+/// - S&oacute; podem haver <b>letras e d&iacute;gitos em sequ&ecirc;ncia.</b>
+/// - Em termos cujo <b>primeiro caractere &eacute; uma letra</b>, esta <b>deve ser escrita em mai&uacute;scula.</b>
+///
+
 class Emissor{
 public:
+
+    ///
+    /// Armazena valor de Emissor caso seja v&aacute;lido.
+    ///
+    /// @param valor Emissor
+    ///
+    /// @throw invalid_argument
+    ///
+
     void SetEmissor(string valor);
+
+    ///
+    /// Retorna valor de Emissor.
+    ///
+    /// @return valor Emissor.
+    ///
+
     string GetEmissor();
 private:
     string valor;
@@ -401,6 +427,14 @@ private:
     const static char kHifen = '-';
     const static char kPonto = '.';
     const static char kEspaco = ' ';
+
+    ///
+    /// Verifica se o valor informado corresponde a um Emissor v&aacute;lido.
+    ///
+    /// @param valor Emissor
+    ///
+    /// @throw invalid_argument
+    ///
 
     void ValidarEmissor(string valor);
 };
@@ -410,6 +444,14 @@ inline string Emissor::GetEmissor(){
 }
 
 //Classe Endereco
+
+///
+/// Padr&atilde;o para representa&ccedil;&atilde;o de Endere&ccedil;o.
+///
+/// <b> Regras de formato: </b>
+///
+/// - Texto de <b>5 &agrave; 20 caracteres </b>, sendo aceitas <b>letras mai&uacute;sculas e min&uacute;sculas, d&iacute;gitos de 0 &agrave; 9</b>, e caracteres especiais <b>ponto e espa&ccedil;o.</b>
+///
 
 class Endereco{
 public:
