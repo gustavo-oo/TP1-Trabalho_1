@@ -104,6 +104,8 @@ $(document).ready(function(){initNavTree('class_endereco.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="class_endereco-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Endereco Class Reference</div>  </div>
@@ -111,13 +113,120 @@ $(document).ready(function(){initNavTree('class_endereco.html','');});
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="dominios_8h_source.html">dominios.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aba0148859d15bfd203d2f71c62f98187"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_endereco.html#aba0148859d15bfd203d2f71c62f98187">SetEndereco</a> (string valor)</td></tr>
+<tr class="separator:aba0148859d15bfd203d2f71c62f98187"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3739ae70f938b2f28cbf58b465d6bbff"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_endereco.html#a3739ae70f938b2f28cbf58b465d6bbff">GetEndereco</a> ()</td></tr>
+<tr class="separator:a3739ae70f938b2f28cbf58b465d6bbff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:acb05e38d42867e3a4284631886d1f23a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_endereco.html#acb05e38d42867e3a4284631886d1f23a">ValidarEndereco</a> (string valor)</td></tr>
+<tr class="separator:acb05e38d42867e3a4284631886d1f23a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Padr&atilde;o para representa&ccedil;&atilde;o de Endere&ccedil;o.</p>
 <p><b> Regras de formato: </b></p>
 <ul>
-<li>Texto de <b>5 &agrave; 20 caracteres </b>, sendo aceitas <b>letras mai&uacute;sculas e min&uacute;sculas, d&iacute;gitos de 0 &agrave; 9</b>, e caracteres especiais <b>ponto e espa&ccedil;o.</b> </li>
+<li>Texto de <b>5 &agrave; 20 caracteres </b>, sendo aceitas <b>letras mai&uacute;sculas e min&uacute;sculas, d&iacute;gitos de 0 &agrave; 9</b>, e caracteres especiais <b>ponto e espa&ccedil;o.</b></li>
+<li>S&oacute; podem haver <b>letras e d&iacute;gitos em sequ&ecirc;ncia.</b></li>
+<li>Em termos cujo <b>primeiro caractere &eacute; uma letra</b>, esta <b>deve ser escrita em mai&uacute;scula.</b> </li>
 </ul>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a3739ae70f938b2f28cbf58b465d6bbff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Endereco::GetEndereco </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Retorna valor de Endere&ccedil;o.</p>
+<dl class="section return"><dt>Returns</dt><dd>valor Endere&ccedil;o. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aba0148859d15bfd203d2f71c62f98187"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Endereco::SetEndereco </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>valor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Armazena valor de Endere&ccedil;o caso seja v&aacute;lido.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">valor</td><td>Endere&ccedil;o</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="acb05e38d42867e3a4284631886d1f23a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Endereco::ValidarEndereco </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>valor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Verifica se o valor informado corresponde a um Endere&ccedil;o v&aacute;lido.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">valor</td><td>Endere&ccedil;o</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="dominios_8h_source.html">dominios.h</a></li>
 <li>dominios.cpp</li>
 </ul>
@@ -127,7 +236,7 @@ $(document).ready(function(){initNavTree('class_endereco.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_endereco.html">Endereco</a></li>
-    <li class="footer">Generated on Tue Sep 29 2020 12:07:01 for Produtos_de_Investimento by
+    <li class="footer">Generated on Tue Sep 29 2020 12:45:34 for Produtos_de_Investimento by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>
