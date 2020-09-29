@@ -39,6 +39,7 @@ public:
 
     int GetCep();
 private:
+
     int valor;
     constexpr static int kIntervalosPermitidosSaoPaulo[2][2] ={{1000000, 5999999} , {8000000, 8499999}};
     constexpr static int kIntervaloPermitidoRioDeJaneiro[2] = {20000000, 26600999};
@@ -46,13 +47,6 @@ private:
     constexpr static int kIntervaloPermitidoSalvador[2] = {40000000, 41999999};
     constexpr static int kIntervaloPermitidoFortaleza[2] = {60000000, 60999999};
 
-    ///
-    /// Verifica se o valor informado corresponde a um CEP v&aacute;lido.
-    ///
-    /// @param valor CEP
-    ///
-    /// @throw invalid_argument
-    ///
     void ValidarCep(int valor);
 };
 
@@ -94,14 +88,6 @@ public:
 private:
     string valor;
     inline const static string kValoresPermitidos[5] = {"CDB", "LCA", "LCI", "LF", "LC"};
-
-    ///
-    /// Verifica se o valor informado corresponde a uma Classe v&aacute;lida.
-    ///
-    /// @param valor Classe
-    ///
-    /// @throw invalid_argument
-    ///
 
     void ValidarClasse(string valor);
 };
@@ -145,14 +131,6 @@ private:
     const static int kTamanhoDoValor = 4;
     inline const static string ValorNaoPermitido = "0000";
 
-    ///
-    /// Verifica se o valor informado corresponde a um C&oacute;digo de Ag&ecirc;ncia v&aacute;lido.
-    ///
-    /// @param valor C&oacute;digo de Ag&ecirc;ncia
-    ///
-    /// @throw invalid_argument
-    ///
-
     void ValidarCodigoDeAgencia(string valor);
 };
 
@@ -193,14 +171,6 @@ private:
     string valor;
     const static int kTamanhoDoValor = 5;
     inline const static string ValorNaoPermitido = "00000";
-
-    ///
-    /// Verifica se o valor informado corresponde a um C&oacute;digo de Aplica&ccedil;&atilde;o v&aacute;lido.
-    ///
-    /// @param valor C&oacute;digo de Aplica&ccedil;&atilde;o
-    ///
-    /// @throw invalid_argument
-    ///
 
     void ValidarCodigoDeAplicacao(string valor);
 };
@@ -248,14 +218,6 @@ private:
     int valor;
     constexpr static int kValoresPermitidos[5] = {341, 001, 237, 104, 033}; //Itau, BB, Bradesco, Caixa, Santander
 
-    ///
-    /// Verifica se o valor informado corresponde a um C&oacute;digo de Banco v&aacute;lido.
-    ///
-    /// @param valor C&oacute;digo de Banco
-    ///
-    /// @throw invalid_argument
-    ///
-
     void ValidarCodigoDeBanco(int valor);
 };
 
@@ -297,14 +259,6 @@ private:
     string valor;
     const static int kTamanhoDoValor = 3;
     inline const static string kValorNaoPermitido = "000";
-
-    ///
-    /// Verifica se o valor informado corresponde a um C&oacute;digo de Produto v&aacute;lido.
-    ///
-    /// @param valor C&oacute;digo de Produto
-    ///
-    /// @throw invalid_argument
-    ///
 
     void ValidarCodigoDeProduto(string valor);
 };
@@ -374,14 +328,6 @@ private:
     const static int kPosicaoBarra1 = 2;
     const static int kPosicaoBarra2 = 4;
 
-    ///
-    /// Verifica se o valor informado corresponde a uma Data v&aacute;lida.
-    ///
-    /// @param valor Data
-    ///
-    /// @throw invalid_argument
-    ///
-
     void ValidarData(string valor);
 };
 
@@ -428,14 +374,6 @@ private:
     const static char kPonto = '.';
     const static char kEspaco = ' ';
 
-    ///
-    /// Verifica se o valor informado corresponde a um Emissor v&aacute;lido.
-    ///
-    /// @param valor Emissor
-    ///
-    /// @throw invalid_argument
-    ///
-
     void ValidarEmissor(string valor);
 };
 
@@ -480,14 +418,6 @@ private:
     constexpr static int kIntervaloDeCaracteres[2] = {5, 20};
     const static char kPonto = '.';
     const static char kEspaco = ' ';
-
-    ///
-    /// Verifica se o valor informado corresponde a um Endere&ccedil;o v&aacute;lido.
-    ///
-    /// @param valor Endere&ccedil;o
-    ///
-    /// @throw invalid_argument
-    ///
 
     void ValidarEndereco(string valor);
 };
@@ -551,14 +481,6 @@ private:
     string valor;
     constexpr static int kIntervaloDeCaracteres[2] = {5, 30};
     const static char kEspaco = ' ';
-
-    ///
-    /// Verifica se o valor informado corresponde a um Nome v&aacute;lido.
-    ///
-    /// @param valor Nome
-    ///
-    /// @throw invalid_argument
-    ///
 
     void ValidarNome(string valor);
 };

@@ -268,15 +268,11 @@ void Emissor::SetEmissor(string valor){
 //Funcoes da Classe: Endereco
 
 void Endereco::ValidarEndereco(string valor){
-    //1º verificar quantidade de caracteres
-    if(valor.length() >= kIntervaloDeCaracteres[0] and valor.length() <= kIntervaloDeCaracteres[1]){
-    //Teste feito sempre analisando o caractere anterior:
-    //So numeros e letras podem estar em sequencia, sendo aceitos letras maisculas e minusculas, numeros, ponto e espaco
-        for(int i = 0; i < valor.length(); i++){
+    if(valor.length() >= kIntervaloDeCaracteres[0] and valor.length() <= kIntervaloDeCaracteres[1]){ //1º verificar quantidade de caracteres
+        for(int i = 0; i < valor.length(); i++){ //Verificação de formato
             if(!isdigit(valor[i]) and !isalpha(valor[i]) and valor[i] != kPonto and valor[i] != kEspaco){
                 throw invalid_argument("Argumento Emissor Invalido");
             }
-            //Como não tem caractere anterior ao 1º, a verificação é um pouco diferente
             if(i == 0){
                 if(isalpha(valor[i])){
                    if(!isupper(valor[i])){
@@ -284,9 +280,7 @@ void Endereco::ValidarEndereco(string valor){
                     }
                 }
             }else{
-                //Verificação de carecteres após o 1º
-                //Se o caractere atual é uma letra e o anterior um espaço, a letra deve ser maiuscula
-                if(isalpha(valor[i])){
+                if(isalpha(valor[i])){ //Se o caractere atual é uma letra e o anterior um espaço, a letra deve ser maiuscula
                     if(valor[i-1] == kEspaco){
                         if(!isupper(valor[i])){
                             throw invalid_argument("Argumento Emissor Invalido");
