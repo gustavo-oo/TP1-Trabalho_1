@@ -104,11 +104,83 @@ $(document).ready(function(){initNavTree('class_horario.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_horario-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Horario Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="dominios_8h_source.html">dominios.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:abd37f359812ac71324e625dab489ee08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horario.html#abd37f359812ac71324e625dab489ee08">SetHorario</a> (string valor)</td></tr>
+<tr class="separator:abd37f359812ac71324e625dab489ee08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add1976ee4799f5bf399dcc143b48f01e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_horario.html#add1976ee4799f5bf399dcc143b48f01e">GetHorario</a> ()</td></tr>
+<tr class="separator:add1976ee4799f5bf399dcc143b48f01e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Padr&atilde;o para representa&ccedil;&atilde;o de Hor&aacute;rio.</p>
+<p><b> Regras de formato: </b></p>
+<ul>
+<li><b> XY:ZW</b>, em que <b>"XY"</b> corresponde &agrave; hora <b>(13 at&eacute; 17)</b> e <b>"XW"</b> aos minutos<b> (00 at&eacute; 59)</b>. </li>
+</ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="add1976ee4799f5bf399dcc143b48f01e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Horario::GetHorario </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Retorna valor de Hor&aacute;rio.</p>
+<dl class="section return"><dt>Returns</dt><dd>valor Hor&aacute;rio. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abd37f359812ac71324e625dab489ee08"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Horario::SetHorario </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>valor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Armazena valor de Hor&aacute;rio caso seja v&aacute;lido.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">valor</td><td>Hor&aacute;rio</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="dominios_8h_source.html">dominios.h</a></li>
 <li>dominios.cpp</li>
@@ -119,7 +191,7 @@ $(document).ready(function(){initNavTree('class_horario.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_horario.html">Horario</a></li>
-    <li class="footer">Generated on Tue Sep 29 2020 15:02:52 for Produtos_de_Investimento by
+    <li class="footer">Generated on Tue Sep 29 2020 20:59:59 for Produtos_de_Investimento by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>
