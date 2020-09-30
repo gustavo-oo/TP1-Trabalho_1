@@ -34,3 +34,23 @@
 	"testes.h"
 	"dominios.h"
 
+1601410060 source:c:\users\david\documents\unb\2020.1\tp1\trabalho 1\tp1-trabalho_1\dominios.cpp
+	"dominios.h"
+	<iostream>
+	<string>
+
+1601410060 c:\users\david\documents\unb\2020.1\tp1\trabalho 1\tp1-trabalho_1\dominios.h
+	<stdexcept>
+
+1601238620 source:c:\users\david\documents\unb\2020.1\tp1\trabalho 1\tp1-trabalho_1\main.cpp
+	<iostream>
+	"dominios.h"
+	"testes.h"
+
+1601238665 c:\users\david\documents\unb\2020.1\tp1\trabalho 1\tp1-trabalho_1\testes.h
+	"dominios.h"
+
+1601238561 source:c:\users\david\documents\unb\2020.1\tp1\trabalho 1\tp1-trabalho_1\testes.cpp
+	"testes.h"
+	"dominios.h"
+

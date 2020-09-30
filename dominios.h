@@ -150,6 +150,7 @@ inline string CodigoDeAgencia::GetCodigoDeAgencia(){
 
 class CodigoDeAplicacao{
 public:
+
     ///
     /// Armazena valor de C&oacute;digo de Aplica&ccedil;&atilde;o caso seja v&aacute;lido.
     ///
@@ -210,7 +211,7 @@ public:
     ///
     /// Retorna valor de C&oacute;digo de Banco.
     ///
-    /// @return valor C&oacute;digo de C&oacute;digo de Banco
+    /// @return valor C&oacute;digo de Banco
     ///
 
     int GetCodigoDeBanco();
@@ -269,9 +270,34 @@ inline string CodigoDeProduto::GetCodigoDeProduto(){
 
 //Classe CPF
 
+///
+/// Padr&atilde;o para representa&ccedil;&atilde;o de CPF.
+///
+/// <b> Regras de formato: </b>
+///
+/// - <b>XXX.XXX.XXX-XX</b>, em que <b>"X"</b> &eacute; d&iacute;gito num&eacute;rico(0 - 9), sendo os &uacute;ltimos dois os <b>d&iacute;gitos verificadores</b> do CPF.
+/// - Algor&iacute;timo utilizado para calcular d&iacute;gitos verificadores pode ser encontrado em http://ghiorzi.org/DVnew.htm na se&ccedil;&atilde;o <b>notas</b>.
+///
+
 class Cpf{
 public:
+
+    ///
+    /// Armazena valor de CPF caso seja v&aacute;lido.
+    ///
+    /// @param valor CPF
+    ///
+    /// @throw invalid_argument
+    ///
+
     void SetCpf(string valor);
+
+    ///
+    /// Retorna valor de CPF.
+    ///
+    /// @return valor CPF
+    ///
+
     string GetCpf();
 private:
     string valor;
@@ -428,9 +454,35 @@ inline string Endereco::GetEndereco(){
 
 //Classe Horario
 
+
+///
+/// Padr&atilde;o para representa&ccedil;&atilde;o de Hor&aacute;rio.
+///
+/// <b> Regras de formato: </b>
+///
+/// - <b> XY:ZW</b>, em que <b>"XY"</b> corresponde &agrave; hora <b>(13 at&eacute; 17)</b> e <b>"XW"</b> aos minutos<b> (00 at&eacute; 59)</b>.
+///
+
+
 class Horario{
 public:
+
+    ///
+    /// Armazena valor de Hor&aacute;rio caso seja v&aacute;lido.
+    ///
+    /// @param valor Hor&aacute;rio
+    ///
+    /// @throw invalid_argument
+    ///
+
     void SetHorario(string valor);
+
+    ///
+    /// Retorna valor de Hor&aacute;rio.
+    ///
+    /// @return valor Hor&aacute;rio.
+    ///
+
     string GetHorario();
 private:
     string valor;
@@ -491,9 +543,34 @@ inline string Nome::GetNome(){
 
 //Classe Numero
 
+///
+/// Padr&atilde;o para representa&ccedil;&atilde;o de N&uacute;mero.
+///
+/// <b> Regras de formato: </b>
+///
+/// - <b>XXXXXX-Y</b>, em que <b>"X"</b> e <b>"Y"</b> s&atilde;o d&iacute;gitos num&eacute;ricos(0 - 9).
+/// - sendo <b>"Y"</b> o <b>d&iacute;gito verificador</b> do n&uacute;mero.
+/// - Algor&iacute;timo utilizado para calcular d&iacute;gito verificador foi a <b>rotina do M&oacute;dulo 11</b>, cuja descri&ccedil;&atilde;o pode ser encontrada em https://pt.wikipedia.org/wiki/D%C3%ADgito_verificador#M%C3%B3dulo_11.
+///
+
 class Numero{
 public:
+
+    ///
+    /// Armazena valor de N&uacute;mero caso seja v&aacute;lido.
+    ///
+    /// @param valor N&uacute;mero
+    ///
+    /// @throw invalid_argument
+    ///
+
     void SetNumero(string valor);
+
+    ///
+    /// Retorna valor de N&uacute;mero.
+    ///
+    /// @return valor N&uacute;mero
+    ///
     string GetNumero();
 
 private:
@@ -511,9 +588,33 @@ inline string Numero::GetNumero(){
 
 //Classe Prazo
 
+///
+/// Padr&atilde;o para representa&ccedil;&atilde;o de Prazo.
+///
+/// <b> Regras de formato: </b>
+///
+/// - Os seguintes valores, em meses, s&atilde;o considerados v&aacute;lidos: <b>6</b>, <b>12</b>, <b>18</b>, <b>24</b>, <b>30<b/>, <b>36</b>, <b>42</b>, <b>48</b>, <b>54</b>, <b>60</b>, <b>66</b> ou <b>72</b>
+///
+
 class Prazo{
 public:
+
+    ///
+    /// Armazena valor de Prazo caso seja v&aacute;lido.
+    ///
+    /// @param valor Prazo
+    ///
+    /// @throw invalid_argument
+    ///
+
     void SetPrazo(int valor);
+
+    ///
+    /// Retorna valor de Prazo.
+    ///
+    /// @return valor Prazo
+    ///
+
     int GetPrazo();
 private:
     int valor;
@@ -528,9 +629,33 @@ inline int Prazo::GetPrazo(){
 
 //Classe Senha
 
+///
+/// Padr&atilde;o para representa&ccedil;&atilde;o de Senha.
+///
+/// <b> Regras de formato: </b>
+///
+/// - <b>XXXXXX</b>, em que cada <b>"X"</b> &eacute; d&iacute;gito num&eacute;rico(0 - 9) e n&atilde;o h&aacute; d&iacute;gito repetido.
+///
+
 class Senha{
 public:
+
+    ///
+    /// Armazena valor de Senha caso seja v&aacute;lido.
+    ///
+    /// @param valor Senha
+    ///
+    /// @throw invalid_argument
+    ///
+
     void SetSenha(string valor);
+
+    ///
+    /// Retorna valor de Senha.
+    ///
+    /// @return valor Senha
+    ///
+
     string GetSenha();
 private:
     string valor;
@@ -545,9 +670,33 @@ inline string Senha::GetSenha(){
 
 //Classe Taxa
 
+///
+/// Padr&atilde;o para representa&ccedil;&atilde;o de Taxa.
+///
+/// <b> Regras de formato: </b>
+///
+/// - Valores, em % ao ano, na faixa de <b>0 a 200<b>.
+///
+
 class Taxa{
 public:
+
+    ///
+    /// Armazena valor de Taxa caso seja v&aacute;lido.
+    ///
+    /// @param valor Taxa
+    ///
+    /// @throw invalid_argument
+    ///
+
     void SetTaxa(double valor);
+
+    ///
+    /// Retorna valor de Taxa.
+    ///
+    /// @return valor Taxa.
+    ///
+
     double GetTaxa();
 private:
     double valor;
@@ -563,9 +712,33 @@ inline double Taxa::GetTaxa(){
 
 //Classe Valor de Aplicacao
 
+///
+/// Padr&atilde;o para representa&ccedil;&atilde;o de Valor de Aplica&ccedil;&atilde;o.
+///
+/// <b> Regras de formato: </b>
+///
+/// - Valores, em reais, na faixa de <b>0 a 1.000.000,00<b>.
+///
+
 class ValorDeAplicacao{
 public:
+
+    ///
+    /// Armazena valor de Valor de Aplica&ccedil;&atilde;o caso seja v&aacute;lido.
+    ///
+    /// @param valor Valor de Aplica&ccedil;&atilde;o
+    ///
+    /// @throw invalid_argument
+    ///
+
     void SetValorDeAplicacao(double valor);
+
+    ///
+    /// Retorna valor de Valor de Aplica&ccedil;&atilde;o.
+    ///
+    /// @return valor Valor de Aplica&ccedil;&atilde;o
+    ///
+
     double GetValorDeAplicacao();
 private:
     double valor;
@@ -581,9 +754,34 @@ inline double ValorDeAplicacao::GetValorDeAplicacao(){
 
 //Classe Valor Minimo
 
+///
+/// Padr&atilde;o para representa&ccedil;&atilde;o de Valor M&iacute;nimo.
+///
+/// <b> Regras de formato: </b>
+///
+/// - Os seguintes valores, em reais, s&atilde;o considerados v&aacute;lidos: <b>1000</b>, <b>5000</b>, <b>10000</b> e <b>50000</b>.
+///
+
+
 class ValorMinimo{
 public:
+
+    ///
+    /// Armazena valor de Valor m&iacute;nimo caso seja v&aacute;lido.
+    ///
+    /// @param valor Valor M&iacute;nimo
+    ///
+    /// @throw invalid_argument
+    ///
+
     void SetValorMinimo(double valor);
+
+    ///
+    /// Retorna valor de Valor m&iacute;nimo.
+    ///
+    /// @return valor Valor m&iacute;nimo
+    ///
+
     double GetValorMinimo();
 private:
     double valor;

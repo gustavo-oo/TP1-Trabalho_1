@@ -104,11 +104,85 @@ $(document).ready(function(){initNavTree('class_numero.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_numero-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Numero Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="dominios_8h_source.html">dominios.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a599feb6403506a7d07b2b35ca8f69f7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_numero.html#a599feb6403506a7d07b2b35ca8f69f7a">SetNumero</a> (string valor)</td></tr>
+<tr class="separator:a599feb6403506a7d07b2b35ca8f69f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a506f75b712678dd7f30cb93702af0dac"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_numero.html#a506f75b712678dd7f30cb93702af0dac">GetNumero</a> ()</td></tr>
+<tr class="separator:a506f75b712678dd7f30cb93702af0dac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Padr&atilde;o para representa&ccedil;&atilde;o de N&uacute;mero.</p>
+<p><b> Regras de formato: </b></p>
+<ul>
+<li><b>XXXXXX-Y</b>, em que <b>"X"</b> e <b>"Y"</b> s&atilde;o d&iacute;gitos num&eacute;ricos(0 - 9).</li>
+<li>sendo <b>"Y"</b> o <b>d&iacute;gito verificador</b> do n&uacute;mero.</li>
+<li>Algor&iacute;timo utilizado para calcular d&iacute;gito verificador foi a <b>rotina do M&oacute;dulo 11</b>, cuja descri&ccedil;&atilde;o pode ser encontrada em <a href="https://pt.wikipedia.org/wiki/D%C3%ADgito_verificador#M%C3%B3dulo_11">https://pt.wikipedia.org/wiki/D%C3%ADgito_verificador#M%C3%B3dulo_11</a>. </li>
+</ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a506f75b712678dd7f30cb93702af0dac"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Numero::GetNumero </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Retorna valor de N&uacute;mero.</p>
+<dl class="section return"><dt>Returns</dt><dd>valor N&uacute;mero </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a599feb6403506a7d07b2b35ca8f69f7a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Numero::SetNumero </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>valor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Armazena valor de N&uacute;mero caso seja v&aacute;lido.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">valor</td><td>N&uacute;mero</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">invalid_argument</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="dominios_8h_source.html">dominios.h</a></li>
 <li>dominios.cpp</li>
@@ -119,7 +193,7 @@ $(document).ready(function(){initNavTree('class_numero.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_numero.html">Numero</a></li>
-    <li class="footer">Generated on Tue Sep 29 2020 15:02:53 for Produtos_de_Investimento by
+    <li class="footer">Generated on Tue Sep 29 2020 20:59:59 for Produtos_de_Investimento by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.11 </li>
   </ul>
