@@ -19,12 +19,12 @@
 	"testes.h"
 	"dominios.h"
 
-1601398350 source:c:\users\gusta\documents\programação\tp1-trabalho_1\main.cpp
+1603653306 source:c:\users\gusta\documents\programação\tp1-trabalho_1\main.cpp
 	<iostream>
-	"dominios.h"
-	"testes.h"
+	"testes_dominios.h"
+	"testes_entidades.h"
 
-1601401996 c:\users\gusta\documents\programação\tp1-trabalho_1\dominios.h
+1603643094 c:\users\gusta\documents\programação\tp1-trabalho_1\dominios.h
 	<stdexcept>
 
 1601398350 c:\users\gusta\documents\programação\tp1-trabalho_1\testes.h
@@ -52,5 +52,32 @@
 
 1601238561 source:c:\users\david\documents\unb\2020.1\tp1\trabalho 1\tp1-trabalho_1\testes.cpp
 	"testes.h"
+	"dominios.h"
+
+1601401731 source:c:\users\gusta\documents\programação\tp1-trabalho_1\dominios.cpp
+	"dominios.h"
+	<iostream>
+	<string>
+
+1603649225 source:c:\users\gusta\documents\programação\tp1-trabalho_1\entidades.cpp
+	"entidades.h"
+
+1603644017 c:\users\gusta\documents\programação\tp1-trabalho_1\testes_dominios.h
+	"dominios.h"
+
+1603646359 source:c:\users\gusta\documents\programação\tp1-trabalho_1\testes_dominios.cpp
+	"testes_dominios.h"
+	"dominios.h"
+
+1603648817 c:\users\gusta\documents\programação\tp1-trabalho_1\entidades.h
+	"dominios.h"
+
+1603653145 source:c:\users\gusta\documents\programação\tp1-trabalho_1\testes_entidades.cpp
+	"testes_entidades.h"
+	"dominios.h"
+	<iostream>
+
+1603650512 c:\users\gusta\documents\programação\tp1-trabalho_1\testes_entidades.h
+	"entidades.h"
 	"dominios.h"
 

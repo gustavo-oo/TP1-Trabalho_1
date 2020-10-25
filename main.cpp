@@ -1,11 +1,12 @@
 #include <iostream>
 
-#include "dominios.h"
-#include "testes.h"
+#include "testes_dominios.h"
+#include "testes_entidades.h"
 
 using namespace std;
 
 int main(){
+    /*
     TUCep teste_cep;
     TUClasse teste_classe;
     TUCodigoDeAgencia teste_codigo_de_agencia;
@@ -24,7 +25,9 @@ int main(){
     TUTaxa teste_taxa;
     TUValorDeAplicacao teste_valor_de_aplicacao;
     TUValorMinimo teste_valor_minimo;
-
+*/
+    TUAplicacao teste_aplicacao;
+/*
     //Confirmacao Teste: Cep
     cout << "Teste da Classe Cep: ";
     if(teste_cep.Run()){
@@ -182,6 +185,15 @@ int main(){
     //Confirmacao Teste: Valor Mínimo
     cout << "Teste da Classe Valor Minimo: ";
     if(teste_valor_minimo.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
+*/
+    //Confirmação Teste: Aplicacao
+    cout << "Teste da Entidade Aplicacao: ";
+    if(teste_aplicacao.Run()){
         cout << "SUCESSO\n";
     }
     else{

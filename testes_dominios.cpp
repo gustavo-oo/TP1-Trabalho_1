@@ -1,4 +1,4 @@
-#include "testes.h"
+#include "testes_dominios.h"
 #include "dominios.h"
 
 //Funcoes de Teste: Cep
