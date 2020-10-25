@@ -1,5 +1,5 @@
-#ifndef TESTES_H_INCLUDED
-#define TESTES_H_INCLUDED
+#ifndef TESTES_DOMINIOS_H_INCLUDED
+#define TESTES_DOMINIOS_H_INCLUDED
 
 #include "dominios.h"
 
@@ -301,4 +301,4 @@ public:
     bool Run();
 };
 
-#endif // TESTES_H_INCLUDED
+#endif // TESTES_DOMINIOS_H_INCLUDED
