@@ -25,3 +25,29 @@ void Aplicacao::SetData(Data &data){
 Data Aplicacao::GetData(){
     return data;
 }
+
+//Funcoes da Entidade: Conta
+
+void Conta::SetBanco(CodigoDeBanco &banco){
+    this->banco = banco;
+}
+
+CodigoDeBanco Conta::GetBanco(){
+    return banco;
+}
+
+void Conta::SetAgencia(CodigoDeAgencia &agencia){
+    this->agencia = agencia;
+}
+
+CodigoDeAgencia Conta::GetAgencia(){
+    return agencia;
+}
+
+void Conta::SetNumero(Numero &numero){
+    this->numero = numero;
+}
+
+Numero Conta::GetNumero(){
+    return numero;
+}

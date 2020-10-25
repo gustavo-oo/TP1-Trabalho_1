@@ -29,4 +29,29 @@ public:
     bool Run();
 };
 
+class TUConta{
+private:
+    Conta *conta;
+
+    CodigoDeBanco banco_valido;
+    const static int kBancoValido = 341;
+
+    CodigoDeAgencia agencia_valida;
+    inline const static string kAgenciaValida = "1111";
+
+    Numero numero_valido;
+    inline const static string kNumeroValido = "123456-0";
+
+    bool estado;
+
+    void Create();
+    void Destroy();
+    void BancoTest();
+    void AgenciaTest();
+    void NumeroTest();
+
+public:
+    bool Run();
+};
+
 #endif // TESTES_ENTIDADES_INCLUDED
