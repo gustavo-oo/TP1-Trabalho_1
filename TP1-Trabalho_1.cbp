@@ -40,13 +40,17 @@
 		<Unit filename="dominios.h">
 			<Option compiler="gcc" use="1" buildCommand="-Wdeprecated" />
 		</Unit>
+		<Unit filename="entidades.cpp" />
+		<Unit filename="entidades.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="testes.cpp">
+		<Unit filename="testes_dominios.cpp">
 			<Option target="Debug" />
 		</Unit>
-		<Unit filename="testes.h">
+		<Unit filename="testes_dominios.h">
 			<Option compiler="gcc" use="1" buildCommand="-std=c++17" />
 		</Unit>
+		<Unit filename="testes_entidades.cpp" />
+		<Unit filename="testes_entidades.h" />
 		<Extensions>
 			<DoxyBlocks>
 				<comment_style block="2" line="2" />
