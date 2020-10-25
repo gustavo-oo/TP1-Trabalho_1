@@ -23,4 +23,24 @@ private:
 
 };
 
+class Conta{
+public:
+
+    void SetBanco(CodigoDeBanco &banco);
+    CodigoDeBanco GetBanco();
+
+    void SetAgencia(CodigoDeAgencia &agencia);
+    CodigoDeAgencia GetAgencia();
+
+    void SetNumero(Numero &numero);
+    Numero GetNumero();
+
+private:
+
+    CodigoDeBanco banco;
+    CodigoDeAgencia agencia;
+    Numero numero;
+
+};
+
 #endif // ENTIDADES_H_INCLUDED

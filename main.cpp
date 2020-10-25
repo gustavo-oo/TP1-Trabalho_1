@@ -25,9 +25,7 @@ int main(){
     TUTaxa teste_taxa;
     TUValorDeAplicacao teste_valor_de_aplicacao;
     TUValorMinimo teste_valor_minimo;
-*/
-    TUAplicacao teste_aplicacao;
-/*
+
     //Confirmacao Teste: Cep
     cout << "Teste da Classe Cep: ";
     if(teste_cep.Run()){
@@ -192,6 +190,8 @@ int main(){
     }
 */
     //Confirmação Teste: Aplicacao
+    TUAplicacao teste_aplicacao;
+
     cout << "Teste da Entidade Aplicacao: ";
     if(teste_aplicacao.Run()){
         cout << "SUCESSO\n";
@@ -200,6 +200,16 @@ int main(){
         cout << "FALHA\n";
     }
 
+    //Confirmação Teste: Conta
+    TUConta teste_conta;
+
+    cout << "Teste da Entidade Conta: ";
+    if(teste_conta.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
 
     return 0;
 }
