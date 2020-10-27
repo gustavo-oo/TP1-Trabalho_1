@@ -115,63 +115,63 @@ void TUProduto::Destroy(){
     delete produto;
 }
 
-    void TUProduto::CodigoTest(){
-        produto->SetCodigo(codigo_valido);
-        if(produto->GetCodigo().GetCodigoDeProduto() != codigo_valido.GetCodigoDeProduto()){
-            estado = false;
-        }
+void TUProduto::CodigoTest(){
+    produto->SetCodigo(codigo_valido);
+    if(produto->GetCodigo().GetCodigoDeProduto() != codigo_valido.GetCodigoDeProduto()){
+        estado = false;
     }
+}
 
-    void TUProduto::ClasseTest(){
-        produto->SetClasse(classe_valida);
-        if(produto->GetClasse().GetClasse() != classe_valida.GetClasse()){
-            estado = false;
-        }
+void TUProduto::ClasseTest(){
+    produto->SetClasse(classe_valida);
+    if(produto->GetClasse().GetClasse() != classe_valida.GetClasse()){
+        estado = false;
     }
+}
 
-    void TUProduto::EmissorTest(){
-        produto->SetEmissor(emissor_valido);
-        if(produto->GetEmissor().GetEmissor() != emissor_valido.GetEmissor()){
-            estado = false;
-        }
+void TUProduto::EmissorTest(){
+    produto->SetEmissor(emissor_valido);
+    if(produto->GetEmissor().GetEmissor() != emissor_valido.GetEmissor()){
+        estado = false;
     }
+}
 
-    void TUProduto::PrazoTest(){
-        produto->SetPrazo(prazo_valido);
-        if(produto->GetPrazo().GetPrazo() != prazo_valido.GetPrazo()){
-            estado = false;
-        }
+void TUProduto::PrazoTest(){
+    produto->SetPrazo(prazo_valido);
+    if(produto->GetPrazo().GetPrazo() != prazo_valido.GetPrazo()){
+        estado = false;
     }
+}
 
-    void TUProduto::VencimentoTest(){
-        produto->SetVencimento(vencimento_valido);
-        if(produto->GetVencimento().GetData() != vencimento_valido.GetData()){
-            estado = false;
-        }
+void TUProduto::VencimentoTest(){
+    produto->SetVencimento(vencimento_valido);
+    if(produto->GetVencimento().GetData() != vencimento_valido.GetData()){
+        estado = false;
     }
+}
 
-    void TUProduto::TaxaTest(){
-        produto->SetTaxa(taxa_valida);
-        if(produto->GetTaxa().GetTaxa() != taxa_valida.GetTaxa()){
-            estado = false;
-        }
+void TUProduto::TaxaTest(){
+    produto->SetTaxa(taxa_valida);
+    if(produto->GetTaxa().GetTaxa() != taxa_valida.GetTaxa()){
+        estado = false;
     }
+}
 
-    void TUProduto::HorarioTest(){
-        produto->SetHorario(horario_valido);
-        if(produto->GetHorario().GetHorario() != horario_valido.GetHorario()){
-            estado = false;
-        }
+void TUProduto::HorarioTest(){
+    produto->SetHorario(horario_valido);
+    if(produto->GetHorario().GetHorario() != horario_valido.GetHorario()){
+        estado = false;
     }
+}
 
-    void TUProduto::ValorTest(){
-        produto->SetValor(valor_valido);
-        if(produto->GetValor().GetValorMinimo() != valor_valido.GetValorMinimo()){
-            estado = false;
-        }
+void TUProduto::ValorTest(){
+    produto->SetValor(valor_valido);
+    if(produto->GetValor().GetValorMinimo() != valor_valido.GetValorMinimo()){
+        estado = false;
     }
+}
 
-    bool TUProduto::Run(){
+bool TUProduto::Run(){
     Create();
     CodigoTest();
     ClasseTest();
@@ -181,6 +181,70 @@ void TUProduto::Destroy(){
     TaxaTest();
     HorarioTest();
     ValorTest();
+    Destroy();
+    return estado;
+}
+
+//Funcoes de Teste: Usuario
+
+void TUUsuario::Create(){
+    usuario = new Usuario();
+
+    nome_valido.SetNome(kNomeValido);
+    endereco_valido.SetEndereco(kEnderecoValido);
+    cep_valido.SetCep(kCepValido);
+    cpf_valido.SetCpf(kCpfValido);
+    senha_valida.SetSenha(kSenhaValida);
+
+    estado = true;
+}
+
+void TUUsuario::Destroy(){
+    delete usuario;
+}
+
+void TUUsuario::NomeTest(){
+    usuario->SetNome(nome_valido);
+    if(usuario->GetNome().GetNome() != nome_valido.GetNome()){
+        estado = false;
+    }
+}
+
+void TUUsuario::EnderecoTest(){
+    usuario->SetEndereco(endereco_valido);
+    if(usuario->GetEndereco().GetEndereco() != endereco_valido.GetEndereco()){
+        estado = false;
+    }
+}
+
+void TUUsuario::CepTest(){
+    usuario->SetCep(cep_valido);
+    if(usuario->GetCep().GetCep() != cep_valido.GetCep()){
+        estado = false;
+    }
+}
+
+void TUUsuario::CpfTest(){
+    usuario->SetCpf(cpf_valido);
+    if(usuario->GetCpf().GetCpf() != cpf_valido.GetCpf()){
+        estado = false;
+    }
+}
+
+void TUUsuario::SenhaTest(){
+    usuario->SetSenha(senha_valida);
+    if(usuario->GetSenha().GetSenha() != senha_valida.GetSenha()){
+        estado = false;
+    }
+}
+
+bool TUUsuario::Run(){
+    Create();
+    NomeTest();
+    EnderecoTest();
+    CepTest();
+    CpfTest();
+    SenhaTest();
     Destroy();
     return estado;
 }
