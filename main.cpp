@@ -6,7 +6,65 @@
 using namespace std;
 
 int main(){
-    /*
+    void TesteEntidades();
+    void TesteDominios();
+
+    //TesteDominios();
+
+    TesteEntidades();
+
+    return 0;
+}
+
+void TesteEntidades(){
+
+    //Confirmação Teste: Aplicacao
+    TUAplicacao teste_aplicacao;
+
+    cout << "Teste da Entidade Aplicacao: ";
+    if(teste_aplicacao.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
+
+    //Confirmação Teste: Conta
+    TUConta teste_conta;
+
+    cout << "Teste da Entidade Conta: ";
+    if(teste_conta.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
+
+    //Confirmação Teste: Produto
+    TUProduto teste_produto;
+
+    cout << "Teste da Entidade Produto: ";
+    if(teste_produto.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
+
+    //Confirmação Teste: Usuario
+    TUUsuario teste_usuario;
+
+    cout << "Teste da Entidade Usuario: ";
+    if(teste_usuario.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
+}
+
+void TesteDominios(){
+
     TUCep teste_cep;
     TUClasse teste_classe;
     TUCodigoDeAgencia teste_codigo_de_agencia;
@@ -188,50 +246,4 @@ int main(){
     else{
         cout << "FALHA\n";
     }
-*/
-    //Confirmação Teste: Aplicacao
-    TUAplicacao teste_aplicacao;
-
-    cout << "Teste da Entidade Aplicacao: ";
-    if(teste_aplicacao.Run()){
-        cout << "SUCESSO\n";
-    }
-    else{
-        cout << "FALHA\n";
-    }
-
-    //Confirmação Teste: Conta
-    TUConta teste_conta;
-
-    cout << "Teste da Entidade Conta: ";
-    if(teste_conta.Run()){
-        cout << "SUCESSO\n";
-    }
-    else{
-        cout << "FALHA\n";
-    }
-
-    //Confirmação Teste: Produto
-    TUProduto teste_produto;
-
-    cout << "Teste da Entidade Produto: ";
-    if(teste_produto.Run()){
-        cout << "SUCESSO\n";
-    }
-    else{
-        cout << "FALHA\n";
-    }
-
-    //Confirmação Teste: Usuario
-    TUUsuario teste_usuario;
-
-    cout << "Teste da Entidade Usuario: ";
-    if(teste_usuario.Run()){
-        cout << "SUCESSO\n";
-    }
-    else{
-        cout << "FALHA\n";
-    }
-
-    return 0;
 }
