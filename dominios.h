@@ -6,6 +6,10 @@
 using namespace std;
 
 ///
+/// @file dominios.h
+///
+
+///
 /// Padr&atilde;o para representa&ccedil;&atilde;o de CEP.
 ///
 /// <b> Regras de formato: </b>
