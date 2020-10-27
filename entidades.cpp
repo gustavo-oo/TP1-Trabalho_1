@@ -51,3 +51,70 @@ void Conta::SetNumero(Numero &numero){
 Numero Conta::GetNumero(){
     return numero;
 }
+
+//Funcoes da Entidade: Produto
+
+
+    void Produto::SetCodigo(CodigoDeProduto &codigo){
+        this->codigo = codigo;
+    }
+
+    CodigoDeProduto Produto::GetCodigo(){
+        return codigo;
+    }
+
+    void Produto::SetClasse(Classe &classe){
+        this->classe = classe;
+    }
+
+    Classe Produto::GetClasse(){
+        return classe;
+    }
+
+    void Produto::SetEmissor(Emissor &emissor){
+        this->emissor = emissor;
+    }
+
+    Emissor Produto::GetEmissor(){
+        return emissor;
+    }
+
+    void Produto::SetPrazo(Prazo &prazo){
+        this->prazo = prazo;
+    }
+
+    Prazo Produto::GetPrazo(){
+        return prazo;
+    }
+
+    void Produto::SetVencimento(Data &vencimento){
+        this->vencimento = vencimento;
+    }
+
+    Data Produto::GetVencimento(){
+        return vencimento;
+    }
+
+    void Produto::SetTaxa(Taxa &taxa){
+        this->taxa = taxa;
+    }
+
+    Taxa Produto::GetTaxa(){
+        return taxa;
+    }
+
+    void Produto::SetHorario(Horario &horario){
+        this->horario = horario;
+    }
+
+    Horario Produto::GetHorario(){
+        return horario;
+    }
+
+    void Produto::SetValor(ValorMinimo &valor){
+        this->valor = valor;
+    }
+
+    ValorMinimo Produto::GetValor(){
+        return valor;
+    }
