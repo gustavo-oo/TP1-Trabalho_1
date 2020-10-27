@@ -100,5 +100,39 @@ public:
     bool Run();
 };
 
+class TUUsuario{
+private:
+    Usuario *usuario;
+
+    Nome nome_valido;
+    inline const static string kNomeValido = "Joao Da Silva";
+
+    Endereco endereco_valido;
+    inline const static string kEnderecoValido = "Rua 8 St . N";
+
+    Cep cep_valido;
+    const static int kCepValido = 3000000;
+
+    Cpf cpf_valido;
+    inline const static string kCpfValido = "123.456.789-09";
+
+    Senha senha_valida;
+    inline const static string kSenhaValida = "123456";
+
+    bool estado;
+
+    void Create();
+    void Destroy();
+    void NomeTest();
+    void EnderecoTest();
+    void CepTest();
+    void CpfTest();
+    void SenhaTest();
+
+public:
+    bool Run();
+
+};
+
 
 #endif // TESTES_ENTIDADES_INCLUDED

@@ -54,67 +54,108 @@ Numero Conta::GetNumero(){
 
 //Funcoes da Entidade: Produto
 
+void Produto::SetCodigo(CodigoDeProduto &codigo){
+    this->codigo = codigo;
+}
 
-    void Produto::SetCodigo(CodigoDeProduto &codigo){
-        this->codigo = codigo;
-    }
+CodigoDeProduto Produto::GetCodigo(){
+    return codigo;
+}
 
-    CodigoDeProduto Produto::GetCodigo(){
-        return codigo;
-    }
+void Produto::SetClasse(Classe &classe){
+    this->classe = classe;
+}
 
-    void Produto::SetClasse(Classe &classe){
-        this->classe = classe;
-    }
+Classe Produto::GetClasse(){
+    return classe;
+}
 
-    Classe Produto::GetClasse(){
-        return classe;
-    }
+void Produto::SetEmissor(Emissor &emissor){
+    this->emissor = emissor;
+}
 
-    void Produto::SetEmissor(Emissor &emissor){
-        this->emissor = emissor;
-    }
+Emissor Produto::GetEmissor(){
+    return emissor;
+}
 
-    Emissor Produto::GetEmissor(){
-        return emissor;
-    }
+void Produto::SetPrazo(Prazo &prazo){
+    this->prazo = prazo;
+}
 
-    void Produto::SetPrazo(Prazo &prazo){
-        this->prazo = prazo;
-    }
+Prazo Produto::GetPrazo(){
+    return prazo;
+}
 
-    Prazo Produto::GetPrazo(){
-        return prazo;
-    }
+void Produto::SetVencimento(Data &vencimento){
+    this->vencimento = vencimento;
+}
 
-    void Produto::SetVencimento(Data &vencimento){
-        this->vencimento = vencimento;
-    }
+Data Produto::GetVencimento(){
+    return vencimento;
+}
 
-    Data Produto::GetVencimento(){
-        return vencimento;
-    }
+void Produto::SetTaxa(Taxa &taxa){
+    this->taxa = taxa;
+}
 
-    void Produto::SetTaxa(Taxa &taxa){
-        this->taxa = taxa;
-    }
+Taxa Produto::GetTaxa(){
+    return taxa;
+}
 
-    Taxa Produto::GetTaxa(){
-        return taxa;
-    }
+void Produto::SetHorario(Horario &horario){
+    this->horario = horario;
+}
 
-    void Produto::SetHorario(Horario &horario){
-        this->horario = horario;
-    }
+Horario Produto::GetHorario(){
+    return horario;
+}
 
-    Horario Produto::GetHorario(){
-        return horario;
-    }
+void Produto::SetValor(ValorMinimo &valor){
+    this->valor = valor;
+}
 
-    void Produto::SetValor(ValorMinimo &valor){
-        this->valor = valor;
-    }
+ValorMinimo Produto::GetValor(){
+    return valor;
+}
 
-    ValorMinimo Produto::GetValor(){
-        return valor;
-    }
+//Funcoes da Entidade: Usuario
+
+void Usuario::SetNome(Nome &nome){
+    this->nome = nome;
+}
+
+Nome Usuario::GetNome(){
+    return nome;
+}
+
+void Usuario::SetEndereco(Endereco &endereco){
+    this->endereco = endereco;
+}
+
+Endereco Usuario::GetEndereco(){
+    return endereco;
+}
+
+void Usuario::SetCep(Cep &cep){
+    this->cep = cep;
+}
+
+Cep Usuario::GetCep(){
+    return cep;
+}
+
+void Usuario::SetCpf(Cpf &cpf){
+    this->cpf = cpf;
+}
+
+Cpf Usuario::GetCpf(){
+    return cpf;
+}
+
+void Usuario::SetSenha(Senha &senha){
+    this->senha = senha;
+}
+
+Senha Usuario::GetSenha(){
+    return senha;
+}

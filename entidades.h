@@ -83,4 +83,32 @@ private:
 
 };
 
+class Usuario{
+public:
+
+    void SetNome(Nome &nome);
+    Nome GetNome();
+
+    void SetEndereco(Endereco &endereco);
+    Endereco GetEndereco();
+
+    void SetCep(Cep &cep);
+    Cep GetCep();
+
+    void SetCpf(Cpf &cpf);
+    Cpf GetCpf();
+
+    void SetSenha(Senha &senha);
+    Senha GetSenha();
+
+private:
+
+    Nome nome;
+    Endereco endereco;
+    Cep cep;
+    Cpf cpf;
+    Senha senha;
+
+};
+
 #endif // ENTIDADES_H_INCLUDED
