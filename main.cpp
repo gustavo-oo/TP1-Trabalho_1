@@ -211,5 +211,16 @@ int main(){
         cout << "FALHA\n";
     }
 
+    //Confirmação Teste: Produto
+    TUProduto teste_produto;
+
+    cout << "Teste da Entidade Produto: ";
+    if(teste_produto.Run()){
+        cout << "SUCESSO\n";
+    }
+    else{
+        cout << "FALHA\n";
+    }
+
     return 0;
 }

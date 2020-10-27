@@ -43,4 +43,44 @@ private:
 
 };
 
+class Produto{
+public:
+
+    void SetCodigo(CodigoDeProduto &codigo);
+    CodigoDeProduto GetCodigo();
+
+    void SetClasse(Classe &classe);
+    Classe GetClasse();
+
+    void SetEmissor(Emissor &emissor);
+    Emissor GetEmissor();
+
+    void SetPrazo(Prazo &prazo);
+    Prazo GetPrazo();
+
+    void SetVencimento(Data &vencimento);
+    Data GetVencimento();
+
+    void SetTaxa(Taxa &taxa);
+    Taxa GetTaxa();
+
+    void SetHorario(Horario &horario);
+    Horario GetHorario();
+
+    void SetValor(ValorMinimo &valor);
+    ValorMinimo GetValor();
+
+private:
+
+    CodigoDeProduto codigo;
+    Classe classe;
+    Emissor emissor;
+    Prazo prazo;
+    Data vencimento;
+    Taxa taxa;
+    Horario horario;
+    ValorMinimo valor;
+
+};
+
 #endif // ENTIDADES_H_INCLUDED

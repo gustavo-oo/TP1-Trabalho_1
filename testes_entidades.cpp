@@ -93,3 +93,94 @@ bool TUConta::Run(){
     Destroy();
     return estado;
 }
+
+//Funcoes de Teste: Produto
+
+void TUProduto::Create(){
+    produto = new Produto();
+
+    codigo_valido.SetCodigoDeProduto(kCodigoValido);
+    classe_valida.SetClasse(kClasseValida);
+    emissor_valido.SetEmissor(kEmissorValido);
+    prazo_valido.SetPrazo(kPrazoValido);
+    vencimento_valido.SetData(kVencimentoValido);
+    taxa_valida.SetTaxa(kTaxaValida);
+    horario_valido.SetHorario(kHorarioValido);
+    valor_valido.SetValorMinimo(kValorValido);
+
+    estado = true;
+}
+
+void TUProduto::Destroy(){
+    delete produto;
+}
+
+    void TUProduto::CodigoTest(){
+        produto->SetCodigo(codigo_valido);
+        if(produto->GetCodigo().GetCodigoDeProduto() != codigo_valido.GetCodigoDeProduto()){
+            estado = false;
+        }
+    }
+
+    void TUProduto::ClasseTest(){
+        produto->SetClasse(classe_valida);
+        if(produto->GetClasse().GetClasse() != classe_valida.GetClasse()){
+            estado = false;
+        }
+    }
+
+    void TUProduto::EmissorTest(){
+        produto->SetEmissor(emissor_valido);
+        if(produto->GetEmissor().GetEmissor() != emissor_valido.GetEmissor()){
+            estado = false;
+        }
+    }
+
+    void TUProduto::PrazoTest(){
+        produto->SetPrazo(prazo_valido);
+        if(produto->GetPrazo().GetPrazo() != prazo_valido.GetPrazo()){
+            estado = false;
+        }
+    }
+
+    void TUProduto::VencimentoTest(){
+        produto->SetVencimento(vencimento_valido);
+        if(produto->GetVencimento().GetData() != vencimento_valido.GetData()){
+            estado = false;
+        }
+    }
+
+    void TUProduto::TaxaTest(){
+        produto->SetTaxa(taxa_valida);
+        if(produto->GetTaxa().GetTaxa() != taxa_valida.GetTaxa()){
+            estado = false;
+        }
+    }
+
+    void TUProduto::HorarioTest(){
+        produto->SetHorario(horario_valido);
+        if(produto->GetHorario().GetHorario() != horario_valido.GetHorario()){
+            estado = false;
+        }
+    }
+
+    void TUProduto::ValorTest(){
+        produto->SetValor(valor_valido);
+        if(produto->GetValor().GetValorMinimo() != valor_valido.GetValorMinimo()){
+            estado = false;
+        }
+    }
+
+    bool TUProduto::Run(){
+    Create();
+    CodigoTest();
+    ClasseTest();
+    EmissorTest();
+    PrazoTest();
+    VencimentoTest();
+    TaxaTest();
+    HorarioTest();
+    ValorTest();
+    Destroy();
+    return estado;
+}

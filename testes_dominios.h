@@ -253,7 +253,7 @@ public:
     bool Run();
 };
 
-//Classe de Teste: Senha
+//Classe de Teste: Taxa
 class TUTaxa{
     Taxa *taxa;
     bool estado;
@@ -269,7 +269,7 @@ public:
     bool Run();
 };
 
-//Classe de Teste: Valor de Aplicação
+//Classe de Teste: Valor de Aplicaï¿½ï¿½o
 class TUValorDeAplicacao{
     ValorDeAplicacao *valor_de_aplicacao;
     bool estado;
@@ -285,7 +285,7 @@ public:
     bool Run();
 };
 
-//Classe de Teste: Valor Mínimo
+//Classe de Teste: Valor Mï¿½nimo
 class TUValorMinimo{
     ValorMinimo *valor_minimo;
     bool estado;
