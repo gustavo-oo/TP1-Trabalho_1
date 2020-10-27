@@ -1,1 +1,8 @@
-C:/Users/gusta/Documents/Programação/TP1-Trabalho_1/dominios.h:458: warning: found </b> tag without matching <b>
+C:/Users/gusta/Documents/Programação/TP1-Trabalho_1/dominios.h:514: warning: found </b> tag without matching <b>
+C:/Users/gusta/Documents/Programação/TP1-Trabalho_1/dominios.h:602: warning: HTML tags may not use the 'empty tag' XHTML syntax.
+C:/Users/gusta/Documents/Programação/TP1-Trabalho_1/dominios.h:603: warning: end of comment block while expecting command </b>
+C:/Users/gusta/Documents/Programação/TP1-Trabalho_1/dominios.h:603: warning: end of comment block while expecting command </b>
+C:/Users/gusta/Documents/Programação/TP1-Trabalho_1/dominios.h:685: warning: end of comment block while expecting command </b>
+C:/Users/gusta/Documents/Programação/TP1-Trabalho_1/dominios.h:685: warning: end of comment block while expecting command </b>
+C:/Users/gusta/Documents/Programação/TP1-Trabalho_1/dominios.h:727: warning: end of comment block while expecting command </b>
+C:/Users/gusta/Documents/Programação/TP1-Trabalho_1/dominios.h:727: warning: end of comment block while expecting command </b>
