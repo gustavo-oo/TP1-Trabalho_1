@@ -773,7 +773,9 @@ WARN_LOGFILE           = C:\Users\gusta\Documents\Programação\TP1-Trabalho_1\d
 
 INPUT                  = "..\main.cpp" \
                          "..\dominios.h" \
-                         "..\dominios.cpp"
+                         "..\dominios.cpp" \
+                         ..\entidades.h \
+                         ..\entidades.cpp
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses
