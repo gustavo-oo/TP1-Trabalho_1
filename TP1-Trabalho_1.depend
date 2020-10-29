@@ -19,12 +19,12 @@
 	"testes.h"
 	"dominios.h"
 
-1603659220 source:c:\users\gusta\documents\programação\tp1-trabalho_1\main.cpp
+1603820170 source:c:\users\gusta\documents\programação\tp1-trabalho_1\main.cpp
 	<iostream>
 	"testes_dominios.h"
 	"testes_entidades.h"
 
-1603818284 c:\users\gusta\documents\programação\tp1-trabalho_1\dominios.h
+1603820167 c:\users\gusta\documents\programação\tp1-trabalho_1\dominios.h
 	<stdexcept>
 
 1601398350 c:\users\gusta\documents\programação\tp1-trabalho_1\testes.h
@@ -69,7 +69,7 @@
 	"testes_dominios.h"
 	"dominios.h"
 
-1603819529 c:\users\gusta\documents\programação\tp1-trabalho_1\entidades.h
+1603820170 c:\users\gusta\documents\programação\tp1-trabalho_1\entidades.h
 	"dominios.h"
 
 1603814961 source:c:\users\gusta\documents\programação\tp1-trabalho_1\testes_entidades.cpp
