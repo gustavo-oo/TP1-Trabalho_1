@@ -26,6 +26,7 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add library="./pdcurses.a" />
 				</Linker>
 			</Target>
 		</Build>
@@ -36,16 +37,23 @@
 			<Add option="-fexceptions" />
 			<Add option="-Wsign-compare" />
 		</Compiler>
+		<Unit filename="controladora_apresentacao.cpp" />
+		<Unit filename="controladora_apresentacao.h" />
+		<Unit filename="controladora_servico.cpp" />
+		<Unit filename="controladora_servico.h" />
+		<Unit filename="curses.h" />
 		<Unit filename="dominios.cpp" />
 		<Unit filename="dominios.h">
 			<Option compiler="gcc" use="1" buildCommand="-Wdeprecated" />
 		</Unit>
 		<Unit filename="entidades.cpp" />
 		<Unit filename="entidades.h" />
+		<Unit filename="interfaces.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="testes_dominios.cpp">
-			<Option target="Debug" />
-		</Unit>
+		<Unit filename="sqlite3.h" />
+		<Unit filename="stubs.cpp" />
+		<Unit filename="stubs.h" />
+		<Unit filename="testes_dominios.cpp" />
 		<Unit filename="testes_dominios.h">
 			<Option compiler="gcc" use="1" buildCommand="-std=c++17" />
 		</Unit>
