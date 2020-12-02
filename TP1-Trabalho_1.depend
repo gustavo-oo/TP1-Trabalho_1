@@ -19,10 +19,15 @@
 	"testes.h"
 	"dominios.h"
 
-1603820170 source:c:\users\gusta\documents\programação\tp1-trabalho_1\main.cpp
+1606918311 source:c:\users\gusta\documents\programação\tp1-trabalho_1\main.cpp
 	<iostream>
 	"testes_dominios.h"
 	"testes_entidades.h"
+	"controladora_apresentacao.h"
+	"curses.h"
+	"dominios.h"
+	"interfaces.h"
+	"stubs.h"
 
 1603820167 c:\users\gusta\documents\programação\tp1-trabalho_1\dominios.h
 	<stdexcept>
@@ -80,4 +85,52 @@
 1603814961 c:\users\gusta\documents\programação\tp1-trabalho_1\testes_entidades.h
 	"entidades.h"
 	"dominios.h"
+
+1606918406 source:c:\users\gusta\documents\programação\tp1-trabalho_1\controladora_servico.cpp
+	"controladora_servico.h"
+
+1606914925 c:\users\gusta\documents\programação\tp1-trabalho_1\builders.h
+	"interfaces.h"
+	"controladora_apresentacao.h"
+	"controladora_servico.h"
+	"stubs.h"
+
+1606919646 c:\users\gusta\documents\programação\tp1-trabalho_1\interfaces.h
+	"dominios.h"
+	"entidades.h"
+
+1606918478 c:\users\gusta\documents\programação\tp1-trabalho_1\controladora_apresentacao.h
+	<string.h>
+	"curses.h"
+	"dominios.h"
+	"entidades.h"
+	"interfaces.h"
+
+1606918436 c:\users\gusta\documents\programação\tp1-trabalho_1\controladora_servico.h
+	"dominios.h"
+	"entidades.h"
+	"interfaces.h"
+
+1606919538 source:c:\users\gusta\documents\programação\tp1-trabalho_1\controladora_apresentacao.cpp
+	"controladora_apresentacao.h"
+
+1606919438 c:\users\gusta\documents\programação\tp1-trabalho_1\stubs.h
+	<string>
+	"dominios.h"
+	"interfaces.h"
+
+1606919531 source:c:\users\gusta\documents\programação\tp1-trabalho_1\stubs.cpp
+	"stubs.h"
+
+1606915642 c:\users\gusta\documents\programação\tp1-trabalho_1\containers.h
+	"dominios.h"
+	"entidades.h"
+	<list>
+
+1567627682 c:\users\gusta\documents\programação\tp1-trabalho_1\curses.h
+	<stdarg.h>
+	<stddef.h>
+	<stdio.h>
+	<wchar.h>
+	<stdbool.h>
 

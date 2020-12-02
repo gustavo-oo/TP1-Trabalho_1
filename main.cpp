@@ -2,16 +2,60 @@
 
 #include "testes_dominios.h"
 #include "testes_entidades.h"
+#include "controladora_apresentacao.h"
+#include "curses.h"
+#include "dominios.h"
+#include "interfaces.h"
+#include "stubs.h"
 
 using namespace std;
 
 int main(){
-    void TesteEntidades();
-    void TesteDominios();
+    //void TesteEntidades();
+    //void TesteDominios();
 
     //TesteDominios();
 
-    TesteEntidades();
+    //TesteEntidades();
+
+    // Instancia as controladoras de apresentação.
+
+    CntrApresentacaoControle *cntrApresentacaoControle;
+    IApresentacaoAutenticacao *cntrApresentacaoAutenticacao;
+    IApresentacaoPessoal *cntrApresentacaoPessoal;
+    IApresentacaoProdutosFinanceiros *cntrApresentacaoProdutosFinanceiros;
+
+    cntrApresentacaoControle = new CntrApresentacaoControle();
+    cntrApresentacaoAutenticacao = new CntrApresentacaoAutenticacao();
+    cntrApresentacaoPessoal = new CntrApresentacaoPessoal();
+    cntrApresentacaoProdutosFinanceiros = new CntrApresentacaoProdutosFinanceiros();
+
+    // Instancia os stubs de serviço.
+
+    IServicoAutenticacao *stubServicoAutenticacao;
+    IServicoPessoal *stubServicoPessoal;
+    IServicoProdutosFinanceiros *stubServicoProdutosFinanceiros;
+
+    stubServicoAutenticacao = new StubServicoAutenticacao();
+    stubServicoPessoal = new StubServicoPessoal();
+    stubServicoProdutosFinanceiros = new StubServicoProdutosFinanceiros();
+
+    // Interliga as controladoras aos stubs.
+
+    cntrApresentacaoControle->setCntrApresentacaoAutenticacao(cntrApresentacaoAutenticacao);
+    cntrApresentacaoControle->setCntrApresentacaoPessoal(cntrApresentacaoPessoal);
+    cntrApresentacaoControle->setCntrApresentacaoProdutosFinanceiros(cntrApresentacaoProdutosFinanceiros);
+
+    cntrApresentacaoAutenticacao->setCntrServicoAutenticacao(stubServicoAutenticacao);
+
+    cntrApresentacaoPessoal->setCntrServicoPessoal(stubServicoPessoal);
+    cntrApresentacaoPessoal->setCntrServicoProdutosFinanceiros(stubServicoProdutosFinanceiros);
+
+    cntrApresentacaoProdutosFinanceiros->setCntrServicoProdutosFinanceiros(stubServicoProdutosFinanceiros);
+
+    initscr();                                                                      // Inicia curses.
+    cntrApresentacaoControle->executar();                                           // Solicita serviço apresentacao.
+    endwin();                                                                       // Finaliza curses.
 
     return 0;
 }
